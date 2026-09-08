@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>METI Training Material</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: transparent;
+      color: #172333;
+    }
+
+    .training-home {
+      width: 100%;
+      padding: 38px 28px 48px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    .intro {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 7px 14px;
+      margin-bottom: 15px;
+
+      border-radius: 30px;
+      background: #eaf6fb;
+
+      color: #1678a3;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .intro h1 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.1;
+      color: #10243a;
+      margin-bottom: 11px;
+    }
+
+    .intro p {
+      max-width: 700px;
+      margin: auto;
+
+      color: #687689;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       SECTION TITLE
+    ========================== */
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 14px;
+    }
+
+    .section-heading h2 {
+      color: #21344b;
+      font-size: 18px;
+    }
+
+    .section-heading span {
+      color: #8a98a8;
+      font-size: 12px;
+    }
+
+    /* =========================
+       CURRENT QUEUE
+    ========================== */
+
+    .primary-card {
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      min-height: 190px;
+      padding: 34px;
+
+      border-radius: 20px;
+      background:
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(73, 192, 234, 0.25),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #102a42,
+          #153e5c
+        );
+
+      text-decoration: none;
+
+      box-shadow:
+        0 16px 40px rgba(24, 62, 88, 0.14);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .primary-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 22px 45px rgba(24, 62, 88, 0.2);
+    }
+
+    .primary-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .primary-label {
+      display: inline-block;
+
+      padding: 7px 12px;
+      margin-bottom: 15px;
+
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.12);
+
+      color: #8ed7f1;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    .primary-card h3 {
+      color: white;
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .primary-card p {
+      max-width: 650px;
+
+      color: #c7d7e5;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .primary-action {
+      position: relative;
+      z-index: 2;
+
+      min-width: 135px;
+
+      padding: 13px 18px;
+      border-radius: 10px;
+
+      background: white;
+
+      color: #123752;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .primary-card:hover .primary-action {
+      transform: translateX(3px);
+      background: #edfaff;
+    }
+
+    .decor-circle {
+      position: absolute;
+      right: -80px;
+      bottom: -110px;
+
+      width: 270px;
+      height: 270px;
+
+      border-radius: 50%;
+      border: 45px solid rgba(255, 255, 255, 0.035);
+    }
+
+    /* =========================
+       GRID
+    ========================== */
+
+    .resources {
+      margin-top: 30px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+
+      min-height: 210px;
+      padding: 24px;
+
+      border: 1px solid #e4eaf0;
+      border-radius: 16px;
+
+      background: #ffffff;
+
+      text-decoration: none;
+
+      box-shadow:
+        0 8px 24px rgba(35, 57, 77, 0.055);
+
+      transition:
+        transform 0.28s ease,
+        border-color 0.28s ease,
+        box-shadow 0.28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+
+      border-color: #a9d8e8;
+
+      box-shadow:
+        0 16px 34px rgba(35, 57, 77, 0.1);
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 44px;
+      height: 44px;
+
+      margin-bottom: 19px;
+
+      border-radius: 12px;
+
+      background: #edf7fb;
+      color: #237ca2;
+    }
+
+    .icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+
+      color: #20344a;
+      font-size: 17px;
+    }
+
+    .card p {
+      flex: 1;
+
+      color: #788697;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .open-link {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      margin-top: 18px;
+
+      color: #227da5;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .card:hover .open-link {
+      gap: 11px;
+    }
+
+    /* =========================
+       UPDATES
+    ========================== */
+
+    .updates-card {
+      margin-top: 30px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      padding: 25px 27px;
+
+      border-radius: 16px;
+      border: 1px solid #dce8ed;
+
+      background:
+        linear-gradient(
+          90deg,
+          #f7fcfe,
+          #f1f8fb
+        );
+
+      text-decoration: none;
+
+      transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .updates-card:hover {
+      transform: translateY(-3px);
+      border-color: #a8cfde;
+    }
+
+    .update-left {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+    }
+
+    .update-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 45px;
+      height: 45px;
+
+      flex-shrink: 0;
+
+      border-radius: 50%;
+      background: #dff3fa;
+      color: #227b9f;
+    }
+
+    .update-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .update-text h3 {
+      margin-bottom: 5px;
+
+      color: #20354b;
+      font-size: 16px;
+    }
+
+    .update-text p {
+      color: #738294;
+      font-size: 13px;
+    }
+
+    .update-action {
+      color: #237fa5;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* =========================
+       ANIMATION
+    ========================== */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(15px);
+
+      animation: reveal 0.55s ease forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.08s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.16s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.24s;
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 800px) {
+
+      .training-home {
+        padding: 28px 16px 38px;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .primary-card {
+        flex-direction: column;
+        align-items: flex-start;
+
+        min-height: auto;
+        padding: 27px;
+      }
+
+      .primary-action {
+        width: 100%;
+      }
+
+      .updates-card {
+        align-items: flex-start;
+      }
+
+      .update-action {
+        display: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <section class="training-home">
+
+    <div class="container">
+
+      <!-- HEADER -->
+
+      <div class="intro reveal">
+
+        <div class="eyebrow">
+          METI QUALITY TRAINING
+        </div>
+
+        <h1>Training Material</h1>
+
+        <p>
+          Your central hub for project guidelines,
+          taxonomy, updates, and labeling references.
+        </p>
+
+      </div>
+
+
+      <!-- START HERE -->
+
+      <div class="section-heading reveal delay-1">
+
+        <h2>Start Here</h2>
+
+        <span>Active project</span>
+
+      </div>
+
+
+      <a
+        class="primary-card reveal delay-1"
+        href="https://sites.google.com/meti.ai/training-material/home/queues/current-queue"
+        target="_top"
+      >
+
+        <div class="primary-content">
+
+          <div class="primary-label">
+            Current Project
+          </div>
+
+          <h3>Current Queue</h3>
+
+          <p>
+            Access the active project training material,
+            workflow, labeling rules, sensor guidance,
+            and important edge cases.
+          </p>
+
+        </div>
+
+        <div class="primary-action">
+          Open Queue →
+        </div>
+
+        <div class="decor-circle"></div>
+
+      </a>
+
+
+      <!-- RESOURCES -->
+
+      <div class="resources">
+
+        <div class="section-heading reveal delay-2">
+
+          <h2>Training Resources</h2>
+
+          <span>Quick access</span>
+
+        </div>
+
+
+        <div class="cards-grid">
+
+          <!-- TAXONOMY -->
+
+          <a
+            class="card reveal delay-1"
+            href="https://sites.google.com/meti.ai/training-material/home/unified-taxonomy"
+            target="_top"
+          >
+
+            <div class="icon">
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6.5h16M4 12h16M4 17.5h10"
+                />
+              </svg>
+
+            </div>
+
+            <h3>Unified Taxonomy</h3>
+
+            <p>
+              Review object classes, attributes,
+              labeling definitions, and classification guidance.
+            </p>
+
+            <div class="open-link">
+              Explore taxonomy →
+            </div>
+
+          </a>
+
+
+          <!-- MAP REGIONS -->
+
+          <a
+            class="card reveal delay-2"
+            href="https://sites.google.com/meti.ai/training-material/home/semantic-map-regions"
+            target="_top"
+          >
+
+            <div class="icon">
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 18l-6 3V6l6-3m0 15 6 3m-6-3V3m6 18 6-3V3l-6 3m0 15V6"
+                />
+              </svg>
+
+            </div>
+
+            <h3>Semantic Map Regions</h3>
+
+            <p>
+              Understand drivable and non-drivable
+              regions and the rules used for semantic mapping.
+            </p>
+
+            <div class="open-link">
+              View regions →
+            </div>
+
+          </a>
+
+
+          <!-- WELCOME -->
+
+          <a
+            class="card reveal delay-3"
+            href="https://sites.google.com/meti.ai/training-material/home/welcome-to-meti"
+            target="_top"
+          >
+
+            <div class="icon">
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6.75a3 3 0 110 6 3 3 0 010-6zm6 12a6 6 0 00-12 0"
+                />
+              </svg>
+
+            </div>
+
+            <h3>Welcome to METI</h3>
+
+            <p>
+              Introduction and essential information
+              for new team members joining the project.
+            </p>
+
+            <div class="open-link">
+              Get started →
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- UPDATES -->
+
+      <a
+        class="updates-card reveal delay-3"
+        href="https://sites.google.com/meti.ai/training-material/home/updates"
+        target="_top"
+      >
+
+        <div class="update-left">
+
+          <div class="update-icon">
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 8v4l2.5 2.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+
+          </div>
+
+          <div class="update-text">
+
+            <h3>Latest Updates</h3>
+
+            <p>
+              Review recent changes,
+              clarifications, and newly added project rules.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="update-action">
+          View Updates →
+        </div>
+
+      </a>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
