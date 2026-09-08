@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
 
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
-  />
+  >
 
   <title>Welcome to METI</title>
 
 
   <style>
 
-    /* =========================
+    /* =====================================================
        GLOBAL
-    ========================== */
+    ===================================================== */
 
     * {
       box-sizing: border-box;
@@ -43,9 +44,6 @@
       color: #172333;
     }
 
-    a {
-      color: inherit;
-    }
 
     .page {
       width: 100%;
@@ -55,7 +53,10 @@
         38px
         26px
         55px;
+
+      background: #efefef;
     }
+
 
     .container {
       width: 100%;
@@ -65,19 +66,21 @@
     }
 
 
-    /* =========================
+
+    /* =====================================================
        INTRO
-    ========================== */
+    ===================================================== */
 
     .intro {
-      text-align: center;
-
-      max-width: 850px;
+      max-width: 900px;
 
       margin:
         0 auto
-        38px;
+        40px;
+
+      text-align: center;
     }
+
 
     .eyebrow {
       display: inline-flex;
@@ -85,58 +88,59 @@
       align-items: center;
       justify-content: center;
 
-      gap: 8px;
-
       padding:
-        7px
-        14px;
+        8px
+        15px;
 
       margin-bottom: 15px;
 
       border-radius: 30px;
 
-      background: #e2f3f9;
+      background: #dff1f8;
 
-      color: #147ca4;
+      color: #137aa2;
 
       font-size: 11px;
       font-weight: 800;
 
-      letter-spacing: 0.9px;
+      letter-spacing: 1px;
     }
 
+
     .intro h1 {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
 
       color: #10243a;
 
       font-size:
         clamp(
-          31px,
+          34px,
           4vw,
-          46px
+          48px
         );
 
       line-height: 1.15;
     }
 
+
     .intro p {
-      max-width: 720px;
+      max-width: 800px;
 
       margin: auto;
 
-      color: #5f7183;
+      color: #40596d;
 
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 15px;
+      font-weight: 700;
 
-      line-height: 1.9;
+      line-height: 2;
     }
 
 
-    /* =========================
+
+    /* =====================================================
        JOURNEY HEADER
-    ========================== */
+    ===================================================== */
 
     .journey-header {
       display: flex;
@@ -146,32 +150,38 @@
 
       gap: 25px;
 
-      margin-bottom: 18px;
+      margin-bottom: 19px;
     }
 
+
     .journey-title h2 {
-      margin-bottom: 5px;
+      margin-bottom: 7px;
 
       color: #20344a;
 
-      font-size: 20px;
+      font-size: 21px;
+      font-weight: 800;
     }
+
 
     .journey-title p {
-      color: #77889a;
+      color: #486174;
 
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 700;
+
+      line-height: 1.8;
     }
+
 
     .step-counter {
       padding:
-        7px
-        13px;
+        8px
+        14px;
 
       border:
         1px solid
-        #d6e4ea;
+        #ccdce4;
 
       border-radius: 30px;
 
@@ -180,19 +190,39 @@
           255,
           255,
           255,
-          0.55
+          0.65
         );
+
+      color: #536d80;
+
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+
+
+    /* =====================================================
+       RECOMMENDED ORDER
+    ===================================================== */
+
+    .order-wrapper {
+      margin-bottom: 27px;
+    }
+
+
+    .order-label {
+      margin-bottom: 10px;
 
       color: #6c8293;
 
       font-size: 11px;
       font-weight: 700;
+
+      text-align: left;
+
+      direction: ltr;
     }
 
-
-    /* =========================
-       PROGRESS LINE
-    ========================== */
 
     .progress {
       display: grid;
@@ -203,12 +233,9 @@
           1fr
         );
 
-      gap: 0;
-
-      margin-bottom: 25px;
-
       direction: ltr;
     }
+
 
     .progress-step {
       position: relative;
@@ -218,8 +245,9 @@
       align-items: center;
       justify-content: center;
 
-      min-height: 36px;
+      min-height: 38px;
     }
+
 
     .progress-step::after {
       content: "";
@@ -232,7 +260,7 @@
       width: 100%;
       height: 2px;
 
-      background: #cfdde4;
+      background: #c8d8e0;
 
       transform:
         translateY(-50%);
@@ -240,9 +268,11 @@
       z-index: 0;
     }
 
+
     .progress-step:last-child::after {
       display: none;
     }
+
 
     .progress-number {
       position: relative;
@@ -253,45 +283,39 @@
       align-items: center;
       justify-content: center;
 
-      width: 32px;
-      height: 32px;
-
-      border-radius: 50%;
+      width: 34px;
+      height: 34px;
 
       border:
         2px solid
-        #87c7dd;
+        #65b5d1;
+
+      border-radius: 50%;
 
       background: #efefef;
 
-      color: #197fa7;
+      color: #177fa7;
 
       font-size: 11px;
       font-weight: 800;
-    }
 
-    .progress-step:first-child
-    .progress-number {
-      border-color: #197fa7;
-
-      background: #197fa7;
-
-      color: white;
-
-      box-shadow:
-        0 0 0 5px
-        rgba(
-          25,
-          127,
-          167,
-          0.1
-        );
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease;
     }
 
 
-    /* =========================
+    .progress-number:hover {
+      transform: scale(1.08);
+
+      background: #e2f4fa;
+    }
+
+
+
+    /* =====================================================
        GRID
-    ========================== */
+    ===================================================== */
 
     .journey-grid {
       display: grid;
@@ -306,9 +330,10 @@
     }
 
 
-    /* =========================
+
+    /* =====================================================
        CARDS
-    ========================== */
+    ===================================================== */
 
     .step-card {
       position: relative;
@@ -319,17 +344,17 @@
 
       flex-direction: column;
 
-      min-height: 285px;
+      min-height: 300px;
 
       padding: 25px;
 
       border:
         1px solid
-        #dce6eb;
+        #d7e3e9;
 
       border-radius: 18px;
 
-      text-decoration: none;
+      cursor: pointer;
 
       box-shadow:
         0 8px 25px
@@ -346,19 +371,21 @@
         border-color 0.28s ease;
     }
 
+
     .step-card:hover {
       transform:
         translateY(-6px);
 
       box-shadow:
-        0 17px 36px
+        0 18px 38px
         rgba(
           35,
           57,
           77,
-          0.11
+          0.12
         );
     }
+
 
     .step-card::after {
       content: "";
@@ -375,25 +402,26 @@
         width 0.3s ease;
     }
 
+
     .step-card:hover::after {
       width: 100%;
     }
 
 
-    /* =========================
+
+    /* =====================================================
        STEP COLORS
-    ========================== */
+    ===================================================== */
 
     .step-1 {
       background:
         linear-gradient(
           145deg,
-          #e7f6fb,
+          #e5f5fb,
           #f6fcfe
         );
 
-      border-color:
-        #bfe4f0;
+      border-color: #b8dfea;
     }
 
     .step-1::after {
@@ -405,8 +433,8 @@
       background:
         linear-gradient(
           145deg,
-          #eef6fd,
-          #fbfdff
+          #edf5fd,
+          #fafcff
         );
     }
 
@@ -419,7 +447,7 @@
       background:
         linear-gradient(
           145deg,
-          #f0f5fc,
+          #edf4fb,
           #ffffff
         );
     }
@@ -433,7 +461,7 @@
       background:
         linear-gradient(
           145deg,
-          #f0faf8,
+          #edf9f7,
           #fbfefd
         );
     }
@@ -447,7 +475,7 @@
       background:
         linear-gradient(
           145deg,
-          #eef9fc,
+          #eaf8fc,
           #fbfeff
         );
     }
@@ -461,12 +489,11 @@
       background:
         linear-gradient(
           145deg,
-          #edf9f1,
+          #eaf8ef,
           #fbfefc
         );
 
-      border-color:
-        #cce8d5;
+      border-color: #c6e4cf;
     }
 
     .step-6::after {
@@ -474,9 +501,10 @@
     }
 
 
-    /* =========================
+
+    /* =====================================================
        CARD TOP
-    ========================== */
+    ===================================================== */
 
     .card-top {
       display: flex;
@@ -489,18 +517,18 @@
       margin-bottom: 20px;
     }
 
+
     .step-number {
       display: flex;
 
       align-items: center;
       justify-content: center;
 
-      min-width: 42px;
-      height: 28px;
+      height: 29px;
 
       padding:
         0
-        10px;
+        11px;
 
       border-radius: 20px;
 
@@ -509,7 +537,7 @@
           22,
           119,
           158,
-          0.09
+          0.1
         );
 
       color: #16789f;
@@ -520,16 +548,19 @@
       letter-spacing: 0.6px;
     }
 
+
     .step-6
     .step-number {
-      background: #e1f3e7;
-      color: #378552;
+      background: #dcefe3;
+
+      color: #34804f;
     }
 
 
-    /* =========================
-       ICON
-    ========================== */
+
+    /* =====================================================
+       ICONS
+    ===================================================== */
 
     .icon {
       display: flex;
@@ -537,8 +568,8 @@
       align-items: center;
       justify-content: center;
 
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
 
       border-radius: 13px;
 
@@ -547,7 +578,7 @@
           255,
           255,
           255,
-          0.7
+          0.8
         );
 
       color: #197fa7;
@@ -558,29 +589,33 @@
           35,
           57,
           77,
-          0.06
+          0.07
         );
 
       transition:
         transform 0.28s ease;
     }
 
+
     .step-card:hover
     .icon {
       transform:
         translateY(-3px)
-        scale(1.06);
+        scale(1.07);
     }
 
+
     .icon svg {
-      width: 24px;
-      height: 24px;
+      width: 25px;
+      height: 25px;
     }
+
 
     .step-4
     .icon {
       color: #268e82;
     }
+
 
     .step-6
     .icon {
@@ -588,48 +623,53 @@
     }
 
 
-    /* =========================
+
+    /* =====================================================
        CARD CONTENT
-    ========================== */
+    ===================================================== */
 
     .step-card h3 {
-      margin-bottom: 9px;
+      margin-bottom: 11px;
 
-      color: #20344a;
+      color: #1d3348;
 
       font-size: 18px;
+      font-weight: 800;
     }
+
 
     .step-card p {
       flex: 1;
 
-      color: #536b7d;
+      color: #405c70;
 
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
 
-      line-height: 1.9;
+      line-height: 2;
     }
 
 
-    /* =========================
+
+    /* =====================================================
        ACTION
-    ========================== */
+    ===================================================== */
 
     .card-action {
       display: flex;
 
       align-items: center;
 
-      gap: 7px;
+      gap: 8px;
 
-      margin-top: 21px;
+      margin-top: 22px;
 
-      color: #197da5;
+      color: #127aa3;
 
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 800;
     }
+
 
     .arrow {
       display: inline-block;
@@ -640,6 +680,7 @@
         transform 0.25s ease;
     }
 
+
     .step-card:hover
     .arrow {
       transform:
@@ -647,73 +688,86 @@
     }
 
 
-    /* =========================
+
+    /* =====================================================
        PRACTICING
-    ========================== */
+    ===================================================== */
 
     .practice-info {
       display: flex;
 
       align-items: center;
 
-      gap: 6px;
+      gap: 7px;
 
-      margin-top: 13px;
+      margin-top: 15px;
 
-      color: #4c8060;
+      color: #32794c;
 
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 800;
     }
 
+
     .practice-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
 
       border-radius: 50%;
 
-      background: #53a76f;
+      background: #49a267;
     }
 
 
-    /* =========================
+
+    /* =====================================================
        BOTTOM NOTE
-    ========================== */
+    ===================================================== */
 
     .journey-note {
       display: flex;
 
       align-items: center;
 
-      gap: 13px;
+      gap: 15px;
 
-      margin-top: 25px;
+      margin-top: 27px;
 
       padding:
-        18px
-        21px;
+        20px
+        22px;
 
       border:
         1px solid
-        #d8e5ea;
+        #cadde5;
 
-      border-radius: 14px;
+      border-radius: 15px;
 
       background:
         rgba(
           255,
           255,
           255,
-          0.5
+          0.72
         );
 
-      color: #5b7080;
+      color: #405b6e;
 
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 700;
 
-      line-height: 1.8;
+      line-height: 1.9;
+
+      box-shadow:
+        0 6px 20px
+        rgba(
+          35,
+          57,
+          77,
+          0.04
+        );
     }
+
 
     .note-icon {
       display: flex;
@@ -721,27 +775,29 @@
       align-items: center;
       justify-content: center;
 
-      width: 35px;
-      height: 35px;
+      width: 39px;
+      height: 39px;
 
       flex-shrink: 0;
 
       border-radius: 10px;
 
-      background: #e2f3f9;
+      background: #dff1f8;
 
       color: #1680a8;
     }
 
+
     .note-icon svg {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
     }
 
 
-    /* =========================
+
+    /* =====================================================
        ANIMATION
-    ========================== */
+    ===================================================== */
 
     .reveal {
       opacity: 0;
@@ -755,6 +811,7 @@
         ease
         forwards;
     }
+
 
     .delay-1 {
       animation-delay: 0.06s;
@@ -780,6 +837,7 @@
       animation-delay: 0.36s;
     }
 
+
     @keyframes reveal {
 
       to {
@@ -792,9 +850,10 @@
     }
 
 
-    /* =========================
+
+    /* =====================================================
        TABLET
-    ========================== */
+    ===================================================== */
 
     @media (
       max-width: 950px
@@ -811,9 +870,10 @@
     }
 
 
-    /* =========================
+
+    /* =====================================================
        MOBILE
-    ========================== */
+    ===================================================== */
 
     @media (
       max-width: 650px
@@ -826,34 +886,46 @@
           40px;
       }
 
+
       .journey-header {
         align-items: flex-start;
 
         flex-direction: column;
       }
 
+
       .step-counter {
         display: none;
       }
 
-      .progress {
+
+      .order-wrapper {
         display: none;
       }
+
 
       .journey-grid {
         grid-template-columns:
           1fr;
       }
 
+
       .step-card {
-        min-height: 240px;
+        min-height: 250px;
       }
 
+
       .intro h1 {
-        font-size: 31px;
+        font-size: 32px;
+      }
+
+
+      .intro p {
+        font-size: 14px;
       }
 
     }
+
 
 
     @media (
@@ -880,135 +952,216 @@
 </head>
 
 
+
 <body>
 
+
 <section class="page">
+
 
   <div class="container">
 
 
-    <!-- =========================
+
+    <!-- ==================================================
          INTRO
-    ========================== -->
+    =================================================== -->
 
     <div class="intro reveal">
 
+
       <div class="eyebrow">
+
         NEW HIRE JOURNEY
+
       </div>
 
+
       <h1>
+
         Welcome to METI
+
       </h1>
 
+
       <p>
+
         ابدأ رحلة التدريب خطوة بخطوة،
         واتعرف على الـTeams والـLabeling Tools
         وطريقة متابعة شغلك قبل ما تبدأ التطبيق العملي.
+
       </p>
+
 
     </div>
 
 
 
-    <!-- =========================
+    <!-- ==================================================
          JOURNEY HEADER
-    ========================== -->
+    =================================================== -->
 
     <div class="journey-header reveal delay-1">
 
+
       <div class="journey-title">
 
+
         <h2>
+
           Your Learning Journey
+
         </h2>
 
+
         <p>
-          يفضل تمشي بالترتيب عشان كل Step بتجهزك للخطوة اللي بعدها.
+
+          يفضل تمشي بالترتيب، لأن كل Step
+          بتجهزك للمعلومات والـTools
+          اللي هتحتاجها في الخطوة اللي بعدها.
+
         </p>
 
+
       </div>
+
 
       <div class="step-counter">
+
         6 Training Steps
+
       </div>
+
 
     </div>
 
 
 
-    <!-- =========================
-         PROGRESS
-    ========================== -->
+    <!-- ==================================================
+         RECOMMENDED ORDER
+    =================================================== -->
 
-    <div class="progress reveal delay-1">
+    <div class="order-wrapper reveal delay-1">
 
-      <div class="progress-step">
-        <div class="progress-number">
-          01
-        </div>
+
+      <div class="order-label">
+
+        Recommended Order
+
       </div>
 
-      <div class="progress-step">
-        <div class="progress-number">
-          02
+
+      <div class="progress">
+
+
+        <div class="progress-step">
+
+          <div class="progress-number">
+            01
+          </div>
+
         </div>
+
+
+        <div class="progress-step">
+
+          <div class="progress-number">
+            02
+          </div>
+
+        </div>
+
+
+        <div class="progress-step">
+
+          <div class="progress-number">
+            03
+          </div>
+
+        </div>
+
+
+        <div class="progress-step">
+
+          <div class="progress-number">
+            04
+          </div>
+
+        </div>
+
+
+        <div class="progress-step">
+
+          <div class="progress-number">
+            05
+          </div>
+
+        </div>
+
+
+        <div class="progress-step">
+
+          <div class="progress-number">
+            06
+          </div>
+
+        </div>
+
+
       </div>
 
-      <div class="progress-step">
-        <div class="progress-number">
-          03
-        </div>
-      </div>
-
-      <div class="progress-step">
-        <div class="progress-number">
-          04
-        </div>
-      </div>
-
-      <div class="progress-step">
-        <div class="progress-number">
-          05
-        </div>
-      </div>
-
-      <div class="progress-step">
-        <div class="progress-number">
-          06
-        </div>
-      </div>
 
     </div>
 
 
 
-    <!-- =========================
+    <!-- ==================================================
          JOURNEY CARDS
-    ========================== -->
+    =================================================== -->
 
     <div class="journey-grid">
 
 
+
       <!-- =====================
-           STEP 01 - TEAMS
+           STEP 01
+           TEAMS
       ====================== -->
 
-      <a
+      <div
         class="step-card step-1 reveal delay-1"
-        href="https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/teams"
-        target="_blank"
-        rel="noopener noreferrer"
+
+        role="link"
+
+        tabindex="0"
+
+        onclick="
+          openPage(
+            'https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/teams'
+          )
+        "
+
+        onkeydown="
+          handleKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/teams'
+          )
+        "
       >
+
 
         <div class="card-top">
 
+
           <div class="step-number">
+
             STEP 01
+
           </div>
 
 
           <div class="icon">
+
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1038,20 +1191,27 @@
 
             </svg>
 
+
           </div>
+
 
         </div>
 
 
         <h3>
+
           Teams
+
         </h3>
 
 
         <p>
+
           اتعرف على الـTeams الموجودة
           ودور كل Team في المشروع،
-          واعرف مين مسؤول عن كل جزء في الـWorkflow.
+          واعرف مين مسؤول عن كل جزء
+          في الـWorkflow.
+
         </p>
 
 
@@ -1065,29 +1225,50 @@
 
         </div>
 
-      </a>
+
+      </div>
 
 
 
       <!-- =====================
-           STEP 02 - LABELING
+           STEP 02
+           LABELING
       ====================== -->
 
-      <a
+      <div
         class="step-card step-2 reveal delay-2"
-        href="https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/introductions-to-labeling"
-        target="_blank"
-        rel="noopener noreferrer"
+
+        role="link"
+
+        tabindex="0"
+
+        onclick="
+          openPage(
+            'https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/introductions-to-labeling'
+          )
+        "
+
+        onkeydown="
+          handleKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/introductions-to-labeling'
+          )
+        "
       >
+
 
         <div class="card-top">
 
+
           <div class="step-number">
+
             STEP 02
+
           </div>
 
 
           <div class="icon">
+
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1111,20 +1292,27 @@
 
             </svg>
 
+
           </div>
+
 
         </div>
 
 
         <h3>
+
           Introduction to Labeling
+
         </h3>
 
 
         <p>
+
           ابدأ بأساسيات الـLabeling
           والمفاهيم الرئيسية اللي محتاج تعرفها
-          قبل ما تبدأ التعامل مع الـTools والـTasks.
+          قبل ما تبدأ التعامل مع الـTools
+          والـTasks.
+
         </p>
 
 
@@ -1138,29 +1326,50 @@
 
         </div>
 
-      </a>
+
+      </div>
 
 
 
       <!-- =====================
-           STEP 03 - MSL
+           STEP 03
+           MSL
       ====================== -->
 
-      <a
+      <div
         class="step-card step-3 reveal delay-3"
-        href="https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/intro-to-msl"
-        target="_blank"
-        rel="noopener noreferrer"
+
+        role="link"
+
+        tabindex="0"
+
+        onclick="
+          openPage(
+            'https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/intro-to-msl'
+          )
+        "
+
+        onkeydown="
+          handleKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/intro-to-msl'
+          )
+        "
       >
+
 
         <div class="card-top">
 
+
           <div class="step-number">
+
             STEP 03
+
           </div>
 
 
           <div class="icon">
+
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1191,21 +1400,27 @@
 
             </svg>
 
+
           </div>
+
 
         </div>
 
 
         <h3>
+
           Intro to MSL
+
         </h3>
 
 
         <p>
+
           اتعرف على الـMSL،
           الواجهة الأساسية،
           وطريقة التعامل مع الـTool
           قبل ما تبدأ تنفيذ الشغل.
+
         </p>
 
 
@@ -1219,29 +1434,50 @@
 
         </div>
 
-      </a>
+
+      </div>
 
 
 
       <!-- =====================
-           STEP 04 - GULP
+           STEP 04
+           GULP
       ====================== -->
 
-      <a
+      <div
         class="step-card step-4 reveal delay-4"
-        href="https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/how-to-use-gulp"
-        target="_blank"
-        rel="noopener noreferrer"
+
+        role="link"
+
+        tabindex="0"
+
+        onclick="
+          openPage(
+            'https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/how-to-use-gulp'
+          )
+        "
+
+        onkeydown="
+          handleKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/how-to-use-gulp'
+          )
+        "
       >
+
 
         <div class="card-top">
 
+
           <div class="step-number">
+
             STEP 04
+
           </div>
 
 
           <div class="icon">
+
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1270,20 +1506,26 @@
 
             </svg>
 
+
           </div>
+
 
         </div>
 
 
         <h3>
+
           How To Use Gulp
+
         </h3>
 
 
         <p>
+
           اتعلم طريقة استخدام Gulp
           والـWorkflow الأساسي المطلوب منك
           أثناء التعامل مع الشغل.
+
         </p>
 
 
@@ -1297,29 +1539,50 @@
 
         </div>
 
-      </a>
+
+      </div>
 
 
 
       <!-- =====================
-           STEP 05 - PORTAL
+           STEP 05
+           METI PORTAL
       ====================== -->
 
-      <a
+      <div
         class="step-card step-5 reveal delay-5"
-        href="https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/meti-portal"
-        target="_blank"
-        rel="noopener noreferrer"
+
+        role="link"
+
+        tabindex="0"
+
+        onclick="
+          openPage(
+            'https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/meti-portal'
+          )
+        "
+
+        onkeydown="
+          handleKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/meti-portal'
+          )
+        "
       >
+
 
         <div class="card-top">
 
+
           <div class="step-number">
+
             STEP 05
+
           </div>
 
 
           <div class="icon">
+
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1360,20 +1623,27 @@
 
             </svg>
 
+
           </div>
+
 
         </div>
 
 
         <h3>
+
           METI Portal
+
         </h3>
 
 
         <p>
-          اتعرف على الـPortal المستخدم لتسجيل الحضور
-          ومتابعة الـProductive Hours والـIdle Time،
+
+          اتعرف على الـPortal المستخدم
+          لتسجيل الحضور ومتابعة
+          الـProductive Hours والـIdle Time،
           عشان تقدر تتابع أرقامك خلال اليوم.
+
         </p>
 
 
@@ -1387,29 +1657,50 @@
 
         </div>
 
-      </a>
+
+      </div>
 
 
 
       <!-- =====================
-           STEP 06 - PRACTICING
+           STEP 06
+           PRACTICING
       ====================== -->
 
-      <a
+      <div
         class="step-card step-6 reveal delay-6"
-        href="https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/practicing"
-        target="_blank"
-        rel="noopener noreferrer"
+
+        role="link"
+
+        tabindex="0"
+
+        onclick="
+          openPage(
+            'https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/practicing'
+          )
+        "
+
+        onkeydown="
+          handleKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/home_1/welcome-to-meti/practicing'
+          )
+        "
       >
+
 
         <div class="card-top">
 
+
           <div class="step-number">
+
             STEP 06
+
           </div>
 
 
           <div class="icon">
+
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1433,21 +1724,27 @@
 
             </svg>
 
+
           </div>
+
 
         </div>
 
 
         <h3>
+
           Practicing
+
         </h3>
 
 
         <p>
+
           بعد ما تخلص الأساسيات،
           ابدأ التطبيق العملي على مراحل التدريب
           وامشي بالترتيب من Phase One
           لحد باقي الـPhases.
+
         </p>
 
 
@@ -1470,20 +1767,23 @@
 
         </div>
 
-      </a>
+
+      </div>
 
 
     </div>
 
 
 
-    <!-- =========================
+    <!-- ==================================================
          NOTE
-    ========================== -->
+    =================================================== -->
 
     <div class="journey-note reveal delay-6">
 
+
       <div class="note-icon">
+
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -1514,22 +1814,71 @@
 
         </svg>
 
+
       </div>
 
 
       <div>
 
         يفضل تخلص كل Step بالترتيب قبل ما تنتقل للـStep اللي بعدها،
-        لأن كل جزء بيجهزك للمعلومات والـTools اللي هتحتاجها في المرحلة التالية.
+        لأن كل جزء بيجهزك للمعلومات والـTools
+        اللي هتحتاجها في المرحلة التالية.
 
       </div>
+
 
     </div>
 
 
   </div>
 
+
 </section>
 
+
+
+<script>
+
+  /*
+    فتح الرابط بشكل مباشر في Tab جديد.
+    بنستخدم JavaScript بدل Anchor Navigation
+    لتجنب مشاكل الـNavigation داخل Google Sites Embed.
+  */
+
+  function openPage(url) {
+
+    window.open(
+      url,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+  }
+
+
+  /*
+    دعم Enter و Space
+    للـKeyboard Navigation.
+  */
+
+  function handleKey(event, url) {
+
+    if (
+      event.key === "Enter" ||
+      event.key === " "
+    ) {
+
+      event.preventDefault();
+
+      openPage(url);
+
+    }
+
+  }
+
+</script>
+
+
 </body>
+
 </html>
