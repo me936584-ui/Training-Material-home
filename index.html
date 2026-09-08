@@ -15,13 +15,15 @@
 
     html {
       scroll-behavior: smooth;
+      background: #efefef;
     }
 
     body {
       font-family: Arial, Tahoma, sans-serif;
-      background: transparent;
+      background: #efefef;
       color: #172333;
       direction: rtl;
+      min-height: 100vh;
     }
 
     a {
@@ -30,7 +32,9 @@
 
     .training-home {
       width: 100%;
+      min-height: 100vh;
       padding: 34px 26px 44px;
+      background: #efefef;
     }
 
     .container {
@@ -264,7 +268,6 @@
       border-radius: 16px;
       text-decoration: none;
       box-shadow: 0 8px 24px rgba(35, 57, 77, 0.055);
-
       transition:
         transform 0.28s ease,
         border-color 0.28s ease,
@@ -278,7 +281,6 @@
           #e8f6fb,
           #f7fcfe
         );
-
       border-color: #c9e8f3;
     }
 
@@ -345,14 +347,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
       width: 48px;
       height: 48px;
-
       margin-bottom: 19px;
-
       border-radius: 13px;
-
       transition:
         transform 0.28s ease,
         background 0.28s ease,
@@ -415,29 +413,21 @@
 
     .updates-card {
       position: relative;
-
       margin-top: 30px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 20px;
-
       padding: 25px 27px;
-
       border-radius: 16px;
       border: 1px solid #cfe6ee;
-
       background:
         linear-gradient(
           90deg,
           #eef9fc,
           #f5fbfd
         );
-
       text-decoration: none;
-
       transition:
         border-color 0.25s ease,
         transform 0.25s ease,
@@ -460,20 +450,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
       width: 48px;
       height: 48px;
-
       flex-shrink: 0;
-
       border-radius: 13px;
-
       background: #dff3fa;
       color: #177fa6;
-
-      box-shadow:
-        0 6px 16px rgba(23, 127, 166, 0.08);
-
+      box-shadow: 0 6px 16px rgba(23, 127, 166, 0.08);
       transition:
         transform 0.28s ease,
         background 0.28s ease;
@@ -493,23 +476,17 @@
       display: flex;
       align-items: center;
       gap: 9px;
-
       margin-bottom: 5px;
-
       color: #20354b;
       font-size: 16px;
     }
 
     .new-badge {
       display: inline-block;
-
       padding: 4px 7px;
-
       border-radius: 20px;
-
       background: #e3f7ef;
       color: #16885b;
-
       font-size: 9px;
       font-weight: 800;
       letter-spacing: 0.7px;
@@ -525,7 +502,6 @@
       display: flex;
       align-items: center;
       gap: 7px;
-
       color: #237fa5;
       font-size: 13px;
       font-weight: 700;
@@ -570,7 +546,6 @@
     ========================== */
 
     @media (max-width: 800px) {
-
       .training-home {
         padding: 26px 15px 36px;
       }
@@ -620,7 +595,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-
       * {
         animation: none !important;
         transition: none !important;
@@ -631,10 +605,8 @@
         transform: none;
       }
     }
-
   </style>
 </head>
-
 
 <body>
 
@@ -642,9 +614,7 @@
 
   <div class="container">
 
-    <!-- =========================
-         INTRO
-    ========================== -->
+    <!-- INTRO -->
 
     <div class="intro reveal">
 
@@ -661,19 +631,12 @@
 
     </div>
 
-
-    <!-- =========================
-         START HERE
-    ========================== -->
+    <!-- START HERE -->
 
     <div class="section-heading reveal delay-1">
-
       <h2>ابدأ من هنا</h2>
-
       <span>New Hire Start</span>
-
     </div>
-
 
     <a
       class="primary-card welcome-primary reveal delay-1"
@@ -707,28 +670,18 @@
 
     </a>
 
-
-    <!-- =========================
-         RESOURCES
-    ========================== -->
+    <!-- RESOURCES -->
 
     <div class="resources">
 
       <div class="section-heading reveal delay-2">
-
         <h2>Training Resources</h2>
-
         <span>الخطوات والمراجع الأساسية</span>
-
       </div>
-
 
       <div class="cards-grid">
 
-
-        <!-- =====================
-             CURRENT QUEUE
-        ====================== -->
+        <!-- CURRENT QUEUE -->
 
         <a
           class="card current-card reveal delay-1"
@@ -738,7 +691,6 @@
 
           <div class="icon">
 
-            <!-- Folder / Active Project -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -751,6 +703,7 @@
                 stroke-linejoin="round"
                 d="M3.75 6.75A1.75 1.75 0 015.5 5h4l2 2h7A1.75 1.75 0 0120.25 8.75v8.75A1.75 1.75 0 0118.5 19.25h-13a1.75 1.75 0 01-1.75-1.75V6.75z"
               />
+
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -774,10 +727,7 @@
 
         </a>
 
-
-        <!-- =====================
-             TAXONOMY
-        ====================== -->
+        <!-- TAXONOMY -->
 
         <a
           class="card taxonomy-card reveal delay-2"
@@ -787,7 +737,6 @@
 
           <div class="icon">
 
-            <!-- Classification / Hierarchy -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -795,29 +744,9 @@
               stroke="currentColor"
               stroke-width="1.8"
             >
-              <rect
-                x="9"
-                y="3"
-                width="6"
-                height="4"
-                rx="1"
-              />
-
-              <rect
-                x="3"
-                y="17"
-                width="6"
-                height="4"
-                rx="1"
-              />
-
-              <rect
-                x="15"
-                y="17"
-                width="6"
-                height="4"
-                rx="1"
-              />
+              <rect x="9" y="3" width="6" height="4" rx="1" />
+              <rect x="3" y="17" width="6" height="4" rx="1" />
+              <rect x="15" y="17" width="6" height="4" rx="1" />
 
               <path
                 stroke-linecap="round"
@@ -842,10 +771,7 @@
 
         </a>
 
-
-        <!-- =====================
-             MAP REGIONS
-        ====================== -->
+        <!-- MAP REGIONS -->
 
         <a
           class="card map-card reveal delay-3"
@@ -855,7 +781,6 @@
 
           <div class="icon">
 
-            <!-- Map Regions -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -902,10 +827,7 @@
 
     </div>
 
-
-    <!-- =========================
-         UPDATES
-    ========================== -->
+    <!-- UPDATES -->
 
     <a
       class="updates-card reveal delay-4"
@@ -917,7 +839,6 @@
 
         <div class="update-icon">
 
-          <!-- Announcement / Megaphone -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
