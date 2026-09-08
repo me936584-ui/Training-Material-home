@@ -26,10 +26,6 @@
       min-height: 100vh;
     }
 
-    a {
-      color: inherit;
-    }
-
     .training-home {
       width: 100%;
       min-height: 100vh;
@@ -118,7 +114,7 @@
       min-height: 190px;
       padding: 34px;
       border-radius: 20px;
-      text-decoration: none;
+      cursor: pointer;
       box-shadow: 0 16px 40px rgba(24, 62, 88, 0.14);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -140,6 +136,11 @@
     .primary-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 22px 45px rgba(24, 62, 88, 0.2);
+    }
+
+    .primary-card:focus-visible {
+      outline: 3px solid rgba(53, 166, 207, 0.3);
+      outline-offset: 3px;
     }
 
     .primary-content {
@@ -268,12 +269,17 @@
       padding: 24px;
       border: 1px solid #e4eaf0;
       border-radius: 16px;
-      text-decoration: none;
+      cursor: pointer;
       box-shadow: 0 8px 24px rgba(35, 57, 77, 0.055);
       transition:
         transform 0.28s ease,
         border-color 0.28s ease,
         box-shadow 0.28s ease;
+    }
+
+    .card:focus-visible {
+      outline: 3px solid rgba(36, 146, 187, 0.22);
+      outline-offset: 3px;
     }
 
     .current-card {
@@ -430,11 +436,16 @@
           #eef9fc,
           #f5fbfd
         );
-      text-decoration: none;
+      cursor: pointer;
       transition:
         border-color 0.25s ease,
         transform 0.25s ease,
         box-shadow 0.25s ease;
+    }
+
+    .updates-card:focus-visible {
+      outline: 3px solid rgba(36, 146, 187, 0.22);
+      outline-offset: 3px;
     }
 
     .updates-card:hover {
@@ -658,11 +669,12 @@
 
     <!-- WELCOME -->
 
-    <a
+    <div
       class="primary-card welcome-primary reveal delay-1"
-      href="https://sites.google.com/meti.ai/training-material/home/welcome-to-meti"
-      target="_blank"
-      rel="noopener noreferrer"
+      role="link"
+      tabindex="0"
+      onclick="openPage('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti')"
+      onkeydown="handleKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti')"
     >
 
       <div class="primary-content">
@@ -691,7 +703,7 @@
       <div class="decor-circle"></div>
       <div class="decor-dot"></div>
 
-    </a>
+    </div>
 
 
     <!-- RESOURCES -->
@@ -716,11 +728,12 @@
 
         <!-- QUEUES -->
 
-        <a
+        <div
           class="card current-card reveal delay-1"
-          href="https://sites.google.com/meti.ai/training-material/home_1/queues"
-          target="_blank"
-          rel="noopener noreferrer"
+          role="link"
+          tabindex="0"
+          onclick="openPage('https://sites.google.com/meti.ai/training-material/home/queues')"
+          onkeydown="handleKey(event,'https://sites.google.com/meti.ai/training-material/home/queues')"
         >
 
           <div class="icon">
@@ -763,16 +776,17 @@
             <span class="arrow">←</span>
           </div>
 
-        </a>
+        </div>
 
 
         <!-- TAXONOMY -->
 
-        <a
+        <div
           class="card taxonomy-card reveal delay-2"
-          href="https://sites.google.com/meti.ai/training-material/home/unified-taxonomy"
-          target="_blank"
-          rel="noopener noreferrer"
+          role="link"
+          tabindex="0"
+          onclick="openPage('https://sites.google.com/meti.ai/training-material/home/unified-taxonomy')"
+          onkeydown="handleKey(event,'https://sites.google.com/meti.ai/training-material/home/unified-taxonomy')"
         >
 
           <div class="icon">
@@ -833,16 +847,17 @@
             <span class="arrow">←</span>
           </div>
 
-        </a>
+        </div>
 
 
         <!-- MAP REGIONS -->
 
-        <a
+        <div
           class="card map-card reveal delay-3"
-          href="https://sites.google.com/meti.ai/training-material/home/semantic-map-regions"
-          target="_blank"
-          rel="noopener noreferrer"
+          role="link"
+          tabindex="0"
+          onclick="openPage('https://sites.google.com/meti.ai/training-material/home/semantic-map-regions')"
+          onkeydown="handleKey(event,'https://sites.google.com/meti.ai/training-material/home/semantic-map-regions')"
         >
 
           <div class="icon">
@@ -891,7 +906,7 @@
             <span class="arrow">←</span>
           </div>
 
-        </a>
+        </div>
 
       </div>
 
@@ -900,11 +915,12 @@
 
     <!-- UPDATES -->
 
-    <a
+    <div
       class="updates-card reveal delay-4"
-      href="https://sites.google.com/meti.ai/training-material/home/updates"
-      target="_blank"
-      rel="noopener noreferrer"
+      role="link"
+      tabindex="0"
+      onclick="openPage('https://sites.google.com/meti.ai/training-material/home/updates')"
+      onkeydown="handleKey(event,'https://sites.google.com/meti.ai/training-material/home/updates')"
     >
 
       <div class="update-left">
@@ -966,12 +982,40 @@
         <span class="arrow">←</span>
       </div>
 
-    </a>
+    </div>
 
 
   </div>
 
 </section>
+
+
+<script>
+
+  function openPage(url) {
+    window.open(
+      url,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  }
+
+  function handleKey(event, url) {
+
+    if (
+      event.key === "Enter" ||
+      event.key === " "
+    ) {
+
+      event.preventDefault();
+
+      openPage(url);
+    }
+
+  }
+
+</script>
+
 
 </body>
 </html>
