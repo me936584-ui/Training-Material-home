@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>METI Training Material</title>
 
   <style>
@@ -15,32 +14,47 @@
 
     html {
       scroll-behavior: smooth;
-      background: #efefef;
+      background: #f7f9fb;
     }
 
     body {
       font-family: Arial, Tahoma, sans-serif;
-      background: #efefef;
       color: #172333;
       direction: rtl;
       min-height: 100vh;
+      position: relative;
+      background: #f7f9fb;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' viewBox='0 0 1600 1000'%3E%3Crect width='1600' height='1000' fill='%23f7f9fb'/%3E%3Cg fill='none' stroke='%23e1e7ec' stroke-width='1.1' opacity='.95'%3E%3Cpath d='M0 105 C120 70 220 150 330 120 S550 60 690 110 950 150 1090 100 1350 45 1600 90'/%3E%3Cpath d='M0 245 C160 185 300 285 440 235 S710 170 860 230 1120 295 1290 235 1490 180 1600 220'/%3E%3Cpath d='M0 410 C150 340 320 450 500 390 S810 310 1000 385 1260 470 1450 395 1540 350 1600 375'/%3E%3Cpath d='M0 585 C180 500 350 620 520 560 S840 500 1030 565 1290 660 1470 580 1550 530 1600 555'/%3E%3Cpath d='M0 760 C170 665 360 800 560 725 S860 645 1070 720 1330 820 1510 730 1570 690 1600 705'/%3E%3Cpath d='M175 0 C135 130 215 225 178 350 S120 575 205 700 255 890 230 1000'/%3E%3Cpath d='M400 0 C360 150 445 235 410 375 S350 610 430 755 500 905 475 1000'/%3E%3Cpath d='M650 0 C615 155 705 240 670 395 S605 630 690 775 765 920 742 1000'/%3E%3Cpath d='M930 0 C900 170 980 245 950 410 S895 655 980 790 1070 920 1040 1000'/%3E%3Cpath d='M1220 0 C1185 165 1285 250 1240 420 S1175 650 1270 800 1350 930 1320 1000'/%3E%3Cpath d='M1475 0 C1440 160 1535 245 1490 415 S1430 635 1515 780'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d6dee5' stroke-width='1' opacity='.92'%3E%3Cpath d='M40 120 L150 180 280 110 400 210 560 130 710 220 900 135 1090 235 1280 150 1500 235'/%3E%3Cpath d='M70 320 L240 250 390 345 520 270 680 360 850 285 1030 375 1210 295 1425 370'/%3E%3Cpath d='M110 520 L260 450 420 560 600 470 760 565 930 470 1125 575 1320 505 1510 590'/%3E%3Cpath d='M90 790 L250 700 430 820 610 725 790 835 980 735 1190 835 1415 745'/%3E%3Cpath d='M210 135 L180 280 275 355 235 505 345 590 315 735 400 830'/%3E%3Cpath d='M545 110 L510 260 605 350 565 510 675 600 645 760 735 840'/%3E%3Cpath d='M920 150 L875 290 960 385 930 535 1035 625 1000 770 1080 860'/%3E%3Cpath d='M1270 140 L1220 285 1310 380 1275 540 1375 625 1345 760 1425 845'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d9e1e8' stroke-width='1' opacity='.88'%3E%3Ccircle cx='170' cy='175' r='10'/%3E%3Ccircle cx='435' cy='208' r='9'/%3E%3Ccircle cx='705' cy='220' r='8'/%3E%3Ccircle cx='1090' cy='235' r='10'/%3E%3Ccircle cx='1380' cy='182' r='9'/%3E%3Ccircle cx='270' cy='450' r='11'/%3E%3Ccircle cx='605' cy='475' r='9'/%3E%3Ccircle cx='930' cy='470' r='10'/%3E%3Ccircle cx='1265' cy='505' r='10'/%3E%3Ccircle cx='345' cy='590' r='8'/%3E%3Ccircle cx='675' cy='600' r='8'/%3E%3Ccircle cx='1035' cy='625' r='9'/%3E%3Ccircle cx='1375' cy='625' r='9'/%3E%3C/g%3E%3Cg opacity='.95'%3E%3Cpath d='M42 33 l12 -8 l0 33 l-12 8 z' fill='%231b8fda'/%3E%3Cpath d='M58 26 l13 8 l0 33 l-13 -8 z' fill='%23156eb2'/%3E%3Cpath d='M42 33 l13 8 l16 -17 l-13 -8 z' fill='%2328a6ef'/%3E%3Ctext x='95' y='52' fill='%23236ea3' font-family='Arial' font-size='34' font-weight='700' letter-spacing='3'%3EMETI%3C/text%3E%3Ctext x='96' y='74' fill='%23b3c2ce' font-family='Arial' font-size='11' font-weight='700' letter-spacing='4'%3ETRAINING MATERIAL%3C/text%3E%3C/g%3E%3Ctext x='1275' y='58' fill='%23c2ced7' font-family='Arial' font-size='12' font-weight='700' letter-spacing='4'%3EDRIVE A SMARTER TOMORROW%3C/text%3E%3C/svg%3E");
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
     }
 
     .training-home {
       width: 100%;
       min-height: 100vh;
       padding: 34px 26px 44px;
-      background: #efefef;
+      background: transparent;
     }
 
     .container {
       max-width: 1180px;
       margin: auto;
     }
-
-    /* =========================
-       INTRO
-    ========================== */
 
     .intro {
       text-align: center;
@@ -77,10 +91,6 @@
       line-height: 1.9;
     }
 
-    /* =========================
-       SECTION HEADINGS
-    ========================== */
-
     .section-heading {
       display: flex;
       align-items: center;
@@ -100,10 +110,6 @@
       white-space: nowrap;
     }
 
-    /* =========================
-       MAIN WELCOME CARD
-    ========================== */
-
     .primary-card {
       position: relative;
       overflow: hidden;
@@ -121,16 +127,8 @@
 
     .welcome-primary {
       background:
-        radial-gradient(
-          circle at 12% 25%,
-          rgba(73, 192, 234, 0.24),
-          transparent 34%
-        ),
-        linear-gradient(
-          135deg,
-          #102a42,
-          #174d6d
-        );
+        radial-gradient(circle at 12% 25%, rgba(73, 192, 234, 0.24), transparent 34%),
+        linear-gradient(135deg, #102a42, #174d6d);
     }
 
     .primary-card:hover {
@@ -238,17 +236,8 @@
       width: 90px;
       height: 90px;
       border-radius: 50%;
-      background:
-        radial-gradient(
-          circle,
-          rgba(114, 215, 247, 0.12),
-          transparent 68%
-        );
+      background: radial-gradient(circle, rgba(114, 215, 247, 0.12), transparent 68%);
     }
-
-    /* =========================
-       RESOURCES
-    ========================== */
 
     .resources {
       margin-top: 30px;
@@ -271,10 +260,7 @@
       border-radius: 16px;
       cursor: pointer;
       box-shadow: 0 8px 24px rgba(35, 57, 77, 0.055);
-      transition:
-        transform 0.28s ease,
-        border-color 0.28s ease,
-        box-shadow 0.28s ease;
+      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
     }
 
     .card:focus-visible {
@@ -283,31 +269,16 @@
     }
 
     .current-card {
-      background:
-        linear-gradient(
-          145deg,
-          #e8f6fb,
-          #f7fcfe
-        );
+      background: linear-gradient(145deg, #e8f6fb, #f7fcfe);
       border-color: #c9e8f3;
     }
 
     .taxonomy-card {
-      background:
-        linear-gradient(
-          145deg,
-          #f1f7fd,
-          #ffffff
-        );
+      background: linear-gradient(145deg, #f1f7fd, #ffffff);
     }
 
     .map-card {
-      background:
-        linear-gradient(
-          145deg,
-          #f0fbf9,
-          #ffffff
-        );
+      background: linear-gradient(145deg, #f0fbf9, #ffffff);
     }
 
     .card::after {
@@ -321,17 +292,9 @@
       transition: width 0.3s ease;
     }
 
-    .current-card::after {
-      background: #168bb6;
-    }
-
-    .taxonomy-card::after {
-      background: #4f92c7;
-    }
-
-    .map-card::after {
-      background: #2c9d90;
-    }
+    .current-card::after { background: #168bb6; }
+    .taxonomy-card::after { background: #4f92c7; }
+    .map-card::after { background: #2c9d90; }
 
     .card:hover::after {
       width: 100%;
@@ -347,10 +310,6 @@
       border-color: #83c7df;
     }
 
-    /* =========================
-       ICONS
-    ========================== */
-
     .icon {
       display: flex;
       align-items: center;
@@ -359,10 +318,7 @@
       height: 48px;
       margin-bottom: 19px;
       border-radius: 13px;
-      transition:
-        transform 0.28s ease,
-        background 0.28s ease,
-        box-shadow 0.28s ease;
+      transition: transform 0.28s ease, background 0.28s ease, box-shadow 0.28s ease;
     }
 
     .icon svg {
@@ -416,10 +372,6 @@
       font-weight: 700;
     }
 
-    /* =========================
-       UPDATES
-    ========================== */
-
     .updates-card {
       position: relative;
       margin-top: 30px;
@@ -430,17 +382,9 @@
       padding: 25px 27px;
       border-radius: 16px;
       border: 1px solid #cfe6ee;
-      background:
-        linear-gradient(
-          90deg,
-          #eef9fc,
-          #f5fbfd
-        );
+      background: linear-gradient(90deg, #eef9fc, #f5fbfd);
       cursor: pointer;
-      transition:
-        border-color 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .updates-card:focus-visible {
@@ -471,9 +415,7 @@
       background: #dff3fa;
       color: #177fa6;
       box-shadow: 0 6px 16px rgba(23, 127, 166, 0.08);
-      transition:
-        transform 0.28s ease,
-        background 0.28s ease;
+      transition: transform 0.28s ease, background 0.28s ease;
     }
 
     .updates-card:hover .update-icon {
@@ -523,31 +465,16 @@
       white-space: nowrap;
     }
 
-    /* =========================
-       ANIMATION
-    ========================== */
-
     .reveal {
       opacity: 0;
       transform: translateY(14px);
       animation: reveal 0.55s ease forwards;
     }
 
-    .delay-1 {
-      animation-delay: 0.08s;
-    }
-
-    .delay-2 {
-      animation-delay: 0.16s;
-    }
-
-    .delay-3 {
-      animation-delay: 0.24s;
-    }
-
-    .delay-4 {
-      animation-delay: 0.32s;
-    }
+    .delay-1 { animation-delay: 0.08s; }
+    .delay-2 { animation-delay: 0.16s; }
+    .delay-3 { animation-delay: 0.24s; }
+    .delay-4 { animation-delay: 0.32s; }
 
     @keyframes reveal {
       to {
@@ -556,12 +483,7 @@
       }
     }
 
-    /* =========================
-       MOBILE
-    ========================== */
-
     @media (max-width: 800px) {
-
       .training-home {
         padding: 26px 15px 36px;
       }
@@ -611,7 +533,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-
       * {
         animation: none !important;
         transition: none !important;
@@ -622,111 +543,61 @@
         transform: none;
       }
     }
-
   </style>
 </head>
 
 <body>
 
 <section class="training-home">
-
   <div class="container">
 
-    <!-- INTRO -->
-
     <div class="intro reveal">
-
-      <div class="eyebrow">
-        METI QUALITY TRAINING
-      </div>
-
-      <h1>
-        Training Material
-      </h1>
-
+      <div class="eyebrow">METI QUALITY TRAINING</div>
+      <h1>Training Material</h1>
       <p>
         المكان الرئيسي لكل الـGuidelines والـUpdates والـLabeling Rules
         الخاصة بالمشروع، عشان تقدر توصل للمعلومة المطلوبة بسهولة وسرعة.
       </p>
-
     </div>
-
-
-    <!-- START HERE -->
 
     <div class="section-heading reveal delay-1">
-
-      <h2>
-        ابدأ من هنا
-      </h2>
-
-      <span>
-        New Hire Start
-      </span>
-
+      <h2>ابدأ من هنا</h2>
+      <span>New Hire Start</span>
     </div>
 
-
-    <!-- WELCOME -->
-
-  <div
-  class="primary-card welcome-primary reveal delay-1"
-  role="link"
-  tabindex="0"
-  onclick="openPage('https://sites.google.com/meti.ai/training-material/welcome-to-meti')"
-  onkeydown="handleKey(event,'https://sites.google.com/meti.ai/training-material/welcome-to-meti')"
->
-
-  <div class="primary-content">
-
-    <div class="primary-label">
-      START HERE
-    </div>
-
-    <h3>
-      Welcome to METI
-    </h3>
-
-    <p>
-      لو أنت New Hire، ابدأ من هنا الأول عشان تتعرف على METI،
-      المشروع، وطريقة الشغل وأهم المعلومات الأساسية اللي محتاج تعرفها
-      قبل ما تبدأ في الـQueues.
-    </p>
-
-  </div>
-
-  <div class="primary-action">
-    ابدأ التدريب
-    <span class="arrow">←</span>
-  </div>
-
-  <div class="decor-circle"></div>
-  <div class="decor-dot"></div>
-
-</div>
-
-
-    <!-- RESOURCES -->
-
-    <div class="resources">
-
-      <div class="section-heading reveal delay-2">
-
-        <h2>
-          Training Resources
-        </h2>
-
-        <span>
-          الخطوات والمراجع الأساسية
-        </span>
-
+    <div
+      class="primary-card welcome-primary reveal delay-1"
+      role="link"
+      tabindex="0"
+      onclick="openPage('https://sites.google.com/meti.ai/training-material/welcome-to-meti')"
+      onkeydown="handleKey(event,'https://sites.google.com/meti.ai/training-material/welcome-to-meti')"
+    >
+      <div class="primary-content">
+        <div class="primary-label">START HERE</div>
+        <h3>Welcome to METI</h3>
+        <p>
+          لو أنت New Hire، ابدأ من هنا الأول عشان تتعرف على METI،
+          المشروع، وطريقة الشغل وأهم المعلومات الأساسية اللي محتاج تعرفها
+          قبل ما تبدأ في الـQueues.
+        </p>
       </div>
 
+      <div class="primary-action">
+        ابدأ التدريب
+        <span class="arrow">←</span>
+      </div>
+
+      <div class="decor-circle"></div>
+      <div class="decor-dot"></div>
+    </div>
+
+    <div class="resources">
+      <div class="section-heading reveal delay-2">
+        <h2>Training Resources</h2>
+        <span>الخطوات والمراجع الأساسية</span>
+      </div>
 
       <div class="cards-grid">
-
-
-        <!-- QUEUES -->
 
         <div
           class="card current-card reveal delay-1"
@@ -735,37 +606,14 @@
           onclick="openPage('https://sites.google.com/meti.ai/training-material/home/queues')"
           onkeydown="handleKey(event,'https://sites.google.com/meti.ai/training-material/home/queues')"
         >
-
           <div class="icon">
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="1.8"
-            >
-
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75A1.75 1.75 0 015.5 5h4l2 2h7A1.75 1.75 0 0120.25 8.75v8.75A1.75 1.75 0 0118.5 19.25h-13a1.75 1.75 0 01-1.75-1.75V6.75z"
-              />
-
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M8 12h8M12 10v4"
-              />
-
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75A1.75 1.75 0 015.5 5h4l2 2h7A1.75 1.75 0 0120.25 8.75v8.75A1.75 1.75 0 0118.5 19.25h-13a1.75 1.75 0 01-1.75-1.75V6.75z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8M12 10v4"/>
             </svg>
-
           </div>
 
-          <h3>
-            Queues
-          </h3>
-
+          <h3>Queues</h3>
           <p>
             ادخل هنا عشان تشوف الـQueues الخاصة بالمشروع،
             وتوصل للـCurrent Queue والـWorkflow والـRules الخاصة بكل Queue.
@@ -775,11 +623,7 @@
             فتح الـQueues
             <span class="arrow">←</span>
           </div>
-
         </div>
-
-
-        <!-- TAXONOMY -->
 
         <div
           class="card taxonomy-card reveal delay-2"
@@ -788,55 +632,16 @@
           onclick="openPage('https://sites.google.com/meti.ai/training-material/home/unified-taxonomy')"
           onkeydown="handleKey(event,'https://sites.google.com/meti.ai/training-material/home/unified-taxonomy')"
         >
-
           <div class="icon">
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="1.8"
-            >
-
-              <rect
-                x="9"
-                y="3"
-                width="6"
-                height="4"
-                rx="1"
-              />
-
-              <rect
-                x="3"
-                y="17"
-                width="6"
-                height="4"
-                rx="1"
-              />
-
-              <rect
-                x="15"
-                y="17"
-                width="6"
-                height="4"
-                rx="1"
-              />
-
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 7v5M6 17v-3h12v3"
-              />
-
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <rect x="9" y="3" width="6" height="4" rx="1" />
+              <rect x="3" y="17" width="6" height="4" rx="1" />
+              <rect x="15" y="17" width="6" height="4" rx="1" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5M6 17v-3h12v3"/>
             </svg>
-
           </div>
 
-          <h3>
-            Unified Taxonomy
-          </h3>
-
+          <h3>Unified Taxonomy</h3>
           <p>
             راجع الـClasses والـAttributes المستخدمة في الشغل،
             واعرف تعريف كل Object وإمتى نستخدم كل تصنيف.
@@ -846,11 +651,7 @@
             فتح الـTaxonomy
             <span class="arrow">←</span>
           </div>
-
         </div>
-
-
-        <!-- MAP REGIONS -->
 
         <div
           class="card map-card reveal delay-3"
@@ -859,43 +660,15 @@
           onclick="openPage('https://sites.google.com/meti.ai/training-material/home/semantic-map-regions')"
           onkeydown="handleKey(event,'https://sites.google.com/meti.ai/training-material/home/semantic-map-regions')"
         >
-
           <div class="icon">
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="1.8"
-            >
-
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4 6.5l5-2.5 6 2.5 5-2.5v13.5L15 20l-6-2.5L4 20V6.5z"
-              />
-
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M9 4v13.5M15 6.5V20"
-              />
-
-              <circle
-                cx="12"
-                cy="11"
-                r="1.5"
-              />
-
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6.5l5-2.5 6 2.5 5-2.5v13.5L15 20l-6-2.5L4 20V6.5z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 4v13.5M15 6.5V20"/>
+              <circle cx="12" cy="11" r="1.5" />
             </svg>
-
           </div>
 
-          <h3>
-            Semantic Map Regions
-          </h3>
-
+          <h3>Semantic Map Regions</h3>
           <p>
             راجع أنواع الـMap Regions وإزاي بنحدد الـDrivable
             والـNon-Drivable Areas والقواعد الخاصة بكل منطقة.
@@ -905,15 +678,10 @@
             فتح الـMap Regions
             <span class="arrow">←</span>
           </div>
-
         </div>
 
       </div>
-
     </div>
-
-
-    <!-- UPDATES -->
 
     <div
       class="updates-card reveal delay-4"
@@ -922,100 +690,48 @@
       onclick="openPage('https://sites.google.com/meti.ai/training-material/home/updates')"
       onkeydown="handleKey(event,'https://sites.google.com/meti.ai/training-material/home/updates')"
     >
-
       <div class="update-left">
-
         <div class="update-icon">
-
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="1.8"
-          >
-
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M4 13V9.5a2 2 0 012-2h2l8-3v14l-8-3H6a2 2 0 01-2-2.5z"
-            />
-
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M8 15.5l1.5 4h3l-1.5-3"
-            />
-
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M19 8.5c.7.8 1 1.7 1 2.75 0 1.05-.3 1.95-1 2.75"
-            />
-
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 13V9.5a2 2 0 012-2h2l8-3v14l-8-3H6a2 2 0 01-2-2.5z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 15.5l1.5 4h3l-1.5-3"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 8.5c.7.8 1 1.7 1 2.75 0 1.05-.3 1.95-1 2.75"/>
           </svg>
-
         </div>
 
-
         <div class="update-text">
-
           <h3>
             Latest Updates
-            <span class="new-badge">
-              NEW
-            </span>
+            <span class="new-badge">NEW</span>
           </h3>
-
           <p>
             راجع آخر الـUpdates والـClarifications وأي Rules جديدة
             اتضافت أو اتغيرت.
           </p>
-
         </div>
-
       </div>
-
 
       <div class="update-action">
         عرض الـUpdates
         <span class="arrow">←</span>
       </div>
-
     </div>
 
-
   </div>
-
 </section>
 
-
 <script>
-
   function openPage(url) {
-    window.open(
-      url,
-      "_blank",
-      "noopener,noreferrer"
-    );
+    window.open(url, "_blank", "noopener,noreferrer");
   }
 
   function handleKey(event, url) {
-
-    if (
-      event.key === "Enter" ||
-      event.key === " "
-    ) {
-
+    if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-
       openPage(url);
     }
-
   }
-
 </script>
-
 
 </body>
 </html>
