@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
   <title>Welcome to METI</title>
 
   <style>
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -14,56 +26,261 @@
 
     html {
       scroll-behavior: smooth;
-      background: #f7f9fb;
+      background: #f8fbfd;
     }
 
     body {
       min-height: 100vh;
-      font-family: Arial, Tahoma, sans-serif;
+      overflow-x: hidden;
+
+      font-family:
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
       direction: rtl;
-      color: #172333;
-      position: relative;
-      background: #f7f9fb;
+
+      color: #102d50;
+      background: #f8fbfd;
+
+      font-weight: 400;
+
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
 
     body.modal-open {
       overflow: hidden;
     }
 
-    body::before {
-      content: "";
+
+    /* =========================================================
+       MAP BACKGROUND
+       SAME THEME AS HOME
+    ========================================================= */
+
+    .map-background {
       position: fixed;
       inset: 0;
+
       z-index: 0;
       pointer-events: none;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center top;
-      background-attachment: fixed;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' viewBox='0 0 1600 1000'%3E%3Crect width='1600' height='1000' fill='%23f7f9fb'/%3E%3Cg fill='none' stroke='%23e1e7ec' stroke-width='1.1' opacity='.95'%3E%3Cpath d='M0 105 C120 70 220 150 330 120 S550 60 690 110 950 150 1090 100 1350 45 1600 90'/%3E%3Cpath d='M0 245 C160 185 300 285 440 235 S710 170 860 230 1120 295 1290 235 1490 180 1600 220'/%3E%3Cpath d='M0 410 C150 340 320 450 500 390 S810 310 1000 385 1260 470 1450 395 1540 350 1600 375'/%3E%3Cpath d='M0 585 C180 500 350 620 520 560 S840 500 1030 565 1290 660 1470 580 1550 530 1600 555'/%3E%3Cpath d='M0 760 C170 665 360 800 560 725 S860 645 1070 720 1330 820 1510 730 1570 690 1600 705'/%3E%3Cpath d='M175 0 C135 130 215 225 178 350 S120 575 205 700 255 890 230 1000'/%3E%3Cpath d='M400 0 C360 150 445 235 410 375 S350 610 430 755 500 905 475 1000'/%3E%3Cpath d='M650 0 C615 155 705 240 670 395 S605 630 690 775 765 920 742 1000'/%3E%3Cpath d='M930 0 C900 170 980 245 950 410 S895 655 980 790 1070 920 1040 1000'/%3E%3Cpath d='M1220 0 C1185 165 1285 250 1240 420 S1175 650 1270 800 1350 930 1320 1000'/%3E%3Cpath d='M1475 0 C1440 160 1535 245 1490 415 S1430 635 1515 780'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d6dee5' stroke-width='1' opacity='.92'%3E%3Cpath d='M40 120 L150 180 280 110 400 210 560 130 710 220 900 135 1090 235 1280 150 1500 235'/%3E%3Cpath d='M70 320 L240 250 390 345 520 270 680 360 850 285 1030 375 1210 295 1425 370'/%3E%3Cpath d='M110 520 L260 450 420 560 600 470 760 565 930 470 1125 575 1320 505 1510 590'/%3E%3Cpath d='M90 790 L250 700 430 820 610 725 790 835 980 735 1190 835 1415 745'/%3E%3Cpath d='M210 135 L180 280 275 355 235 505 345 590 315 735 400 830'/%3E%3Cpath d='M545 110 L510 260 605 350 565 510 675 600 645 760 735 840'/%3E%3Cpath d='M920 150 L875 290 960 385 930 535 1035 625 1000 770 1080 860'/%3E%3Cpath d='M1270 140 L1220 285 1310 380 1275 540 1375 625 1345 760 1425 845'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d9e1e8' stroke-width='1' opacity='.88'%3E%3Ccircle cx='170' cy='175' r='10'/%3E%3Ccircle cx='435' cy='208' r='9'/%3E%3Ccircle cx='705' cy='220' r='8'/%3E%3Ccircle cx='1090' cy='235' r='10'/%3E%3Ccircle cx='1380' cy='182' r='9'/%3E%3Ccircle cx='270' cy='450' r='11'/%3E%3Ccircle cx='605' cy='475' r='9'/%3E%3Ccircle cx='930' cy='470' r='10'/%3E%3Ccircle cx='1265' cy='505' r='10'/%3E%3Ccircle cx='345' cy='590' r='8'/%3E%3Ccircle cx='675' cy='600' r='8'/%3E%3Ccircle cx='1035' cy='625' r='9'/%3E%3Ccircle cx='1375' cy='625' r='9'/%3E%3C/g%3E%3Cg opacity='.95'%3E%3Cpath d='M42 33 l12 -8 l0 33 l-12 8 z' fill='%231b8fda'/%3E%3Cpath d='M58 26 l13 8 l0 33 l-13 -8 z' fill='%23156eb2'/%3E%3Cpath d='M42 33 l13 8 l16 -17 l-13 -8 z' fill='%2328a6ef'/%3E%3Ctext x='95' y='52' fill='%23236ea3' font-family='Arial' font-size='34' font-weight='700' letter-spacing='3'%3EMETI%3C/text%3E%3Ctext x='96' y='74' fill='%23b3c2ce' font-family='Arial' font-size='11' font-weight='700' letter-spacing='4'%3ETRAINING MATERIAL%3C/text%3E%3C/g%3E%3Ctext x='1275' y='58' fill='%23c2ced7' font-family='Arial' font-size='12' font-weight='700' letter-spacing='4'%3EDRIVE A SMARTER TOMORROW%3C/text%3E%3C/svg%3E");
+
+      overflow: hidden;
+
+      background-color: #f8fbfd;
+
+      background-image:
+        linear-gradient(
+          rgba(250, 252, 254, 0.36),
+          rgba(250, 252, 254, 0.36)
+        ),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='920' height='620' viewBox='0 0 920 620'%3E%3Crect width='920' height='620' fill='%23f8fbfd'/%3E%3Cg fill='none' stroke='%23cedce5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke-width='1.05' opacity='.55' d='M-30 79C60 50 119 65 177 93c62 30 126 23 190-7 80-37 147-34 221 2 61 29 123 33 191 7 54-20 99-25 171-5'/%3E%3Cpath stroke-width='.7' opacity='.48' d='M-20 112c65-13 109 0 162 24 54 25 106 24 163 0 63-27 126-31 192-3 57 24 107 29 168 10 70-21 137-17 275 17'/%3E%3Cpath stroke-width='.8' opacity='.5' d='M-20 165c62-29 123-19 181 12 54 29 105 32 164 7 68-29 133-29 199-2 58 24 119 30 177 7 75-29 139-27 239 7'/%3E%3Cpath stroke-width='.65' opacity='.42' d='M-20 211c89-21 147-7 210 26 56 29 116 22 176-7 70-33 143-28 213 7 60 31 118 29 178 3 57-25 111-27 183-8'/%3E%3Cpath stroke-width='.95' opacity='.54' d='M-30 271c69-37 133-28 193 6 65 36 127 35 192 3 67-32 128-29 193 5 60 32 119 36 182 8 69-31 131-30 210 0'/%3E%3Cpath stroke-width='.7' opacity='.43' d='M-20 319c83-21 143-11 201 17 66 32 128 27 188-6 60-33 130-33 195-1 60 30 117 31 179 6 73-30 125-27 197-7'/%3E%3Cpath stroke-width='.9' opacity='.52' d='M-40 379c74-29 138-20 202 14 60 32 123 29 187-5 67-35 132-31 198 3 61 31 119 37 184 12 72-28 132-28 209 2'/%3E%3Cpath stroke-width='.65' opacity='.42' d='M-15 424c72-17 133-2 190 27 61 31 116 30 176 2 76-36 144-37 212-2 60 31 119 33 179 10 72-28 132-23 198 0'/%3E%3Cpath stroke-width='.95' opacity='.51' d='M-20 482c69-33 132-26 192 7 65 36 129 34 193 1 70-36 137-32 202 5 58 32 116 36 179 8 67-29 126-27 194 2'/%3E%3Cpath stroke-width='.7' opacity='.42' d='M-30 531c84-20 145-9 205 21 62 31 121 27 181-5 65-35 134-32 200 1 63 32 124 33 187 6 71-31 128-26 197-4'/%3E%3Cpath stroke-width='.95' opacity='.52' d='M-25 585c73-29 135-23 196 10 65 36 127 33 192 1 69-34 133-31 199 4 63 33 122 35 185 8 68-30 127-29 193-3'/%3E%3Cpath stroke-width='.85' opacity='.5' d='M80-20c-23 60-11 100 16 143 27 44 21 86-3 132-25 48-23 93 4 143 27 51 27 92 4 139-19 39-19 78-2 113'/%3E%3Cpath stroke-width='.55' opacity='.4' d='M123-20c-9 56 7 91 32 127 26 38 28 77 8 119-20 44-16 88 9 130 29 49 30 89 10 134-20 45-18 84 5 130'/%3E%3Cpath stroke-width='.92' opacity='.5' d='M209-20c-28 66-13 107 14 148 31 46 24 92-1 136-24 43-23 87 4 136 28 49 29 95 6 138-21 39-20 76-5 112'/%3E%3Cpath stroke-width='.58' opacity='.4' d='M265-20c-13 58 3 96 28 136 24 40 21 81 1 122-23 45-18 86 7 129 28 48 32 88 11 132-20 41-18 80 2 121'/%3E%3Cpath stroke-width='.95' opacity='.52' d='M361-20c-26 65-14 106 13 148 27 42 23 83 0 128-26 50-22 96 5 141 28 46 28 90 7 135-19 40-20 77-7 118'/%3E%3Cpath stroke-width='.6' opacity='.4' d='M417-20c-11 55 3 92 28 132 24 39 24 79 4 122-22 47-18 90 7 134 27 46 29 87 10 129-20 44-20 82 2 123'/%3E%3Cpath stroke-width='.95' opacity='.52' d='M519-20c-29 68-12 110 14 149 30 44 25 89 1 134-26 49-23 94 5 141 29 49 29 93 7 138-19 39-19 76-5 108'/%3E%3Cpath stroke-width='.58' opacity='.4' d='M571-20c-9 55 5 95 29 132 25 39 24 80 4 122-23 47-17 90 8 134 26 45 29 86 9 129-18 39-18 78 4 123'/%3E%3Cpath stroke-width='.9' opacity='.5' d='M670-20c-25 63-10 106 17 146 28 42 22 87-2 132-25 49-20 94 6 140 29 50 28 94 5 138-21 41-20 78-6 114'/%3E%3Cpath stroke-width='.57' opacity='.39' d='M723-20c-11 56 5 94 30 134 25 40 23 80 3 122-23 47-18 90 8 134 28 48 29 88 9 130-18 38-18 76 4 120'/%3E%3Cpath stroke-width='.9' opacity='.5' d='M819-20c-24 64-12 105 15 147 27 42 21 85-3 130-26 49-21 94 5 140 29 51 27 96 5 139-20 40-20 77-5 114'/%3E%3Cpath stroke-width='.55' opacity='.38' d='M866-20c-9 53 5 92 30 131 25 40 23 79 3 120-23 47-18 92 8 136 26 44 29 85 10 127-20 44-18 83 4 126'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d5e1e8' stroke-width='.48' opacity='.56' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 31l31 20 28-17 33 21 29-18 35 24 29-20 37 22 30-17 33 23 31-19 36 21 34-17 36 23 34-22 38 22 31-18 38 21 35-17 39 24 31-20 39 20 37-19 42 25'/%3E%3Cpath d='M12 139l36-22 33 19 31-23 36 21 35-20 36 25 31-22 36 20 34-22 35 24 34-21 37 21 33-18 39 21 32-20 39 24 35-21 35 22 38-19 39 21 38-21 45 24'/%3E%3Cpath d='M4 233l39-22 34 20 33-23 37 23 36-20 38 23 34-22 37 22 36-20 36 23 35-20 38 21 34-21 38 22 35-20 39 23 37-21 38 21 38-19 38 22 40-20 42 22'/%3E%3Cpath d='M2 348l40-24 38 20 34-24 37 21 38-23 38 25 34-21 38 21 37-23 36 24 39-21 38 23 34-22 40 23 38-20 38 23 36-21 41 22 37-20 39 23 41-22 47 23'/%3E%3Cpath d='M8 452l37-23 35 21 34-21 38 21 35-21 39 24 35-23 38 22 36-22 40 23 34-22 39 22 35-19 40 23 38-21 37 23 39-23 39 23 38-20 39 22 41-22 44 23'/%3E%3Cpath d='M11 558l36-23 37 21 35-23 38 23 36-21 39 23 36-22 39 22 37-21 39 22 36-22 40 23 37-22 39 22 38-21 39 23 39-23 38 23 40-20 38 22 41-22 44 23'/%3E%3Cpath d='M41 4l18 31-13 31 21 30-14 35 23 32-16 33 23 35-15 34 22 34-15 37 23 33-16 37 22 35-14 39 21 32-13 39'/%3E%3Cpath d='M158 4l20 31-14 32 23 30-16 33 24 34-16 33 22 34-14 35 23 33-15 37 23 33-15 36 23 35-16 39 22 31-13 40'/%3E%3Cpath d='M309 2l21 32-15 32 23 31-16 34 23 33-15 34 23 34-16 34 24 34-17 37 24 33-16 36 23 34-16 39 22 32-14 39'/%3E%3Cpath d='M464 4l20 30-14 33 22 31-15 34 23 32-16 35 23 33-15 35 23 33-16 37 24 33-16 35 23 35-16 39 22 32-14 39'/%3E%3Cpath d='M620 3l21 31-15 33 23 30-16 35 24 32-17 35 24 33-16 35 23 34-16 36 24 34-17 35 23 34-16 40 22 31-13 39'/%3E%3Cpath d='M775 2l21 32-15 31 22 32-15 34 23 34-16 33 23 34-15 35 23 33-16 37 23 33-15 36 22 34-15 40 22 31-13 39'/%3E%3C/g%3E%3Cg fill='none' stroke='%23c9d8e2' stroke-width='.8' opacity='.48'%3E%3Ccircle cx='96' cy='92' r='9'/%3E%3Ccircle cx='236' cy='171' r='8'/%3E%3Ccircle cx='433' cy='117' r='9'/%3E%3Ccircle cx='602' cy='237' r='8'/%3E%3Ccircle cx='780' cy='148' r='9'/%3E%3Ccircle cx='155' cy='339' r='9'/%3E%3Ccircle cx='338' cy='293' r='8'/%3E%3Ccircle cx='520' cy='391' r='10'/%3E%3Ccircle cx='713' cy='332' r='8'/%3E%3Ccircle cx='854' cy='426' r='9'/%3E%3Ccircle cx='92' cy='515' r='8'/%3E%3Ccircle cx='281' cy='477' r='9'/%3E%3Ccircle cx='450' cy='555' r='8'/%3E%3Ccircle cx='653' cy='507' r='9'/%3E%3Ccircle cx='811' cy='565' r='8'/%3E%3C/g%3E%3C/svg%3E");
+
+      background-size:
+        auto,
+        920px 620px;
+
+      background-repeat:
+        repeat,
+        repeat;
+
+      background-position:
+        center,
+        center top;
     }
 
-    body > * {
-      position: relative;
-      z-index: 1;
+
+    .map-background::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          rgba(255, 255, 255, 0.22),
+          transparent 34%
+        );
     }
+
+
+    /* =========================================================
+       PAGE
+    ========================================================= */
 
     .page {
+      position: relative;
+      z-index: 1;
+
       width: 100%;
       min-height: 100vh;
-      padding: 38px 26px 55px;
-      background: transparent;
+
+      padding: 28px 38px 45px;
     }
 
     .container {
       width: 100%;
-      max-width: 1180px;
-      margin: auto;
+      max-width: 1320px;
+      margin: 0 auto;
     }
+
+
+    /* =========================================================
+       TOP BRANDING
+    ========================================================= */
+
+    .top-branding {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      min-height: 62px;
+
+      direction: ltr;
+    }
+
+    .meti-brand {
+      display: flex;
+      align-items: center;
+
+      gap: 13px;
+
+      direction: ltr;
+    }
+
+    .meti-mark {
+      position: relative;
+
+      width: 31px;
+      height: 43px;
+
+      flex-shrink: 0;
+    }
+
+    .meti-mark::before,
+    .meti-mark::after {
+      content: "";
+
+      position: absolute;
+
+      width: 10px;
+
+      border-radius: 1px;
+    }
+
+    .meti-mark::before {
+      left: 4px;
+      top: 3px;
+
+      height: 36px;
+
+      background: #1596db;
+
+      transform: skewY(-38deg);
+    }
+
+    .meti-mark::after {
+      right: 4px;
+      top: 0;
+
+      height: 31px;
+
+      background: #0872bb;
+
+      transform: skewY(38deg);
+    }
+
+    .meti-cut {
+      position: absolute;
+
+      left: 10px;
+      top: 12px;
+
+      width: 14px;
+      height: 7px;
+
+      border-top:
+        4px solid
+        #62c9ef;
+
+      transform:
+        rotate(-38deg);
+    }
+
+    .meti-text {
+      text-align: left;
+      direction: ltr;
+    }
+
+    .meti-name {
+      color: #173e6d;
+
+      font-size: 27px;
+      line-height: 1;
+
+      font-weight: 700;
+
+      letter-spacing: 3.5px;
+    }
+
+    .meti-sub {
+      margin-top: 6px;
+
+      color: #9bb0c1;
+
+      font-size: 8px;
+      line-height: 1;
+
+      font-weight: 600;
+
+      letter-spacing: 3px;
+    }
+
+    .top-tagline {
+      display: flex;
+      align-items: center;
+
+      gap: 13px;
+
+      margin-top: 15px;
+
+      color: #7f9ab2;
+
+      font-size: 8px;
+      font-weight: 700;
+
+      letter-spacing: 2.4px;
+
+      white-space: nowrap;
+
+      direction: ltr;
+    }
+
+    .top-tagline::after {
+      content: "";
+
+      width: 41px;
+      height: 1px;
+
+      background: #39a7db;
+    }
+
+
+    /* =========================================================
+       INTRO
+    ========================================================= */
 
     .intro {
       max-width: 900px;
-      margin: 0 auto 40px;
+
+      margin:
+        -2px auto
+        34px;
+
       text-align: center;
     }
 
@@ -71,100 +288,215 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 15px;
-      margin-bottom: 15px;
+
+      padding:
+        7px 14px;
+
+      margin-bottom: 13px;
+
       border-radius: 30px;
-      background: #dff1f8;
-      color: #137aa2;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1px;
+
+      background: #dff4fd;
+      color: #0879b7;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 1.1px;
     }
 
     .intro h1 {
-      margin-bottom: 14px;
-      color: #10243a;
-      font-size: clamp(34px, 4vw, 48px);
-      line-height: 1.15;
+      margin-bottom: 11px;
+
+      color: #092a51;
+
+      font-size:
+        clamp(
+          34px,
+          3.3vw,
+          43px
+        );
+
+      line-height: 1.1;
+
+      font-weight: 700;
+
+      direction: ltr;
     }
 
     .intro p {
-      max-width: 800px;
+      max-width: 760px;
+
       margin: auto;
-      color: #40596d;
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 2;
+
+      color: #48698b;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      line-height: 1.9;
     }
 
+
+    /* =========================================================
+       JOURNEY HEADER
+    ========================================================= */
+
     .journey-header {
+      max-width: 1240px;
+
+      margin:
+        0 auto
+        18px;
+
       display: flex;
       align-items: flex-end;
-      justify-content: space-between;
+      justify-content:
+        space-between;
+
       gap: 25px;
-      margin-bottom: 19px;
+    }
+
+    .journey-title {
+      position: relative;
+
+      padding-right: 15px;
+    }
+
+    .journey-title::before {
+      content: "";
+
+      position: absolute;
+
+      right: 0;
+      top: 0;
+
+      width: 4px;
+      height: 44px;
+
+      border-radius: 8px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #059ee4,
+          #087fc6
+        );
     }
 
     .journey-title h2 {
-      margin-bottom: 7px;
-      color: #20344a;
-      font-size: 21px;
-      font-weight: 800;
+      margin-bottom: 5px;
+
+      color: #0b315d;
+
+      font-size: 20px;
+
+      font-weight: 700;
+
+      direction: ltr;
+      text-align: right;
     }
 
     .journey-title p {
-      color: #486174;
-      font-size: 13px;
-      font-weight: 700;
+      color: #5d7890;
+
+      font-size: 12px;
+
+      font-weight: 600;
+
       line-height: 1.8;
     }
 
     .step-counter {
-      padding: 8px 14px;
-      border: 1px solid #ccdce4;
+      padding:
+        7px 14px;
+
+      border:
+        1px solid
+        #d5e5ec;
+
       border-radius: 30px;
-      background: rgba(255, 255, 255, 0.65);
-      color: #536d80;
-      font-size: 11px;
-      font-weight: 800;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.75
+        );
+
+      color: #4e718b;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      direction: ltr;
     }
 
+
+    /* =========================================================
+       PROGRESS
+    ========================================================= */
+
     .order-wrapper {
-      margin-bottom: 27px;
+      max-width: 1240px;
+
+      margin:
+        0 auto
+        25px;
     }
 
     .order-label {
-      margin-bottom: 10px;
-      color: #5a7488;
-      font-size: 12px;
-      font-weight: 800;
+      margin-bottom: 9px;
+
+      color: #6d879c;
+
+      font-size: 10px;
+
+      font-weight: 600;
+
       text-align: left;
+
       direction: ltr;
     }
 
     .progress {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
+
+      grid-template-columns:
+        repeat(7, 1fr);
+
       direction: ltr;
     }
 
     .progress-step {
       position: relative;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       min-height: 38px;
     }
 
     .progress-step::after {
       content: "";
+
       position: absolute;
+
       top: 50%;
       left: 50%;
+
       width: 100%;
       height: 2px;
-      background: #c8d8e0;
-      transform: translateY(-50%);
+
+      background: #c8dce5;
+
+      transform:
+        translateY(-50%);
+
       z-index: 0;
     }
 
@@ -174,150 +506,340 @@
 
     .progress-number {
       position: relative;
+
       z-index: 1;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 34px;
-      height: 34px;
-      border: 2px solid #65b5d1;
+
+      width: 32px;
+      height: 32px;
+
+      border:
+        2px solid
+        #6bbbd9;
+
       border-radius: 50%;
-      background: #f7f9fa;
+
+      background: #f8fbfd;
+
       color: #177fa7;
-      font-size: 11px;
-      font-weight: 800;
+
+      font-size: 10px;
+
+      font-weight: 700;
     }
 
+
+    /* =========================================================
+       JOURNEY GRID
+    ========================================================= */
+
     .journey-grid {
+      max-width: 1240px;
+
+      margin: 0 auto;
+
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 19px;
     }
+
+
+    /* =========================================================
+       CARDS
+    ========================================================= */
 
     .step-card {
       position: relative;
+
       overflow: hidden;
+
       display: flex;
+
       flex-direction: column;
-      min-height: 300px;
-      padding: 25px;
-      border: 1px solid #d7e3e9;
-      border-radius: 18px;
+
+      min-height: 280px;
+
+      padding:
+        22px
+        25px
+        19px;
+
+      border:
+        1px solid
+        #dfe8ef;
+
+      border-radius: 15px;
+
       cursor: pointer;
-      box-shadow: 0 8px 25px rgba(35, 57, 77, 0.06);
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.91
+        );
+
+      box-shadow:
+        0 8px 22px
+        rgba(
+          26,
+          67,
+          97,
+          0.055
+        );
+
+      transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
     }
 
     .step-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 38px rgba(35, 57, 77, 0.12);
+      transform:
+        translateY(-5px);
+
+      box-shadow:
+        0 15px 31px
+        rgba(
+          26,
+          67,
+          97,
+          0.11
+        );
     }
 
     .step-card:focus-visible {
-      outline: 3px solid rgba(25, 127, 167, 0.22);
+      outline:
+        3px solid
+        rgba(
+          36,
+          146,
+          187,
+          0.22
+        );
+
       outline-offset: 3px;
     }
 
     .step-card::after {
       content: "";
+
       position: absolute;
+
       right: 0;
+      left: 0;
       bottom: 0;
-      width: 0;
-      height: 4px;
-      transition: width 0.3s ease;
+
+      height: 3px;
     }
 
-    .step-card:hover::after {
-      width: 100%;
-    }
+
+    /* =========================================================
+       STEP COLORS
+    ========================================================= */
 
     .step-1 {
-      background: linear-gradient(145deg, #e5f5fb, #f6fcfe);
-      border-color: #b8dfea;
+      background:
+        linear-gradient(
+          145deg,
+          #e8f6fb,
+          #f9fdff
+        );
+
+      border-color: #c9e8f3;
     }
 
-    .step-1::after { background: #1883ac; }
+    .step-1::after {
+      background: #15a9df;
+    }
 
     .step-2 {
-      background: linear-gradient(145deg, #edf5fd, #fafcff);
+      background:
+        linear-gradient(
+          145deg,
+          #f1f7fd,
+          #ffffff
+        );
     }
 
-    .step-2::after { background: #4f8fc3; }
+    .step-2::after {
+      background: #4f8fc3;
+    }
 
     .step-3 {
-      background: linear-gradient(145deg, #edf4fb, #ffffff);
+      background:
+        linear-gradient(
+          145deg,
+          #f2f6fb,
+          #ffffff
+        );
     }
 
-    .step-3::after { background: #678ab5; }
+    .step-3::after {
+      background: #6e8fb7;
+    }
 
     .step-4 {
-      background: linear-gradient(145deg, #edf9f7, #fbfefd);
+      background:
+        linear-gradient(
+          145deg,
+          #effaf8,
+          #ffffff
+        );
     }
 
-    .step-4::after { background: #2f9a8d; }
+    .step-4::after {
+      background: #2f9a8d;
+    }
 
     .step-5 {
-      background: linear-gradient(145deg, #f4f2fb, #ffffff);
+      background:
+        linear-gradient(
+          145deg,
+          #f4f3fb,
+          #ffffff
+        );
     }
 
-    .step-5::after { background: #7a69b7; }
+    .step-5::after {
+      background: #7568b7;
+    }
 
     .step-6 {
-      background: linear-gradient(145deg, #eaf8fc, #fbfeff);
+      background:
+        linear-gradient(
+          145deg,
+          #eef9fc,
+          #ffffff
+        );
     }
 
-    .step-6::after { background: #258ab1; }
+    .step-6::after {
+      background: #258ab1;
+    }
 
     .step-7 {
-      background: linear-gradient(145deg, #eaf8ef, #fbfefc);
-      border-color: #c6e4cf;
+      background:
+        linear-gradient(
+          145deg,
+          #edf9f1,
+          #ffffff
+        );
+
+      border-color: #cce7d5;
     }
 
-    .step-7::after { background: #42955f; }
+    .step-7::after {
+      background: #42955f;
+    }
+
+
+    /* =========================================================
+       CARD TOP
+    ========================================================= */
 
     .card-top {
       display: flex;
+
       align-items: flex-start;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
+
       gap: 15px;
-      margin-bottom: 20px;
+
+      margin-bottom: 17px;
     }
 
     .step-number {
       display: flex;
+
       align-items: center;
       justify-content: center;
-      height: 29px;
-      padding: 0 11px;
+
+      height: 27px;
+
+      padding:
+        0 10px;
+
       border-radius: 20px;
-      background: rgba(22, 119, 158, 0.1);
+
+      background:
+        rgba(
+          22,
+          119,
+          158,
+          0.10
+        );
+
       color: #16789f;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.6px;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.5px;
+
+      direction: ltr;
     }
 
     .step-7 .step-number {
       background: #dcefe3;
+
       color: #34804f;
     }
 
+
+    /* =========================================================
+       ICONS
+    ========================================================= */
+
     .icon {
       display: flex;
+
       align-items: center;
       justify-content: center;
-      width: 50px;
-      height: 50px;
-      border-radius: 13px;
-      background: rgba(255, 255, 255, 0.8);
+
+      width: 48px;
+      height: 48px;
+
+      border-radius: 12px;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.82
+        );
+
       color: #197fa7;
-      box-shadow: 0 5px 14px rgba(35, 57, 77, 0.07);
-      transition: transform 0.28s ease;
+
+      box-shadow:
+        0 5px 14px
+        rgba(
+          35,
+          57,
+          77,
+          0.07
+        );
+
+      transition:
+        transform
+        0.28s ease;
     }
 
     .step-card:hover .icon {
-      transform: translateY(-3px) scale(1.07);
+      transform:
+        translateY(-3px)
+        scale(1.05);
     }
 
     .icon svg {
@@ -325,226 +847,455 @@
       height: 25px;
     }
 
-    .step-4 .icon { color: #268e82; }
-    .step-5 .icon { color: #7460b3; }
-    .step-7 .icon { color: #3d8d57; }
+    .step-4 .icon {
+      color: #268e82;
+    }
+
+    .step-5 .icon {
+      color: #7460b3;
+    }
+
+    .step-7 .icon {
+      color: #3d8d57;
+    }
+
+
+    /* =========================================================
+       CARD TEXT
+    ========================================================= */
 
     .step-card h3 {
-      margin-bottom: 11px;
-      color: #1d3348;
-      font-size: 18px;
-      font-weight: 800;
+      margin-bottom: 9px;
+
+      color: #0a2d55;
+
+      font-size: 17px;
+
+      font-weight: 700;
+
+      direction: ltr;
+
+      text-align: right;
     }
 
     .step-card p {
       flex: 1;
-      color: #405c70;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 2;
+
+      color: #466687;
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+      line-height: 1.9;
     }
 
     .card-action {
       display: flex;
+
       align-items: center;
-      gap: 8px;
-      margin-top: 22px;
-      color: #127aa3;
-      font-size: 13px;
-      font-weight: 800;
+
+      gap: 7px;
+
+      margin-top: 17px;
+
+      color: #087fb9;
+
+      font-size: 11px;
+
+      font-weight: 700;
     }
 
     .arrow {
       display: inline-block;
+
       direction: ltr;
-      transition: transform 0.25s ease;
+
+      transition:
+        transform
+        0.25s ease;
     }
 
     .step-card:hover .arrow {
-      transform: translateX(-5px);
+      transform:
+        translateX(-4px);
     }
+
+
+    /* =========================================================
+       PRACTICING
+    ========================================================= */
 
     .practice-info {
       display: flex;
+
       align-items: center;
+
       gap: 7px;
-      margin-top: 15px;
+
+      margin-top: 13px;
+
       color: #32794c;
-      font-size: 12px;
-      font-weight: 800;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      direction: ltr;
+
+      justify-content: flex-end;
     }
 
     .practice-dot {
       width: 7px;
       height: 7px;
+
       border-radius: 50%;
+
       background: #49a267;
     }
 
+
+    /* =========================================================
+       NOTE
+    ========================================================= */
+
     .journey-note {
+      max-width: 1240px;
+
+      margin:
+        23px auto
+        0;
+
       display: flex;
+
       align-items: center;
+
       gap: 15px;
-      margin-top: 27px;
-      padding: 20px 22px;
-      border: 1px solid #cadde5;
+
+      padding:
+        18px
+        22px;
+
+      border:
+        1px solid
+        #d7e8ef;
+
       border-radius: 15px;
-      background: rgba(255, 255, 255, 0.72);
-      color: #405b6e;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 1.9;
-      box-shadow: 0 6px 20px rgba(35, 57, 77, 0.04);
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(
+            255,
+            255,
+            255,
+            0.96
+          ),
+          rgba(
+            244,
+            251,
+            254,
+            0.95
+          )
+        );
+
+      color: #4f6f8b;
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+      line-height: 1.8;
+
+      box-shadow:
+        0 7px 20px
+        rgba(
+          23,
+          67,
+          96,
+          0.05
+        );
     }
 
     .note-icon {
       display: flex;
+
       align-items: center;
+
       justify-content: center;
-      width: 39px;
-      height: 39px;
+
+      width: 45px;
+      height: 45px;
+
       flex-shrink: 0;
-      border-radius: 10px;
-      background: #dff1f8;
-      color: #1680a8;
+
+      border-radius: 12px;
+
+      background: #e2f5fc;
+
+      color: #087fc5;
     }
 
     .note-icon svg {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
     }
+
+
+    /* =========================================================
+       MODAL
+    ========================================================= */
 
     .modal-overlay {
       position: fixed;
+
       inset: 0;
+
       z-index: 9999;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       padding: 20px;
-      background: rgba(12, 28, 42, 0.42);
-      backdrop-filter: blur(7px);
-      -webkit-backdrop-filter: blur(7px);
+
+      background:
+        rgba(
+          9,
+          36,
+          63,
+          0.45
+        );
+
+      backdrop-filter:
+        blur(7px);
+
+      -webkit-backdrop-filter:
+        blur(7px);
+
       opacity: 0;
+
       visibility: hidden;
+
       pointer-events: none;
-      transition: opacity 0.22s ease, visibility 0.22s ease;
+
+      transition:
+        opacity
+        0.22s ease,
+        visibility
+        0.22s ease;
     }
 
     .modal-overlay.active {
       opacity: 1;
+
       visibility: visible;
+
       pointer-events: auto;
     }
 
     .modal-box {
       width: 100%;
+
       max-width: 500px;
+
       padding: 27px;
-      border: 1px solid rgba(255,255,255,0.75);
-      border-radius: 20px;
-      background: #f8fbfc;
-      box-shadow: 0 25px 70px rgba(17, 40, 58, 0.22);
-      transform: translateY(14px) scale(0.98);
-      transition: transform 0.22s ease;
+
+      border:
+        1px solid
+        #d9e8ef;
+
+      border-radius: 18px;
+
+      background: #f8fbfd;
+
+      box-shadow:
+        0 25px 70px
+        rgba(
+          10,
+          44,
+          75,
+          0.24
+        );
+
+      transform:
+        translateY(14px)
+        scale(0.98);
+
+      transition:
+        transform
+        0.22s ease;
     }
 
-    .modal-overlay.active .modal-box {
-      transform: translateY(0) scale(1);
+    .modal-overlay.active
+    .modal-box {
+      transform:
+        translateY(0)
+        scale(1);
     }
 
     .modal-icon {
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       width: 48px;
+
       height: 48px;
+
       margin-bottom: 17px;
-      border-radius: 14px;
-      background: #dff1f8;
-      color: #1680a8;
+
+      border-radius: 12px;
+
+      background: #e2f5fc;
+
+      color: #087fc5;
     }
 
     .modal-icon svg {
       width: 24px;
+
       height: 24px;
     }
 
     .modal-box h3 {
       margin-bottom: 9px;
-      color: #173149;
+
+      color: #0a2d55;
+
       font-size: 20px;
-      font-weight: 800;
+
+      font-weight: 700;
     }
 
     .modal-box p {
-      color: #465f72;
-      font-size: 14px;
-      font-weight: 700;
+      color: #4f6f8b;
+
+      font-size: 13px;
+
+      font-weight: 600;
+
       line-height: 1.9;
     }
 
     .previous-step {
       display: flex;
+
       align-items: center;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
+
       gap: 12px;
+
       margin-top: 18px;
-      padding: 13px 15px;
-      border: 1px solid #d6e7ed;
+
+      padding:
+        13px
+        15px;
+
+      border:
+        1px solid
+        #d6e7ed;
+
       border-radius: 12px;
+
       background: #eef7fa;
     }
 
     .previous-step-label {
       color: #6b8090;
+
       font-size: 11px;
-      font-weight: 700;
+
+      font-weight: 600;
     }
 
     .previous-step-name {
       color: #173d58;
+
       font-size: 13px;
-      font-weight: 800;
-      text-align: left;
+
+      font-weight: 700;
+
       direction: ltr;
+
+      text-align: left;
     }
 
     .modal-actions {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr 1fr;
+
       gap: 10px;
+
       margin-top: 22px;
     }
 
     .modal-btn {
       border: 0;
+
       border-radius: 11px;
-      padding: 13px 15px;
+
+      padding:
+        13px
+        15px;
+
       cursor: pointer;
+
       font-family: inherit;
+
       font-size: 13px;
-      font-weight: 800;
-      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+
+      font-weight: 700;
+
+      transition:
+        transform
+        0.2s ease,
+        background
+        0.2s ease,
+        box-shadow
+        0.2s ease;
     }
 
     .modal-btn:hover {
-      transform: translateY(-2px);
+      transform:
+        translateY(-2px);
     }
 
     .continue-btn {
-      background: #176f94;
+      background: #0b6f9c;
+
       color: white;
-      box-shadow: 0 8px 18px rgba(23, 111, 148, 0.17);
+
+      box-shadow:
+        0 8px 18px
+        rgba(
+          11,
+          111,
+          156,
+          0.17
+        );
     }
 
     .continue-btn:hover {
-      background: #125f80;
+      background: #075b81;
     }
 
     .cancel-btn {
-      border: 1px solid #d3e0e6;
+      border:
+        1px solid
+        #d3e0e6;
+
       background: white;
+
       color: #536b7d;
     }
 
@@ -552,41 +1303,194 @@
       background: #f1f5f7;
     }
 
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .page-footer {
+      max-width: 1320px;
+
+      margin:
+        26px auto
+        0;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content:
+        space-between;
+
+      direction: ltr;
+    }
+
+    .footer-brand {
+      color: #7893aa;
+
+      font-size: 7px;
+
+      line-height: 1.8;
+
+      font-weight: 600;
+
+      letter-spacing: 1.8px;
+
+      direction: ltr;
+
+      text-align: left;
+    }
+
+    .footer-links {
+      color: #718ca5;
+
+      font-size: 7px;
+
+      font-weight: 600;
+
+      letter-spacing: 1.4px;
+
+      direction: ltr;
+    }
+
+
+    /* =========================================================
+       ANIMATION
+    ========================================================= */
+
     .reveal {
       opacity: 0;
-      transform: translateY(15px);
-      animation: reveal 0.55s ease forwards;
+
+      transform:
+        translateY(13px);
+
+      animation:
+        reveal
+        0.55s ease
+        forwards;
     }
 
-    .delay-1 { animation-delay: 0.06s; }
-    .delay-2 { animation-delay: 0.12s; }
-    .delay-3 { animation-delay: 0.18s; }
-    .delay-4 { animation-delay: 0.24s; }
-    .delay-5 { animation-delay: 0.30s; }
-    .delay-6 { animation-delay: 0.36s; }
-    .delay-7 { animation-delay: 0.42s; }
+    .delay-1 {
+      animation-delay: 0.06s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.12s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.18s;
+    }
+
+    .delay-4 {
+      animation-delay: 0.24s;
+    }
+
+    .delay-5 {
+      animation-delay: 0.30s;
+    }
+
+    .delay-6 {
+      animation-delay: 0.36s;
+    }
+
+    .delay-7 {
+      animation-delay: 0.42s;
+    }
 
     @keyframes reveal {
+
       to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+          translateY(0);
       }
+
     }
+
+
+    /* =========================================================
+       TABLET
+    ========================================================= */
 
     @media (max-width: 950px) {
-      .journey-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+      .page {
+        padding:
+          25px
+          22px
+          40px;
       }
+
+      .journey-grid {
+        grid-template-columns:
+          repeat(
+            2,
+            1fr
+          );
+      }
+
     }
 
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
     @media (max-width: 650px) {
+
       .page {
-        padding: 28px 15px 40px;
+        padding:
+          22px
+          15px
+          38px;
+      }
+
+      .top-branding {
+        min-height: 50px;
+      }
+
+      .meti-name {
+        font-size: 21px;
+      }
+
+      .meti-mark {
+        transform:
+          scale(0.82);
+
+        transform-origin:
+          left top;
+      }
+
+      .meti-sub {
+        font-size: 6px;
+      }
+
+      .top-tagline {
+        display: none;
+      }
+
+      .intro {
+        margin-top: 5px;
+
+        margin-bottom: 27px;
+      }
+
+      .intro h1 {
+        font-size: 31px;
+      }
+
+      .intro p {
+        font-size: 13px;
       }
 
       .journey-header {
-        align-items: flex-start;
-        flex-direction: column;
+        align-items:
+          flex-start;
+
+        flex-direction:
+          column;
       }
 
       .step-counter {
@@ -598,27 +1502,28 @@
       }
 
       .journey-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
 
       .step-card {
-        min-height: 250px;
-      }
-
-      .intro h1 {
-        font-size: 32px;
-      }
-
-      .intro p {
-        font-size: 14px;
+        min-height: 245px;
       }
 
       .modal-actions {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
+
+      .page-footer {
+        display: none;
+      }
+
     }
 
+
     @media (prefers-reduced-motion: reduce) {
+
       * {
         animation: none !important;
         transition: none !important;
@@ -626,417 +1531,1508 @@
 
       .reveal {
         opacity: 1;
+
         transform: none;
       }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
+<div class="map-background"></div>
+
+
+
 <section class="page">
+
+
   <div class="container">
 
+
+    <!-- =====================================================
+         TOP BRANDING
+    ====================================================== -->
+
+    <div class="top-branding reveal">
+
+
+      <div class="meti-brand">
+
+
+        <div class="meti-mark">
+
+          <span class="meti-cut"></span>
+
+        </div>
+
+
+        <div class="meti-text">
+
+
+          <div class="meti-name">
+            METI
+          </div>
+
+
+          <div class="meti-sub">
+            TRAINING MATERIAL
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="top-tagline">
+        DRIVE A SMARTER TOMORROW
+      </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
     <div class="intro reveal">
-      <div class="eyebrow">NEW HIRE JOURNEY</div>
-      <h1>Welcome to METI</h1>
+
+
+      <div class="eyebrow">
+        NEW HIRE JOURNEY
+      </div>
+
+
+      <h1>
+        Welcome to METI
+      </h1>
+
+
       <p>
+
         ابدأ رحلة التدريب خطوة بخطوة،
         واتعرف على الـTeams والـLabeling Tools
         وطريقة متابعة شغلك قبل ما تبدأ التطبيق العملي.
+
       </p>
+
+
     </div>
+
+
+
+    <!-- =====================================================
+         JOURNEY HEADER
+    ====================================================== -->
 
     <div class="journey-header reveal delay-1">
+
+
       <div class="journey-title">
-        <h2>Your Learning Journey</h2>
+
+
+        <h2>
+          Your Learning Journey
+        </h2>
+
+
         <p>
-          يفضل تمشي بالترتيب، لأن كل Step
-          بتجهزك للمعلومات والـTools
+
+          يفضل تمشي بالترتيب،
+          لأن كل Step بتجهزك للمعلومات والـTools
           اللي هتحتاجها في الخطوة اللي بعدها.
+
         </p>
+
+
       </div>
 
-      <div class="step-counter">7 Training Steps</div>
+
+      <div class="step-counter">
+        7 Training Steps
+      </div>
+
+
     </div>
+
+
+
+    <!-- =====================================================
+         PROGRESS
+    ====================================================== -->
 
     <div class="order-wrapper reveal delay-1">
-      <div class="order-label">Recommended Order</div>
-      <div class="progress">
-        <div class="progress-step"><div class="progress-number">01</div></div>
-        <div class="progress-step"><div class="progress-number">02</div></div>
-        <div class="progress-step"><div class="progress-number">03</div></div>
-        <div class="progress-step"><div class="progress-number">04</div></div>
-        <div class="progress-step"><div class="progress-number">05</div></div>
-        <div class="progress-step"><div class="progress-number">06</div></div>
-        <div class="progress-step"><div class="progress-number">07</div></div>
+
+
+      <div class="order-label">
+        Recommended Order
       </div>
+
+
+      <div class="progress">
+
+
+        <div class="progress-step">
+
+          <div class="progress-number">
+            01
+          </div>
+
+        </div>
+
+
+        <div class="progress-step">
+
+          <div class="progress-number">
+            02
+          </div>
+
+        </div>
+
+
+        <div class="progress-step">
+
+          <div class="progress-number">
+            03
+          </div>
+
+        </div>
+
+
+        <div class="progress-step">
+
+          <div class="progress-number">
+            04
+          </div>
+
+        </div>
+
+
+        <div class="progress-step">
+
+          <div class="progress-number">
+            05
+          </div>
+
+        </div>
+
+
+        <div class="progress-step">
+
+          <div class="progress-number">
+            06
+          </div>
+
+        </div>
+
+
+        <div class="progress-step">
+
+          <div class="progress-number">
+            07
+          </div>
+
+        </div>
+
+
+      </div>
+
+
     </div>
+
+
+
+    <!-- =====================================================
+         JOURNEY CARDS
+    ====================================================== -->
 
     <div class="journey-grid">
 
+
+
+      <!-- STEP 01 -->
+
       <div
         class="step-card step-1 reveal delay-1"
+
         role="link"
+
         tabindex="0"
-        onclick="openDirect('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/teams')"
-        onkeydown="handleDirectKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/teams')"
+
+        onclick="
+          openDirect(
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/teams'
+          )
+        "
+
+        onkeydown="
+          handleDirectKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/teams'
+          )
+        "
       >
+
+
         <div class="card-top">
-          <div class="step-number">STEP 01</div>
+
+
+          <div class="step-number">
+            STEP 01
+          </div>
+
 
           <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M16 20v-1.5a4.5 4.5 0 00-4.5-4.5h-4A4.5 4.5 0 003 18.5V20"/>
-              <circle cx="9.5" cy="7" r="3"/>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M16 5.5a3 3 0 010 5.5M18 14a4.5 4.5 0 013 4v2"/>
+
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+
+              fill="none"
+
+              viewBox="0 0 24 24"
+
+              stroke="currentColor"
+
+              stroke-width="1.8"
+            >
+
+              <path
+                stroke-linecap="round"
+
+                stroke-linejoin="round"
+
+                d="M16 20v-1.5a4.5 4.5 0 00-4.5-4.5h-4A4.5 4.5 0 003 18.5V20"
+              />
+
+              <circle
+                cx="9.5"
+
+                cy="7"
+
+                r="3"
+              />
+
+              <path
+                stroke-linecap="round"
+
+                stroke-linejoin="round"
+
+                d="M16 5.5a3 3 0 010 5.5M18 14a4.5 4.5 0 013 4v2"
+              />
+
             </svg>
+
+
           </div>
+
+
         </div>
 
-        <h3>Teams</h3>
+
+        <h3>
+          Teams
+        </h3>
+
+
         <p>
+
           اتعرف على الـTeams الموجودة
           ودور كل Team في المشروع،
           واعرف مين مسؤول عن كل جزء
           في الـWorkflow.
+
         </p>
 
+
         <div class="card-action">
+
           فتح Teams
-          <span class="arrow">←</span>
+
+          <span class="arrow">
+            ←
+          </span>
+
         </div>
+
+
       </div>
+
+
+
+      <!-- STEP 02 -->
 
       <div
         class="step-card step-2 reveal delay-2"
+
         role="link"
+
         tabindex="0"
-        onclick="showStepModal('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/introductions-to-labeling','Teams','Introduction to Labeling')"
-        onkeydown="handleModalKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/introductions-to-labeling','Teams','Introduction to Labeling')"
+
+        onclick="
+          showStepModal(
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/introductions-to-labeling',
+            'Teams',
+            'Introduction to Labeling'
+          )
+        "
+
+        onkeydown="
+          handleModalKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/introductions-to-labeling',
+            'Teams',
+            'Introduction to Labeling'
+          )
+        "
       >
+
+
         <div class="card-top">
-          <div class="step-number">STEP 02</div>
+
+
+          <div class="step-number">
+            STEP 02
+          </div>
+
 
           <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 5.5A1.5 1.5 0 015.5 4H12l8 8-8 8-8-8V5.5z"/>
-              <circle cx="8" cy="8" r="1.3"/>
+
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+
+              fill="none"
+
+              viewBox="0 0 24 24"
+
+              stroke="currentColor"
+
+              stroke-width="1.8"
+            >
+
+              <path
+                stroke-linecap="round"
+
+                stroke-linejoin="round"
+
+                d="M4 5.5A1.5 1.5 0 015.5 4H12l8 8-8 8-8-8V5.5z"
+              />
+
+              <circle
+                cx="8"
+
+                cy="8"
+
+                r="1.3"
+              />
+
             </svg>
+
+
           </div>
+
+
         </div>
 
-        <h3>Introduction to Labeling</h3>
+
+        <h3>
+          Introduction to Labeling
+        </h3>
+
+
         <p>
+
           ابدأ بأساسيات الـLabeling
           والمفاهيم الرئيسية اللي محتاج تعرفها
           قبل ما تبدأ التعامل مع الـTools
           والـTasks.
+
         </p>
 
+
         <div class="card-action">
+
           ابدأ الـLabeling
-          <span class="arrow">←</span>
+
+          <span class="arrow">
+            ←
+          </span>
+
         </div>
+
+
       </div>
+
+
+
+      <!-- STEP 03 -->
 
       <div
         class="step-card step-3 reveal delay-3"
+
         role="link"
+
         tabindex="0"
-        onclick="showStepModal('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/intro-to-msl','Introduction to Labeling','Intro to MSL')"
-        onkeydown="handleModalKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/intro-to-msl','Introduction to Labeling','Intro to MSL')"
+
+        onclick="
+          showStepModal(
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/intro-to-msl',
+            'Introduction to Labeling',
+            'Intro to MSL'
+          )
+        "
+
+        onkeydown="
+          handleModalKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/intro-to-msl',
+            'Introduction to Labeling',
+            'Intro to MSL'
+          )
+        "
       >
+
+
         <div class="card-top">
-          <div class="step-number">STEP 03</div>
+
+
+          <div class="step-number">
+            STEP 03
+          </div>
+
 
           <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <rect x="3.5" y="4" width="17" height="13" rx="2"/>
-              <path stroke-linecap="round" d="M8 21h8M12 17v4"/>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 9h9M7.5 12h5"/>
+
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+
+              fill="none"
+
+              viewBox="0 0 24 24"
+
+              stroke="currentColor"
+
+              stroke-width="1.8"
+            >
+
+              <rect
+                x="3.5"
+
+                y="4"
+
+                width="17"
+
+                height="13"
+
+                rx="2"
+              />
+
+              <path
+                stroke-linecap="round"
+
+                d="M8 21h8M12 17v4"
+              />
+
+              <path
+                stroke-linecap="round"
+
+                stroke-linejoin="round"
+
+                d="M7.5 9h9M7.5 12h5"
+              />
+
             </svg>
+
+
           </div>
+
+
         </div>
 
-        <h3>Intro to MSL</h3>
+
+        <h3>
+          Intro to MSL
+        </h3>
+
+
         <p>
+
           اتعرف على الـMSL،
           الواجهة الأساسية،
           وطريقة التعامل مع الـTool
           قبل ما تبدأ تنفيذ الشغل.
+
         </p>
 
+
         <div class="card-action">
+
           فتح Intro to MSL
-          <span class="arrow">←</span>
+
+          <span class="arrow">
+            ←
+          </span>
+
         </div>
+
+
       </div>
+
+
+
+      <!-- STEP 04 -->
 
       <div
         class="step-card step-4 reveal delay-4"
+
         role="link"
+
         tabindex="0"
-        onclick="showStepModal('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/how-to-use-gulp','Intro to MSL','How To Use Gulp')"
-        onkeydown="handleModalKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/how-to-use-gulp','Intro to MSL','How To Use Gulp')"
+
+        onclick="
+          showStepModal(
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/how-to-use-gulp',
+            'Intro to MSL',
+            'How To Use Gulp'
+          )
+        "
+
+        onkeydown="
+          handleModalKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/how-to-use-gulp',
+            'Intro to MSL',
+            'How To Use Gulp'
+          )
+        "
       >
+
+
         <div class="card-top">
-          <div class="step-number">STEP 04</div>
+
+
+          <div class="step-number">
+            STEP 04
+          </div>
+
 
           <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 3h8M9 3l1 4h4l1-4"/>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h10l-1 13H8L7 7z"/>
-              <path stroke-linecap="round" d="M10 11h4"/>
+
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+
+              fill="none"
+
+              viewBox="0 0 24 24"
+
+              stroke="currentColor"
+
+              stroke-width="1.8"
+            >
+
+              <path
+                stroke-linecap="round"
+
+                stroke-linejoin="round"
+
+                d="M8 3h8M9 3l1 4h4l1-4"
+              />
+
+              <path
+                stroke-linecap="round"
+
+                stroke-linejoin="round"
+
+                d="M7 7h10l-1 13H8L7 7z"
+              />
+
+              <path
+                stroke-linecap="round"
+
+                d="M10 11h4"
+              />
+
             </svg>
+
+
           </div>
+
+
         </div>
 
-        <h3>How To Use Gulp</h3>
+
+        <h3>
+          How To Use Gulp
+        </h3>
+
+
         <p>
+
           اتعلم طريقة استخدام Gulp
           والـWorkflow الأساسي المطلوب منك
           أثناء التعامل مع الشغل.
+
         </p>
 
+
         <div class="card-action">
+
           تعلم Gulp
-          <span class="arrow">←</span>
+
+          <span class="arrow">
+            ←
+          </span>
+
         </div>
+
+
       </div>
+
+
+
+      <!-- STEP 05 -->
 
       <div
         class="step-card step-5 reveal delay-5"
+
         role="link"
+
         tabindex="0"
-        onclick="showStepModal('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/shortcuts-keys','How To Use Gulp','Shortcuts Keys')"
-        onkeydown="handleModalKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/shortcuts-keys','How To Use Gulp','Shortcuts Keys')"
+
+        onclick="
+          showStepModal(
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/shortcuts-keys',
+            'How To Use Gulp',
+            'Shortcuts Keys'
+          )
+        "
+
+        onkeydown="
+          handleModalKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/shortcuts-keys',
+            'How To Use Gulp',
+            'Shortcuts Keys'
+          )
+        "
       >
+
+
         <div class="card-top">
-          <div class="step-number">STEP 05</div>
+
+
+          <div class="step-number">
+            STEP 05
+          </div>
+
 
           <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <rect x="3.5" y="5" width="17" height="14" rx="2"/>
-              <path stroke-linecap="round" d="M7 9h2M11 9h2M15 9h2M7 13h2M11 13h6M7 16h10"/>
+
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+
+              fill="none"
+
+              viewBox="0 0 24 24"
+
+              stroke="currentColor"
+
+              stroke-width="1.8"
+            >
+
+              <rect
+                x="3.5"
+
+                y="5"
+
+                width="17"
+
+                height="14"
+
+                rx="2"
+              />
+
+              <path
+                stroke-linecap="round"
+
+                d="M7 9h2M11 9h2M15 9h2M7 13h2M11 13h6M7 16h10"
+              />
+
             </svg>
+
+
           </div>
+
+
         </div>
 
-        <h3>Shortcuts Keys</h3>
+
+        <h3>
+          Shortcuts Keys
+        </h3>
+
+
         <p>
+
           راجع أهم الـKeyboard Shortcuts
           اللي هتساعدك تشتغل أسرع وتتحرك
           بين الـTools والـActions بسهولة.
+
         </p>
 
+
         <div class="card-action">
+
           فتح Shortcuts Keys
-          <span class="arrow">←</span>
+
+          <span class="arrow">
+            ←
+          </span>
+
         </div>
+
+
       </div>
+
+
+
+      <!-- STEP 06 -->
 
       <div
         class="step-card step-6 reveal delay-6"
+
         role="link"
+
         tabindex="0"
-        onclick="showStepModal('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/meti-portal','Shortcuts Keys','METI Portal')"
-        onkeydown="handleModalKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/meti-portal','Shortcuts Keys','METI Portal')"
+
+        onclick="
+          showStepModal(
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/meti-portal',
+            'Shortcuts Keys',
+            'METI Portal'
+          )
+        "
+
+        onkeydown="
+          handleModalKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/meti-portal',
+            'Shortcuts Keys',
+            'METI Portal'
+          )
+        "
       >
+
+
         <div class="card-top">
-          <div class="step-number">STEP 06</div>
+
+
+          <div class="step-number">
+            STEP 06
+          </div>
+
 
           <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <rect x="4" y="3.5" width="16" height="17" rx="2"/>
-              <path stroke-linecap="round" d="M8 8h8"/>
-              <path stroke-linecap="round" d="M8 12h3"/>
-              <circle cx="15.5" cy="15.5" r="2.5"/>
-              <path stroke-linecap="round" d="M15.5 14v1.7l1 .7"/>
+
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+
+              fill="none"
+
+              viewBox="0 0 24 24"
+
+              stroke="currentColor"
+
+              stroke-width="1.8"
+            >
+
+              <rect
+                x="4"
+
+                y="3.5"
+
+                width="16"
+
+                height="17"
+
+                rx="2"
+              />
+
+              <path
+                stroke-linecap="round"
+
+                d="M8 8h8"
+              />
+
+              <path
+                stroke-linecap="round"
+
+                d="M8 12h3"
+              />
+
+              <circle
+                cx="15.5"
+
+                cy="15.5"
+
+                r="2.5"
+              />
+
+              <path
+                stroke-linecap="round"
+
+                d="M15.5 14v1.7l1 .7"
+              />
+
             </svg>
+
+
           </div>
+
+
         </div>
 
-        <h3>METI Portal</h3>
+
+        <h3>
+          METI Portal
+        </h3>
+
+
         <p>
+
           اتعرف على الـPortal المستخدم
           لتسجيل الحضور ومتابعة
           الـProductive Hours والـIdle Time،
           عشان تقدر تتابع أرقامك خلال اليوم.
+
         </p>
 
+
         <div class="card-action">
+
           فتح METI Portal
-          <span class="arrow">←</span>
+
+          <span class="arrow">
+            ←
+          </span>
+
         </div>
+
+
       </div>
+
+
+
+      <!-- STEP 07 -->
 
       <div
         class="step-card step-7 reveal delay-7"
+
         role="link"
+
         tabindex="0"
-        onclick="showStepModal('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/practicing','METI Portal','Practicing')"
-        onkeydown="handleModalKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/practicing','METI Portal','Practicing')"
+
+        onclick="
+          showStepModal(
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/practicing',
+            'METI Portal',
+            'Practicing'
+          )
+        "
+
+        onkeydown="
+          handleModalKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/practicing',
+            'METI Portal',
+            'Practicing'
+          )
+        "
       >
+
+
         <div class="card-top">
-          <div class="step-number">STEP 07</div>
+
+
+          <div class="step-number">
+            STEP 07
+          </div>
+
 
           <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4 4L19 6.5"/>
-              <circle cx="12" cy="12" r="9"/>
+
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+
+              fill="none"
+
+              viewBox="0 0 24 24"
+
+              stroke="currentColor"
+
+              stroke-width="1.8"
+            >
+
+              <path
+                stroke-linecap="round"
+
+                stroke-linejoin="round"
+
+                d="M5 12.5l4 4L19 6.5"
+              />
+
+              <circle
+                cx="12"
+
+                cy="12"
+
+                r="9"
+              />
+
             </svg>
+
+
           </div>
+
+
         </div>
 
-        <h3>Practicing</h3>
+
+        <h3>
+          Practicing
+        </h3>
+
+
         <p>
+
           بعد ما تخلص الأساسيات،
           ابدأ التطبيق العملي على مراحل التدريب
           وامشي بالترتيب من Phase One
           لحد باقي الـPhases.
+
         </p>
 
+
         <div class="practice-info">
+
           <span class="practice-dot"></span>
+
           Phase 1 • Phase 2 • Phase 3
+
         </div>
 
+
         <div class="card-action">
+
           ابدأ الـPracticing
-          <span class="arrow">←</span>
+
+          <span class="arrow">
+            ←
+          </span>
+
         </div>
+
+
       </div>
+
 
     </div>
 
+
+
+    <!-- =====================================================
+         NOTE
+    ====================================================== -->
+
     <div class="journey-note reveal delay-7">
+
+
       <div class="note-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-          <circle cx="12" cy="12" r="9"/>
-          <path stroke-linecap="round" d="M12 11v5"/>
-          <circle cx="12" cy="8" r=".7" fill="currentColor" stroke="none"/>
+
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+
+          fill="none"
+
+          viewBox="0 0 24 24"
+
+          stroke="currentColor"
+
+          stroke-width="1.8"
+        >
+
+          <circle
+            cx="12"
+
+            cy="12"
+
+            r="9"
+          />
+
+          <path
+            stroke-linecap="round"
+
+            d="M12 11v5"
+          />
+
+          <circle
+            cx="12"
+
+            cy="8"
+
+            r=".7"
+
+            fill="currentColor"
+
+            stroke="none"
+          />
+
         </svg>
+
+
       </div>
 
+
       <div>
+
         يفضل تخلص كل Step بالترتيب قبل ما تنتقل للـStep اللي بعدها،
         لأن كل جزء بيجهزك للمعلومات والـTools
         اللي هتحتاجها في المرحلة التالية.
+
       </div>
+
+
     </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <div class="page-footer">
+
+
+      <div class="footer-brand">
+
+        METI | TRAINING MATERIAL
+
+        <br>
+
+        BETTER DATA. SAFER ROADS.
+
+      </div>
+
+
+      <div class="footer-links">
+
+        GUIDELINES
+        &nbsp; | &nbsp;
+
+        SUPPORT
+        &nbsp; | &nbsp;
+
+        CONTACT
+
+      </div>
+
+
+    </div>
+
 
   </div>
+
+
 </section>
 
-<div class="modal-overlay" id="stepModal" onclick="overlayClose(event)">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+
+<!-- =========================================================
+     MODAL
+========================================================= -->
+
+<div
+  class="modal-overlay"
+
+  id="stepModal"
+
+  onclick="
+    overlayClose(event)
+  "
+>
+
+
+  <div
+    class="modal-box"
+
+    role="dialog"
+
+    aria-modal="true"
+
+    aria-labelledby="modalTitle"
+  >
+
 
     <div class="modal-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-        <circle cx="12" cy="12" r="9"/>
-        <path stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.5l2.2 2.2 4.8-5"/>
+
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+
+        fill="none"
+
+        viewBox="0 0 24 24"
+
+        stroke="currentColor"
+
+        stroke-width="1.8"
+      >
+
+        <circle
+          cx="12"
+
+          cy="12"
+
+          r="9"
+        />
+
+        <path
+          stroke-linecap="round"
+
+          stroke-linejoin="round"
+
+          d="M8.5 12.5l2.2 2.2 4.8-5"
+        />
+
       </svg>
+
+
     </div>
 
-    <h3 id="modalTitle">قبل ما تكمل</h3>
+
+    <h3 id="modalTitle">
+
+      قبل ما تكمل
+
+    </h3>
+
 
     <p id="modalText">
+
       يفضل تكون خلصت الـStep السابقة،
       لأن كل جزء بيجهزك للمعلومات والـTools
       اللي هتحتاجها في الخطوة اللي بعدها.
+
     </p>
 
+
+
     <div class="previous-step">
-      <div class="previous-step-label">الخطوة السابقة</div>
-      <div class="previous-step-name" id="previousStepName">Previous Step</div>
+
+
+      <div class="previous-step-label">
+
+        الخطوة السابقة
+
+      </div>
+
+
+      <div
+        class="previous-step-name"
+
+        id="previousStepName"
+      >
+
+        Previous Step
+
+      </div>
+
+
     </div>
+
+
 
     <div class="modal-actions">
-      <button class="modal-btn continue-btn" id="continueButton" type="button">
+
+
+      <button
+        class="
+          modal-btn
+          continue-btn
+        "
+
+        id="continueButton"
+
+        type="button"
+      >
+
         خلصت الخطوة السابقة — كمل
+
       </button>
 
-      <button class="modal-btn cancel-btn" type="button" onclick="closeModal()">
+
+      <button
+        class="
+          modal-btn
+          cancel-btn
+        "
+
+        type="button"
+
+        onclick="
+          closeModal()
+        "
+      >
+
         رجوع
+
       </button>
+
+
     </div>
 
+
   </div>
+
+
 </div>
 
+
+
 <script>
+
   let pendingUrl = null;
 
-  const modal = document.getElementById("stepModal");
-  const previousStepName = document.getElementById("previousStepName");
-  const modalText = document.getElementById("modalText");
-  const continueButton = document.getElementById("continueButton");
+
+  const modal =
+    document.getElementById(
+      "stepModal"
+    );
+
+
+  const previousStepName =
+    document.getElementById(
+      "previousStepName"
+    );
+
+
+  const modalText =
+    document.getElementById(
+      "modalText"
+    );
+
+
+  const continueButton =
+    document.getElementById(
+      "continueButton"
+    );
+
+
 
   function openDirect(url) {
-    window.open(url, "_blank", "noopener,noreferrer");
+
+    window.open(
+      url,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
   }
 
-  function showStepModal(url, previousStep, currentStep) {
+
+
+  function showStepModal(
+    url,
+    previousStep,
+    currentStep
+  ) {
+
     pendingUrl = url;
-    previousStepName.textContent = previousStep;
+
+
+    previousStepName.textContent =
+      previousStep;
+
 
     modalText.innerHTML =
+
       `قبل ما تبدأ <strong>${currentStep}</strong>،
        يفضل تكون خلصت الـStep اللي قبلها،
        لأن كل جزء بيجهزك للمعلومات والـTools
        اللي هتحتاجها في الخطوة التالية.`;
 
-    modal.classList.add("active");
-    document.body.classList.add("modal-open");
 
-    setTimeout(() => {
-      continueButton.focus();
-    }, 100);
+
+    modal.classList.add(
+      "active"
+    );
+
+
+    document.body.classList.add(
+      "modal-open"
+    );
+
+
+    setTimeout(
+      () => {
+
+        continueButton.focus();
+
+      },
+      100
+    );
+
   }
+
+
 
   function closeModal() {
-    modal.classList.remove("active");
-    document.body.classList.remove("modal-open");
+
+    modal.classList.remove(
+      "active"
+    );
+
+
+    document.body.classList.remove(
+      "modal-open"
+    );
+
+
     pendingUrl = null;
+
   }
+
+
 
   function continueToPage() {
-    if (!pendingUrl) return;
 
-    const url = pendingUrl;
+    if (!pendingUrl) {
+      return;
+    }
+
+
+    const url =
+      pendingUrl;
+
+
     closeModal();
-    window.open(url, "_blank", "noopener,noreferrer");
+
+
+    window.open(
+      url,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
   }
+
+
 
   function overlayClose(event) {
-    if (event.target === modal) {
+
+    if (
+      event.target === modal
+    ) {
+
       closeModal();
+
     }
+
   }
 
-  function handleDirectKey(event, url) {
-    if (event.key === "Enter" || event.key === " ") {
+
+
+  function handleDirectKey(
+    event,
+    url
+  ) {
+
+    if (
+      event.key === "Enter" ||
+      event.key === " "
+    ) {
+
       event.preventDefault();
+
       openDirect(url);
+
     }
+
   }
 
-  function handleModalKey(event, url, previousStep, currentStep) {
-    if (event.key === "Enter" || event.key === " ") {
+
+
+  function handleModalKey(
+    event,
+    url,
+    previousStep,
+    currentStep
+  ) {
+
+    if (
+      event.key === "Enter" ||
+      event.key === " "
+    ) {
+
       event.preventDefault();
-      showStepModal(url, previousStep, currentStep);
+
+
+      showStepModal(
+        url,
+        previousStep,
+        currentStep
+      );
+
     }
+
   }
 
-  continueButton.addEventListener("click", continueToPage);
 
-  document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape" && modal.classList.contains("active")) {
-      closeModal();
+
+  continueButton.addEventListener(
+    "click",
+    continueToPage
+  );
+
+
+  document.addEventListener(
+    "keydown",
+
+    function(event) {
+
+      if (
+        event.key === "Escape" &&
+        modal.classList.contains(
+          "active"
+        )
+      ) {
+
+        closeModal();
+
+      }
+
     }
-  });
+  );
+
 </script>
 
+
 </body>
+
 </html>
