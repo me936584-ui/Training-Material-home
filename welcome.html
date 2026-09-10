@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to METI</title>
 
   <style>
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -22,26 +14,45 @@
 
     html {
       scroll-behavior: smooth;
-      background: #efefef;
+      background: #f7f9fb;
     }
 
     body {
       min-height: 100vh;
       font-family: Arial, Tahoma, sans-serif;
       direction: rtl;
-      background: #efefef;
       color: #172333;
+      position: relative;
+      background: #f7f9fb;
     }
 
     body.modal-open {
       overflow: hidden;
     }
 
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' viewBox='0 0 1600 1000'%3E%3Crect width='1600' height='1000' fill='%23f7f9fb'/%3E%3Cg fill='none' stroke='%23e1e7ec' stroke-width='1.1' opacity='.95'%3E%3Cpath d='M0 105 C120 70 220 150 330 120 S550 60 690 110 950 150 1090 100 1350 45 1600 90'/%3E%3Cpath d='M0 245 C160 185 300 285 440 235 S710 170 860 230 1120 295 1290 235 1490 180 1600 220'/%3E%3Cpath d='M0 410 C150 340 320 450 500 390 S810 310 1000 385 1260 470 1450 395 1540 350 1600 375'/%3E%3Cpath d='M0 585 C180 500 350 620 520 560 S840 500 1030 565 1290 660 1470 580 1550 530 1600 555'/%3E%3Cpath d='M0 760 C170 665 360 800 560 725 S860 645 1070 720 1330 820 1510 730 1570 690 1600 705'/%3E%3Cpath d='M175 0 C135 130 215 225 178 350 S120 575 205 700 255 890 230 1000'/%3E%3Cpath d='M400 0 C360 150 445 235 410 375 S350 610 430 755 500 905 475 1000'/%3E%3Cpath d='M650 0 C615 155 705 240 670 395 S605 630 690 775 765 920 742 1000'/%3E%3Cpath d='M930 0 C900 170 980 245 950 410 S895 655 980 790 1070 920 1040 1000'/%3E%3Cpath d='M1220 0 C1185 165 1285 250 1240 420 S1175 650 1270 800 1350 930 1320 1000'/%3E%3Cpath d='M1475 0 C1440 160 1535 245 1490 415 S1430 635 1515 780'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d6dee5' stroke-width='1' opacity='.92'%3E%3Cpath d='M40 120 L150 180 280 110 400 210 560 130 710 220 900 135 1090 235 1280 150 1500 235'/%3E%3Cpath d='M70 320 L240 250 390 345 520 270 680 360 850 285 1030 375 1210 295 1425 370'/%3E%3Cpath d='M110 520 L260 450 420 560 600 470 760 565 930 470 1125 575 1320 505 1510 590'/%3E%3Cpath d='M90 790 L250 700 430 820 610 725 790 835 980 735 1190 835 1415 745'/%3E%3Cpath d='M210 135 L180 280 275 355 235 505 345 590 315 735 400 830'/%3E%3Cpath d='M545 110 L510 260 605 350 565 510 675 600 645 760 735 840'/%3E%3Cpath d='M920 150 L875 290 960 385 930 535 1035 625 1000 770 1080 860'/%3E%3Cpath d='M1270 140 L1220 285 1310 380 1275 540 1375 625 1345 760 1425 845'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d9e1e8' stroke-width='1' opacity='.88'%3E%3Ccircle cx='170' cy='175' r='10'/%3E%3Ccircle cx='435' cy='208' r='9'/%3E%3Ccircle cx='705' cy='220' r='8'/%3E%3Ccircle cx='1090' cy='235' r='10'/%3E%3Ccircle cx='1380' cy='182' r='9'/%3E%3Ccircle cx='270' cy='450' r='11'/%3E%3Ccircle cx='605' cy='475' r='9'/%3E%3Ccircle cx='930' cy='470' r='10'/%3E%3Ccircle cx='1265' cy='505' r='10'/%3E%3Ccircle cx='345' cy='590' r='8'/%3E%3Ccircle cx='675' cy='600' r='8'/%3E%3Ccircle cx='1035' cy='625' r='9'/%3E%3Ccircle cx='1375' cy='625' r='9'/%3E%3C/g%3E%3Cg opacity='.95'%3E%3Cpath d='M42 33 l12 -8 l0 33 l-12 8 z' fill='%231b8fda'/%3E%3Cpath d='M58 26 l13 8 l0 33 l-13 -8 z' fill='%23156eb2'/%3E%3Cpath d='M42 33 l13 8 l16 -17 l-13 -8 z' fill='%2328a6ef'/%3E%3Ctext x='95' y='52' fill='%23236ea3' font-family='Arial' font-size='34' font-weight='700' letter-spacing='3'%3EMETI%3C/text%3E%3Ctext x='96' y='74' fill='%23b3c2ce' font-family='Arial' font-size='11' font-weight='700' letter-spacing='4'%3ETRAINING MATERIAL%3C/text%3E%3C/g%3E%3Ctext x='1275' y='58' fill='%23c2ced7' font-family='Arial' font-size='12' font-weight='700' letter-spacing='4'%3EDRIVE A SMARTER TOMORROW%3C/text%3E%3C/svg%3E");
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+
     .page {
       width: 100%;
       min-height: 100vh;
       padding: 38px 26px 55px;
-      background: #efefef;
+      background: transparent;
     }
 
     .container {
@@ -49,10 +60,6 @@
       max-width: 1180px;
       margin: auto;
     }
-
-    /* =========================
-       INTRO
-    ========================== */
 
     .intro {
       max-width: 900px;
@@ -90,10 +97,6 @@
       line-height: 2;
     }
 
-    /* =========================
-       JOURNEY HEADER
-    ========================== */
-
     .journey-header {
       display: flex;
       align-items: flex-end;
@@ -125,10 +128,6 @@
       font-size: 11px;
       font-weight: 800;
     }
-
-    /* =========================
-       RECOMMENDED ORDER
-    ========================== */
 
     .order-wrapper {
       margin-bottom: 27px;
@@ -183,25 +182,17 @@
       height: 34px;
       border: 2px solid #65b5d1;
       border-radius: 50%;
-      background: #efefef;
+      background: #f7f9fa;
       color: #177fa7;
       font-size: 11px;
       font-weight: 800;
     }
-
-    /* =========================
-       GRID
-    ========================== */
 
     .journey-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
-
-    /* =========================
-       CARDS
-    ========================== */
 
     .step-card {
       position: relative;
@@ -214,10 +205,7 @@
       border-radius: 18px;
       cursor: pointer;
       box-shadow: 0 8px 25px rgba(35, 57, 77, 0.06);
-      transition:
-        transform 0.28s ease,
-        box-shadow 0.28s ease,
-        border-color 0.28s ease;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
 
     .step-card:hover {
@@ -244,71 +232,49 @@
       width: 100%;
     }
 
-    /* =========================
-       STEP COLORS
-    ========================== */
-
     .step-1 {
       background: linear-gradient(145deg, #e5f5fb, #f6fcfe);
       border-color: #b8dfea;
     }
 
-    .step-1::after {
-      background: #1883ac;
-    }
+    .step-1::after { background: #1883ac; }
 
     .step-2 {
       background: linear-gradient(145deg, #edf5fd, #fafcff);
     }
 
-    .step-2::after {
-      background: #4f8fc3;
-    }
+    .step-2::after { background: #4f8fc3; }
 
     .step-3 {
       background: linear-gradient(145deg, #edf4fb, #ffffff);
     }
 
-    .step-3::after {
-      background: #678ab5;
-    }
+    .step-3::after { background: #678ab5; }
 
     .step-4 {
       background: linear-gradient(145deg, #edf9f7, #fbfefd);
     }
 
-    .step-4::after {
-      background: #2f9a8d;
-    }
+    .step-4::after { background: #2f9a8d; }
 
     .step-5 {
       background: linear-gradient(145deg, #f4f2fb, #ffffff);
     }
 
-    .step-5::after {
-      background: #7a69b7;
-    }
+    .step-5::after { background: #7a69b7; }
 
     .step-6 {
       background: linear-gradient(145deg, #eaf8fc, #fbfeff);
     }
 
-    .step-6::after {
-      background: #258ab1;
-    }
+    .step-6::after { background: #258ab1; }
 
     .step-7 {
       background: linear-gradient(145deg, #eaf8ef, #fbfefc);
       border-color: #c6e4cf;
     }
 
-    .step-7::after {
-      background: #42955f;
-    }
-
-    /* =========================
-       CARD TOP
-    ========================== */
+    .step-7::after { background: #42955f; }
 
     .card-top {
       display: flex;
@@ -337,10 +303,6 @@
       color: #34804f;
     }
 
-    /* =========================
-       ICONS
-    ========================== */
-
     .icon {
       display: flex;
       align-items: center;
@@ -363,21 +325,9 @@
       height: 25px;
     }
 
-    .step-4 .icon {
-      color: #268e82;
-    }
-
-    .step-5 .icon {
-      color: #7460b3;
-    }
-
-    .step-7 .icon {
-      color: #3d8d57;
-    }
-
-    /* =========================
-       CARD CONTENT
-    ========================== */
+    .step-4 .icon { color: #268e82; }
+    .step-5 .icon { color: #7460b3; }
+    .step-7 .icon { color: #3d8d57; }
 
     .step-card h3 {
       margin-bottom: 11px;
@@ -414,10 +364,6 @@
       transform: translateX(-5px);
     }
 
-    /* =========================
-       PRACTICING
-    ========================== */
-
     .practice-info {
       display: flex;
       align-items: center;
@@ -434,10 +380,6 @@
       border-radius: 50%;
       background: #49a267;
     }
-
-    /* =========================
-       BOTTOM NOTE
-    ========================== */
 
     .journey-note {
       display: flex;
@@ -472,32 +414,21 @@
       height: 20px;
     }
 
-    /* =========================
-       MODAL
-    ========================== */
-
     .modal-overlay {
       position: fixed;
       inset: 0;
       z-index: 9999;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       padding: 20px;
-
       background: rgba(12, 28, 42, 0.42);
       backdrop-filter: blur(7px);
       -webkit-backdrop-filter: blur(7px);
-
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-
-      transition:
-        opacity 0.22s ease,
-        visibility 0.22s ease;
+      transition: opacity 0.22s ease, visibility 0.22s ease;
     }
 
     .modal-overlay.active {
@@ -509,19 +440,12 @@
     .modal-box {
       width: 100%;
       max-width: 500px;
-
       padding: 27px;
-
       border: 1px solid rgba(255,255,255,0.75);
       border-radius: 20px;
-
       background: #f8fbfc;
-
-      box-shadow:
-        0 25px 70px rgba(17, 40, 58, 0.22);
-
+      box-shadow: 0 25px 70px rgba(17, 40, 58, 0.22);
       transform: translateY(14px) scale(0.98);
-
       transition: transform 0.22s ease;
     }
 
@@ -533,14 +457,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
       width: 48px;
       height: 48px;
-
       margin-bottom: 17px;
-
       border-radius: 14px;
-
       background: #dff1f8;
       color: #1680a8;
     }
@@ -552,19 +472,15 @@
 
     .modal-box h3 {
       margin-bottom: 9px;
-
       color: #173149;
-
       font-size: 20px;
       font-weight: 800;
     }
 
     .modal-box p {
       color: #465f72;
-
       font-size: 14px;
       font-weight: 700;
-
       line-height: 1.9;
     }
 
@@ -572,32 +488,24 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 12px;
-
       margin-top: 18px;
-
       padding: 13px 15px;
-
       border: 1px solid #d6e7ed;
       border-radius: 12px;
-
       background: #eef7fa;
     }
 
     .previous-step-label {
       color: #6b8090;
-
       font-size: 11px;
       font-weight: 700;
     }
 
     .previous-step-name {
       color: #173d58;
-
       font-size: 13px;
       font-weight: 800;
-
       text-align: left;
       direction: ltr;
     }
@@ -606,26 +514,18 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
-
       margin-top: 22px;
     }
 
     .modal-btn {
       border: 0;
       border-radius: 11px;
-
       padding: 13px 15px;
-
       cursor: pointer;
-
       font-family: inherit;
       font-size: 13px;
       font-weight: 800;
-
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
 
     .modal-btn:hover {
@@ -635,9 +535,7 @@
     .continue-btn {
       background: #176f94;
       color: white;
-
-      box-shadow:
-        0 8px 18px rgba(23, 111, 148, 0.17);
+      box-shadow: 0 8px 18px rgba(23, 111, 148, 0.17);
     }
 
     .continue-btn:hover {
@@ -646,7 +544,6 @@
 
     .cancel-btn {
       border: 1px solid #d3e0e6;
-
       background: white;
       color: #536b7d;
     }
@@ -654,10 +551,6 @@
     .cancel-btn:hover {
       background: #f1f5f7;
     }
-
-    /* =========================
-       ANIMATION
-    ========================== */
 
     .reveal {
       opacity: 0;
@@ -680,22 +573,13 @@
       }
     }
 
-    /* =========================
-       TABLET
-    ========================== */
-
     @media (max-width: 950px) {
       .journey-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    /* =========================
-       MOBILE
-    ========================== */
-
     @media (max-width: 650px) {
-
       .page {
         padding: 28px 15px 40px;
       }
@@ -732,11 +616,9 @@
       .modal-actions {
         grid-template-columns: 1fr;
       }
-
     }
 
     @media (prefers-reduced-motion: reduce) {
-
       * {
         animation: none !important;
         transition: none !important;
@@ -746,117 +628,52 @@
         opacity: 1;
         transform: none;
       }
-
     }
-
   </style>
-
 </head>
-
 
 <body>
 
-
 <section class="page">
-
   <div class="container">
 
-
-    <!-- INTRO -->
-
     <div class="intro reveal">
-
-      <div class="eyebrow">
-        NEW HIRE JOURNEY
-      </div>
-
-      <h1>
-        Welcome to METI
-      </h1>
-
+      <div class="eyebrow">NEW HIRE JOURNEY</div>
+      <h1>Welcome to METI</h1>
       <p>
         ابدأ رحلة التدريب خطوة بخطوة،
         واتعرف على الـTeams والـLabeling Tools
         وطريقة متابعة شغلك قبل ما تبدأ التطبيق العملي.
       </p>
-
     </div>
 
-
-    <!-- JOURNEY HEADER -->
-
     <div class="journey-header reveal delay-1">
-
       <div class="journey-title">
-
-        <h2>
-          Your Learning Journey
-        </h2>
-
+        <h2>Your Learning Journey</h2>
         <p>
           يفضل تمشي بالترتيب، لأن كل Step
           بتجهزك للمعلومات والـTools
           اللي هتحتاجها في الخطوة اللي بعدها.
         </p>
-
       </div>
 
-      <div class="step-counter">
-        7 Training Steps
-      </div>
-
+      <div class="step-counter">7 Training Steps</div>
     </div>
-
-
-    <!-- RECOMMENDED ORDER -->
 
     <div class="order-wrapper reveal delay-1">
-
-      <div class="order-label">
-        Recommended Order
-      </div>
-
+      <div class="order-label">Recommended Order</div>
       <div class="progress">
-
-        <div class="progress-step">
-          <div class="progress-number">01</div>
-        </div>
-
-        <div class="progress-step">
-          <div class="progress-number">02</div>
-        </div>
-
-        <div class="progress-step">
-          <div class="progress-number">03</div>
-        </div>
-
-        <div class="progress-step">
-          <div class="progress-number">04</div>
-        </div>
-
-        <div class="progress-step">
-          <div class="progress-number">05</div>
-        </div>
-
-        <div class="progress-step">
-          <div class="progress-number">06</div>
-        </div>
-
-        <div class="progress-step">
-          <div class="progress-number">07</div>
-        </div>
-
+        <div class="progress-step"><div class="progress-number">01</div></div>
+        <div class="progress-step"><div class="progress-number">02</div></div>
+        <div class="progress-step"><div class="progress-number">03</div></div>
+        <div class="progress-step"><div class="progress-number">04</div></div>
+        <div class="progress-step"><div class="progress-number">05</div></div>
+        <div class="progress-step"><div class="progress-number">06</div></div>
+        <div class="progress-step"><div class="progress-number">07</div></div>
       </div>
-
     </div>
 
-
-    <!-- CARDS -->
-
     <div class="journey-grid">
-
-
-      <!-- STEP 01 -->
 
       <div
         class="step-card step-1 reveal delay-1"
@@ -865,34 +682,19 @@
         onclick="openDirect('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/teams')"
         onkeydown="handleDirectKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/teams')"
       >
-
         <div class="card-top">
-
-          <div class="step-number">
-            STEP 01
-          </div>
+          <div class="step-number">STEP 01</div>
 
           <div class="icon">
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M16 20v-1.5a4.5 4.5 0 00-4.5-4.5h-4A4.5 4.5 0 003 18.5V20"/>
-
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 20v-1.5a4.5 4.5 0 00-4.5-4.5h-4A4.5 4.5 0 003 18.5V20"/>
               <circle cx="9.5" cy="7" r="3"/>
-
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M16 5.5a3 3 0 010 5.5M18 14a4.5 4.5 0 013 4v2"/>
-
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 5.5a3 3 0 010 5.5M18 14a4.5 4.5 0 013 4v2"/>
             </svg>
-
           </div>
-
         </div>
 
         <h3>Teams</h3>
-
         <p>
           اتعرف على الـTeams الموجودة
           ودور كل Team في المشروع،
@@ -904,53 +706,27 @@
           فتح Teams
           <span class="arrow">←</span>
         </div>
-
       </div>
-
-
-      <!-- STEP 02 -->
 
       <div
         class="step-card step-2 reveal delay-2"
         role="link"
         tabindex="0"
-        onclick="showStepModal(
-          'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/introductions-to-labeling',
-          'Teams',
-          'Introduction to Labeling'
-        )"
-        onkeydown="handleModalKey(
-          event,
-          'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/introductions-to-labeling',
-          'Teams',
-          'Introduction to Labeling'
-        )"
+        onclick="showStepModal('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/introductions-to-labeling','Teams','Introduction to Labeling')"
+        onkeydown="handleModalKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/introductions-to-labeling','Teams','Introduction to Labeling')"
       >
-
         <div class="card-top">
-
-          <div class="step-number">
-            STEP 02
-          </div>
+          <div class="step-number">STEP 02</div>
 
           <div class="icon">
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M4 5.5A1.5 1.5 0 015.5 4H12l8 8-8 8-8-8V5.5z"/>
-
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 5.5A1.5 1.5 0 015.5 4H12l8 8-8 8-8-8V5.5z"/>
               <circle cx="8" cy="8" r="1.3"/>
-
             </svg>
-
           </div>
-
         </div>
 
         <h3>Introduction to Labeling</h3>
-
         <p>
           ابدأ بأساسيات الـLabeling
           والمفاهيم الرئيسية اللي محتاج تعرفها
@@ -962,55 +738,28 @@
           ابدأ الـLabeling
           <span class="arrow">←</span>
         </div>
-
       </div>
-
-
-      <!-- STEP 03 -->
 
       <div
         class="step-card step-3 reveal delay-3"
         role="link"
         tabindex="0"
-        onclick="showStepModal(
-          'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/intro-to-msl',
-          'Introduction to Labeling',
-          'Intro to MSL'
-        )"
-        onkeydown="handleModalKey(
-          event,
-          'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/intro-to-msl',
-          'Introduction to Labeling',
-          'Intro to MSL'
-        )"
+        onclick="showStepModal('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/intro-to-msl','Introduction to Labeling','Intro to MSL')"
+        onkeydown="handleModalKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/intro-to-msl','Introduction to Labeling','Intro to MSL')"
       >
-
         <div class="card-top">
-
-          <div class="step-number">
-            STEP 03
-          </div>
+          <div class="step-number">STEP 03</div>
 
           <div class="icon">
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
               <rect x="3.5" y="4" width="17" height="13" rx="2"/>
-
               <path stroke-linecap="round" d="M8 21h8M12 17v4"/>
-
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M7.5 9h9M7.5 12h5"/>
-
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 9h9M7.5 12h5"/>
             </svg>
-
           </div>
-
         </div>
 
         <h3>Intro to MSL</h3>
-
         <p>
           اتعرف على الـMSL،
           الواجهة الأساسية،
@@ -1022,56 +771,28 @@
           فتح Intro to MSL
           <span class="arrow">←</span>
         </div>
-
       </div>
-
-
-      <!-- STEP 04 -->
 
       <div
         class="step-card step-4 reveal delay-4"
         role="link"
         tabindex="0"
-        onclick="showStepModal(
-          'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/how-to-use-gulp',
-          'Intro to MSL',
-          'How To Use Gulp'
-        )"
-        onkeydown="handleModalKey(
-          event,
-          'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/how-to-use-gulp',
-          'Intro to MSL',
-          'How To Use Gulp'
-        )"
+        onclick="showStepModal('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/how-to-use-gulp','Intro to MSL','How To Use Gulp')"
+        onkeydown="handleModalKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/how-to-use-gulp','Intro to MSL','How To Use Gulp')"
       >
-
         <div class="card-top">
-
-          <div class="step-number">
-            STEP 04
-          </div>
+          <div class="step-number">STEP 04</div>
 
           <div class="icon">
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M8 3h8M9 3l1 4h4l1-4"/>
-
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M7 7h10l-1 13H8L7 7z"/>
-
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 3h8M9 3l1 4h4l1-4"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h10l-1 13H8L7 7z"/>
               <path stroke-linecap="round" d="M10 11h4"/>
-
             </svg>
-
           </div>
-
         </div>
 
         <h3>How To Use Gulp</h3>
-
         <p>
           اتعلم طريقة استخدام Gulp
           والـWorkflow الأساسي المطلوب منك
@@ -1082,53 +803,27 @@
           تعلم Gulp
           <span class="arrow">←</span>
         </div>
-
       </div>
-
-
-      <!-- STEP 05 -->
 
       <div
         class="step-card step-5 reveal delay-5"
         role="link"
         tabindex="0"
-        onclick="showStepModal(
-          'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/shortcuts-keys',
-          'How To Use Gulp',
-          'Shortcuts Keys'
-        )"
-        onkeydown="handleModalKey(
-          event,
-          'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/shortcuts-keys',
-          'How To Use Gulp',
-          'Shortcuts Keys'
-        )"
+        onclick="showStepModal('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/shortcuts-keys','How To Use Gulp','Shortcuts Keys')"
+        onkeydown="handleModalKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/shortcuts-keys','How To Use Gulp','Shortcuts Keys')"
       >
-
         <div class="card-top">
-
-          <div class="step-number">
-            STEP 05
-          </div>
+          <div class="step-number">STEP 05</div>
 
           <div class="icon">
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
               <rect x="3.5" y="5" width="17" height="14" rx="2"/>
-
-              <path stroke-linecap="round"
-                d="M7 9h2M11 9h2M15 9h2M7 13h2M11 13h6M7 16h10"/>
-
+              <path stroke-linecap="round" d="M7 9h2M11 9h2M15 9h2M7 13h2M11 13h6M7 16h10"/>
             </svg>
-
           </div>
-
         </div>
 
         <h3>Shortcuts Keys</h3>
-
         <p>
           راجع أهم الـKeyboard Shortcuts
           اللي هتساعدك تشتغل أسرع وتتحرك
@@ -1139,58 +834,30 @@
           فتح Shortcuts Keys
           <span class="arrow">←</span>
         </div>
-
       </div>
-
-
-      <!-- STEP 06 -->
 
       <div
         class="step-card step-6 reveal delay-6"
         role="link"
         tabindex="0"
-        onclick="showStepModal(
-          'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/meti-portal',
-          'Shortcuts Keys',
-          'METI Portal'
-        )"
-        onkeydown="handleModalKey(
-          event,
-          'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/meti-portal',
-          'Shortcuts Keys',
-          'METI Portal'
-        )"
+        onclick="showStepModal('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/meti-portal','Shortcuts Keys','METI Portal')"
+        onkeydown="handleModalKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/meti-portal','Shortcuts Keys','METI Portal')"
       >
-
         <div class="card-top">
-
-          <div class="step-number">
-            STEP 06
-          </div>
+          <div class="step-number">STEP 06</div>
 
           <div class="icon">
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
               <rect x="4" y="3.5" width="16" height="17" rx="2"/>
-
               <path stroke-linecap="round" d="M8 8h8"/>
-
               <path stroke-linecap="round" d="M8 12h3"/>
-
               <circle cx="15.5" cy="15.5" r="2.5"/>
-
               <path stroke-linecap="round" d="M15.5 14v1.7l1 .7"/>
-
             </svg>
-
           </div>
-
         </div>
 
         <h3>METI Portal</h3>
-
         <p>
           اتعرف على الـPortal المستخدم
           لتسجيل الحضور ومتابعة
@@ -1202,53 +869,27 @@
           فتح METI Portal
           <span class="arrow">←</span>
         </div>
-
       </div>
-
-
-      <!-- STEP 07 -->
 
       <div
         class="step-card step-7 reveal delay-7"
         role="link"
         tabindex="0"
-        onclick="showStepModal(
-          'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/practicing',
-          'METI Portal',
-          'Practicing'
-        )"
-        onkeydown="handleModalKey(
-          event,
-          'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/practicing',
-          'METI Portal',
-          'Practicing'
-        )"
+        onclick="showStepModal('https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/practicing','METI Portal','Practicing')"
+        onkeydown="handleModalKey(event,'https://sites.google.com/meti.ai/training-material/home/welcome-to-meti/practicing','METI Portal','Practicing')"
       >
-
         <div class="card-top">
-
-          <div class="step-number">
-            STEP 07
-          </div>
+          <div class="step-number">STEP 07</div>
 
           <div class="icon">
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M5 12.5l4 4L19 6.5"/>
-
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4 4L19 6.5"/>
               <circle cx="12" cy="12" r="9"/>
-
             </svg>
-
           </div>
-
         </div>
 
         <h3>Practicing</h3>
-
         <p>
           بعد ما تخلص الأساسيات،
           ابدأ التطبيق العملي على مراحل التدريب
@@ -1265,31 +906,17 @@
           ابدأ الـPracticing
           <span class="arrow">←</span>
         </div>
-
       </div>
-
 
     </div>
 
-
-    <!-- NOTE -->
-
     <div class="journey-note reveal delay-7">
-
       <div class="note-icon">
-
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-          viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
           <circle cx="12" cy="12" r="9"/>
-
           <path stroke-linecap="round" d="M12 11v5"/>
-
-          <circle cx="12" cy="8" r=".7"
-            fill="currentColor" stroke="none"/>
-
+          <circle cx="12" cy="8" r=".7" fill="currentColor" stroke="none"/>
         </svg>
-
       </div>
 
       <div>
@@ -1297,52 +924,22 @@
         لأن كل جزء بيجهزك للمعلومات والـTools
         اللي هتحتاجها في المرحلة التالية.
       </div>
-
     </div>
-
 
   </div>
-
 </section>
 
-
-<!-- =========================
-     CONFIRMATION MODAL
-========================== -->
-
-<div
-  class="modal-overlay"
-  id="stepModal"
-  onclick="overlayClose(event)"
->
-
-  <div
-    class="modal-box"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modalTitle"
-  >
+<div class="modal-overlay" id="stepModal" onclick="overlayClose(event)">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
 
     <div class="modal-icon">
-
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
         <circle cx="12" cy="12" r="9"/>
-
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M8.5 12.5l2.2 2.2 4.8-5"
-        />
-
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.5l2.2 2.2 4.8-5"/>
       </svg>
-
     </div>
 
-    <h3 id="modalTitle">
-      قبل ما تكمل
-    </h3>
+    <h3 id="modalTitle">قبل ما تكمل</h3>
 
     <p id="modalText">
       يفضل تكون خلصت الـStep السابقة،
@@ -1351,47 +948,24 @@
     </p>
 
     <div class="previous-step">
-
-      <div class="previous-step-label">
-        الخطوة السابقة
-      </div>
-
-      <div
-        class="previous-step-name"
-        id="previousStepName"
-      >
-        Previous Step
-      </div>
-
+      <div class="previous-step-label">الخطوة السابقة</div>
+      <div class="previous-step-name" id="previousStepName">Previous Step</div>
     </div>
 
     <div class="modal-actions">
-
-      <button
-        class="modal-btn continue-btn"
-        id="continueButton"
-        type="button"
-      >
+      <button class="modal-btn continue-btn" id="continueButton" type="button">
         خلصت الخطوة السابقة — كمل
       </button>
 
-      <button
-        class="modal-btn cancel-btn"
-        type="button"
-        onclick="closeModal()"
-      >
+      <button class="modal-btn cancel-btn" type="button" onclick="closeModal()">
         رجوع
       </button>
-
     </div>
 
   </div>
-
 </div>
 
-
 <script>
-
   let pendingUrl = null;
 
   const modal = document.getElementById("stepModal");
@@ -1399,20 +973,12 @@
   const modalText = document.getElementById("modalText");
   const continueButton = document.getElementById("continueButton");
 
-
   function openDirect(url) {
-    window.open(
-      url,
-      "_blank",
-      "noopener,noreferrer"
-    );
+    window.open(url, "_blank", "noopener,noreferrer");
   }
 
-
   function showStepModal(url, previousStep, currentStep) {
-
     pendingUrl = url;
-
     previousStepName.textContent = previousStep;
 
     modalText.innerHTML =
@@ -1422,121 +988,55 @@
        اللي هتحتاجها في الخطوة التالية.`;
 
     modal.classList.add("active");
-
     document.body.classList.add("modal-open");
 
     setTimeout(() => {
       continueButton.focus();
     }, 100);
-
   }
-
 
   function closeModal() {
-
     modal.classList.remove("active");
-
     document.body.classList.remove("modal-open");
-
     pendingUrl = null;
-
   }
-
 
   function continueToPage() {
-
-    if (!pendingUrl) {
-      return;
-    }
+    if (!pendingUrl) return;
 
     const url = pendingUrl;
-
     closeModal();
-
-    window.open(
-      url,
-      "_blank",
-      "noopener,noreferrer"
-    );
-
+    window.open(url, "_blank", "noopener,noreferrer");
   }
 
-
   function overlayClose(event) {
-
     if (event.target === modal) {
       closeModal();
     }
-
   }
-
 
   function handleDirectKey(event, url) {
-
-    if (
-      event.key === "Enter" ||
-      event.key === " "
-    ) {
-
+    if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-
       openDirect(url);
-
     }
-
   }
 
-
-  function handleModalKey(
-    event,
-    url,
-    previousStep,
-    currentStep
-  ) {
-
-    if (
-      event.key === "Enter" ||
-      event.key === " "
-    ) {
-
+  function handleModalKey(event, url, previousStep, currentStep) {
+    if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-
-      showStepModal(
-        url,
-        previousStep,
-        currentStep
-      );
-
+      showStepModal(url, previousStep, currentStep);
     }
-
   }
 
+  continueButton.addEventListener("click", continueToPage);
 
-  continueButton.addEventListener(
-    "click",
-    continueToPage
-  );
-
-
-  document.addEventListener(
-    "keydown",
-    function(event) {
-
-      if (
-        event.key === "Escape" &&
-        modal.classList.contains("active")
-      ) {
-
-        closeModal();
-
-      }
-
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape" && modal.classList.contains("active")) {
+      closeModal();
     }
-  );
-
+  });
 </script>
 
-
 </body>
-
 </html>
