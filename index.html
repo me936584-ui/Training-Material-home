@@ -14,10 +14,6 @@
 
   <style>
 
-    /* =========================================================
-       RESET
-    ========================================================= */
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -33,17 +29,28 @@
       min-height: 100vh;
       overflow-x: hidden;
 
-      font-family: Arial, Tahoma, sans-serif;
+      font-family:
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
       direction: rtl;
 
       color: #102d50;
       background: #f8fbfd;
+
+      font-weight: 400;
+
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      text-rendering: optimizeLegibility;
     }
 
 
     /* =========================================================
        MAP BACKGROUND
-       ONLY THIS PART WAS CHANGED
     ========================================================= */
 
     .map-background {
@@ -51,6 +58,7 @@
       inset: 0;
 
       z-index: 0;
+
       pointer-events: none;
 
       overflow: hidden;
@@ -58,10 +66,12 @@
       background-color: #f8fbfd;
 
       background-image:
+
         linear-gradient(
           rgba(250, 252, 254, 0.36),
           rgba(250, 252, 254, 0.36)
         ),
+
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='920' height='620' viewBox='0 0 920 620'%3E%3Crect width='920' height='620' fill='%23f8fbfd'/%3E%3Cg fill='none' stroke='%23cedce5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke-width='1.05' opacity='.55' d='M-30 79C60 50 119 65 177 93c62 30 126 23 190-7 80-37 147-34 221 2 61 29 123 33 191 7 54-20 99-25 171-5'/%3E%3Cpath stroke-width='.7' opacity='.48' d='M-20 112c65-13 109 0 162 24 54 25 106 24 163 0 63-27 126-31 192-3 57 24 107 29 168 10 70-21 137-17 275 17'/%3E%3Cpath stroke-width='.8' opacity='.5' d='M-20 165c62-29 123-19 181 12 54 29 105 32 164 7 68-29 133-29 199-2 58 24 119 30 177 7 75-29 139-27 239 7'/%3E%3Cpath stroke-width='.65' opacity='.42' d='M-20 211c89-21 147-7 210 26 56 29 116 22 176-7 70-33 143-28 213 7 60 31 118 29 178 3 57-25 111-27 183-8'/%3E%3Cpath stroke-width='.95' opacity='.54' d='M-30 271c69-37 133-28 193 6 65 36 127 35 192 3 67-32 128-29 193 5 60 32 119 36 182 8 69-31 131-30 210 0'/%3E%3Cpath stroke-width='.7' opacity='.43' d='M-20 319c83-21 143-11 201 17 66 32 128 27 188-6 60-33 130-33 195-1 60 30 117 31 179 6 73-30 125-27 197-7'/%3E%3Cpath stroke-width='.9' opacity='.52' d='M-40 379c74-29 138-20 202 14 60 32 123 29 187-5 67-35 132-31 198 3 61 31 119 37 184 12 72-28 132-28 209 2'/%3E%3Cpath stroke-width='.65' opacity='.42' d='M-15 424c72-17 133-2 190 27 61 31 116 30 176 2 76-36 144-37 212-2 60 31 119 33 179 10 72-28 132-23 198 0'/%3E%3Cpath stroke-width='.95' opacity='.51' d='M-20 482c69-33 132-26 192 7 65 36 129 34 193 1 70-36 137-32 202 5 58 32 116 36 179 8 67-29 126-27 194 2'/%3E%3Cpath stroke-width='.7' opacity='.42' d='M-30 531c84-20 145-9 205 21 62 31 121 27 181-5 65-35 134-32 200 1 63 32 124 33 187 6 71-31 128-26 197-4'/%3E%3Cpath stroke-width='.95' opacity='.52' d='M-25 585c73-29 135-23 196 10 65 36 127 33 192 1 69-34 133-31 199 4 63 33 122 35 185 8 68-30 127-29 193-3'/%3E%3Cpath stroke-width='.85' opacity='.5' d='M80-20c-23 60-11 100 16 143 27 44 21 86-3 132-25 48-23 93 4 143 27 51 27 92 4 139-19 39-19 78-2 113'/%3E%3Cpath stroke-width='.55' opacity='.4' d='M123-20c-9 56 7 91 32 127 26 38 28 77 8 119-20 44-16 88 9 130 29 49 30 89 10 134-20 45-18 84 5 130'/%3E%3Cpath stroke-width='.92' opacity='.5' d='M209-20c-28 66-13 107 14 148 31 46 24 92-1 136-24 43-23 87 4 136 28 49 29 95 6 138-21 39-20 76-5 112'/%3E%3Cpath stroke-width='.58' opacity='.4' d='M265-20c-13 58 3 96 28 136 24 40 21 81 1 122-23 45-18 86 7 129 28 48 32 88 11 132-20 41-18 80 2 121'/%3E%3Cpath stroke-width='.95' opacity='.52' d='M361-20c-26 65-14 106 13 148 27 42 23 83 0 128-26 50-22 96 5 141 28 46 28 90 7 135-19 40-20 77-7 118'/%3E%3Cpath stroke-width='.6' opacity='.4' d='M417-20c-11 55 3 92 28 132 24 39 24 79 4 122-22 47-18 90 7 134 27 46 29 87 10 129-20 44-20 82 2 123'/%3E%3Cpath stroke-width='.95' opacity='.52' d='M519-20c-29 68-12 110 14 149 30 44 25 89 1 134-26 49-23 94 5 141 29 49 29 93 7 138-19 39-19 76-5 108'/%3E%3Cpath stroke-width='.58' opacity='.4' d='M571-20c-9 55 5 95 29 132 25 39 24 80 4 122-23 47-17 90 8 134 26 45 29 86 9 129-18 39-18 78 4 123'/%3E%3Cpath stroke-width='.9' opacity='.5' d='M670-20c-25 63-10 106 17 146 28 42 22 87-2 132-25 49-20 94 6 140 29 50 28 94 5 138-21 41-20 78-6 114'/%3E%3Cpath stroke-width='.57' opacity='.39' d='M723-20c-11 56 5 94 30 134 25 40 23 80 3 122-23 47-18 90 8 134 28 48 29 88 9 130-18 38-18 76 4 120'/%3E%3Cpath stroke-width='.9' opacity='.5' d='M819-20c-24 64-12 105 15 147 27 42 21 85-3 130-26 49-21 94 5 140 29 51 27 96 5 139-20 40-20 77-5 114'/%3E%3Cpath stroke-width='.55' opacity='.38' d='M866-20c-9 53 5 92 30 131 25 40 23 79 3 120-23 47-18 92 8 136 26 44 29 85 10 127-20 44-18 83 4 126'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d5e1e8' stroke-width='.48' opacity='.56' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 31l31 20 28-17 33 21 29-18 35 24 29-20 37 22 30-17 33 23 31-19 36 21 34-17 36 23 34-22 38 22 31-18 38 21 35-17 39 24 31-20 39 20 37-19 42 25'/%3E%3Cpath d='M12 139l36-22 33 19 31-23 36 21 35-20 36 25 31-22 36 20 34-22 35 24 34-21 37 21 33-18 39 21 32-20 39 24 35-21 35 22 38-19 39 21 38-21 45 24'/%3E%3Cpath d='M4 233l39-22 34 20 33-23 37 23 36-20 38 23 34-22 37 22 36-20 36 23 35-20 38 21 34-21 38 22 35-20 39 23 37-21 38 21 38-19 38 22 40-20 42 22'/%3E%3Cpath d='M2 348l40-24 38 20 34-24 37 21 38-23 38 25 34-21 38 21 37-23 36 24 39-21 38 23 34-22 40 23 38-20 38 23 36-21 41 22 37-20 39 23 41-22 47 23'/%3E%3Cpath d='M8 452l37-23 35 21 34-21 38 21 35-21 39 24 35-23 38 22 36-22 40 23 34-22 39 22 35-19 40 23 38-21 37 23 39-23 39 23 38-20 39 22 41-22 44 23'/%3E%3Cpath d='M11 558l36-23 37 21 35-23 38 23 36-21 39 23 36-22 39 22 37-21 39 22 36-22 40 23 37-22 39 22 38-21 39 23 39-23 38 23 40-20 38 22 41-22 44 23'/%3E%3Cpath d='M41 4l18 31-13 31 21 30-14 35 23 32-16 33 23 35-15 34 22 34-15 37 23 33-16 37 22 35-14 39 21 32-13 39'/%3E%3Cpath d='M158 4l20 31-14 32 23 30-16 33 24 34-16 33 22 34-14 35 23 33-15 37 23 33-15 36 23 35-16 39 22 31-13 40'/%3E%3Cpath d='M309 2l21 32-15 32 23 31-16 34 23 33-15 34 23 34-16 34 24 34-17 37 24 33-16 36 23 34-16 39 22 32-14 39'/%3E%3Cpath d='M464 4l20 30-14 33 22 31-15 34 23 32-16 35 23 33-15 35 23 33-16 37 24 33-16 35 23 35-16 39 22 32-14 39'/%3E%3Cpath d='M620 3l21 31-15 33 23 30-16 35 24 32-17 35 24 33-16 35 23 34-16 36 24 34-17 35 23 34-16 40 22 31-13 39'/%3E%3Cpath d='M775 2l21 32-15 31 22 32-15 34 23 34-16 33 23 34-15 35 23 33-16 37 23 33-15 36 22 34-15 40 22 31-13 39'/%3E%3C/g%3E%3Cg fill='none' stroke='%23c9d8e2' stroke-width='.8' opacity='.48'%3E%3Ccircle cx='96' cy='92' r='9'/%3E%3Ccircle cx='236' cy='171' r='8'/%3E%3Ccircle cx='433' cy='117' r='9'/%3E%3Ccircle cx='602' cy='237' r='8'/%3E%3Ccircle cx='780' cy='148' r='9'/%3E%3Ccircle cx='155' cy='339' r='9'/%3E%3Ccircle cx='338' cy='293' r='8'/%3E%3Ccircle cx='520' cy='391' r='10'/%3E%3Ccircle cx='713' cy='332' r='8'/%3E%3Ccircle cx='854' cy='426' r='9'/%3E%3Ccircle cx='92' cy='515' r='8'/%3E%3Ccircle cx='281' cy='477' r='9'/%3E%3Ccircle cx='450' cy='555' r='8'/%3E%3Ccircle cx='653' cy='507' r='9'/%3E%3Ccircle cx='811' cy='565' r='8'/%3E%3C/g%3E%3Cg fill='none' stroke='%23dbe5eb' stroke-width='.42' opacity='.62'%3E%3Cpath d='M23 59l28 8 12 25 27 9 11 24 29 11 10 24 27 10 12 26 28 9 11 25 28 10 10 25 29 10 11 25 28 10'/%3E%3Cpath d='M375 53l27 10 11 24 28 10 11 25 27 9 11 25 29 10 10 25 29 10 10 25 28 9 11 26 28 9 10 25'/%3E%3Cpath d='M683 51l28 10 11 25 27 9 11 25 28 10 10 25 29 9 11 26 28 9 10 25 29 10'/%3E%3Cpath d='M33 396l26 9 12 23 27 10 11 24 27 10 11 24 28 9 11 25 27 10 11 24 28 10'/%3E%3Cpath d='M386 399l27 9 11 24 27 10 11 24 28 10 10 24 29 10 10 25 28 9 11 25 28 10'/%3E%3Cpath d='M695 401l27 9 11 24 28 10 10 24 29 10 10 24 28 10 11 25 28 9'/%3E%3C/g%3E%3C/svg%3E");
 
       background-size:
@@ -110,6 +120,7 @@
     .container {
       width: 100%;
       max-width: 1320px;
+
       margin: 0 auto;
     }
 
@@ -126,7 +137,6 @@
       justify-content: space-between;
 
       min-height: 62px;
-      margin-bottom: 0;
 
       direction: ltr;
     }
@@ -135,10 +145,12 @@
     .meti-brand {
       display: flex;
       align-items: center;
+
       gap: 13px;
 
       direction: ltr;
     }
+
 
     .meti-mark {
       position: relative;
@@ -152,9 +164,11 @@
     .meti-mark::before,
     .meti-mark::after {
       content: "";
+
       position: absolute;
 
       width: 10px;
+
       border-radius: 1px;
     }
 
@@ -194,6 +208,7 @@
       transform: rotate(-38deg);
     }
 
+
     .meti-text {
       text-align: left;
       direction: ltr;
@@ -204,9 +219,10 @@
 
       font-size: 27px;
       line-height: 1;
-      font-weight: 800;
 
-      letter-spacing: 4px;
+      font-weight: 700;
+
+      letter-spacing: 3.5px;
     }
 
     .meti-sub {
@@ -216,7 +232,8 @@
 
       font-size: 8px;
       line-height: 1;
-      font-weight: 700;
+
+      font-weight: 600;
 
       letter-spacing: 3px;
     }
@@ -225,6 +242,7 @@
     .top-tagline {
       display: flex;
       align-items: center;
+
       gap: 13px;
 
       margin-top: 15px;
@@ -232,9 +250,10 @@
       color: #7f9ab2;
 
       font-size: 8px;
-      font-weight: 800;
+      font-weight: 700;
 
-      letter-spacing: 2.8px;
+      letter-spacing: 2.4px;
+
       white-space: nowrap;
 
       direction: ltr;
@@ -267,6 +286,7 @@
       justify-content: center;
 
       margin-bottom: 13px;
+
       padding: 7px 14px;
 
       border-radius: 30px;
@@ -275,9 +295,9 @@
       color: #0879b7;
 
       font-size: 10px;
-      font-weight: 800;
+      font-weight: 700;
 
-      letter-spacing: 1.3px;
+      letter-spacing: 1.1px;
     }
 
     .intro h1 {
@@ -286,42 +306,58 @@
       color: #092a51;
 
       font-size: clamp(33px, 3.3vw, 43px);
+
       line-height: 1.1;
-      font-weight: 800;
+
+      font-weight: 700;
 
       direction: ltr;
     }
 
     .intro p {
       max-width: 740px;
+
       margin: auto;
 
       color: #48698b;
 
       font-size: 14px;
-      font-weight: 700;
+
+      font-weight: 600;
+
       line-height: 1.9;
     }
 
 
     /* =========================================================
        SECTION HEADINGS
+       POSITION FIX
     ========================================================= */
 
     .section-heading {
+      position: relative;
+
       display: flex;
+
       align-items: center;
-      justify-content: flex-end;
+
+      /* IMPORTANT:
+         RTL + flex-start = RIGHT SIDE
+      */
+      justify-content: flex-start;
+
       gap: 12px;
 
-      margin-bottom: 14px;
+      width: 100%;
 
-      position: relative;
+      margin-bottom: 14px;
     }
+
 
     .section-heading-content {
       text-align: right;
     }
+
 
     .section-heading h2 {
       margin-bottom: 3px;
@@ -329,8 +365,10 @@
       color: #0b315d;
 
       font-size: 19px;
-      font-weight: 800;
+
+      font-weight: 700;
     }
+
 
     .section-heading span {
       display: block;
@@ -338,26 +376,33 @@
       color: #6f89a1;
 
       font-size: 11px;
+
       font-weight: 500;
 
       direction: ltr;
+
       text-align: right;
     }
+
 
     .section-line {
       width: 4px;
       height: 40px;
 
+      flex-shrink: 0;
+
       border-radius: 8px;
 
-      background: linear-gradient(
-        180deg,
-        #059ee4,
-        #087fc6
-      );
+      background:
+        linear-gradient(
+          180deg,
+          #059ee4,
+          #087fc6
+        );
 
       box-shadow:
-        0 0 12px rgba(9, 142, 208, 0.15);
+        0 0 12px
+        rgba(9, 142, 208, 0.15);
     }
 
 
@@ -366,11 +411,16 @@
     ========================================================= */
 
     .start-section {
+      width: 100%;
       max-width: 1240px;
+
       margin: 0 auto;
     }
 
+
     .start-heading {
+      width: 100%;
+
       margin-bottom: 14px;
     }
 
@@ -381,10 +431,13 @@
 
     .primary-card {
       position: relative;
+
       overflow: hidden;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       min-height: 190px;
@@ -405,18 +458,21 @@
         );
 
       box-shadow:
-        0 13px 33px rgba(4, 52, 89, 0.16);
+        0 13px 33px
+        rgba(4, 52, 89, 0.16);
 
       transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
     }
 
+
     .primary-card:hover {
       transform: translateY(-4px);
 
       box-shadow:
-        0 19px 39px rgba(4, 52, 89, 0.21);
+        0 19px 39px
+        rgba(4, 52, 89, 0.21);
     }
 
 
@@ -434,7 +490,9 @@
       opacity: 0.37;
 
       background-position: center bottom;
+
       background-repeat: no-repeat;
+
       background-size: cover;
 
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='760' height='210' viewBox='0 0 760 210'%3E%3Cdefs%3E%3ClinearGradient id='fade' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23037aac' stop-opacity='0'/%3E%3Cstop offset='.45' stop-color='%23088ec3' stop-opacity='.7'/%3E%3Cstop offset='1' stop-color='%230098ce' stop-opacity='.15'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23fade)' d='M0 210V137h54l13-27 33 18 20-38 32 24 30-47 34 28 26-31 35 26 29-55 23 39 25-25 29 32 25-58 27 45 22-20 28 31 33-60 25 51 34-31 29 39 38-25 32 42 40-17 35 47v106z'/%3E%3Cg fill='%23033e72' opacity='.8'%3E%3Crect x='355' y='83' width='16' height='66'/%3E%3Crect x='378' y='71' width='20' height='78'/%3E%3Crect x='404' y='90' width='18' height='59'/%3E%3Crect x='430' y='55' width='16' height='94'/%3E%3Crect x='452' y='82' width='21' height='67'/%3E%3Crect x='480' y='67' width='18' height='82'/%3E%3Crect x='506' y='39' width='18' height='110'/%3E%3Crect x='530' y='76' width='22' height='73'/%3E%3Crect x='561' y='91' width='18' height='58'/%3E%3Crect x='589' y='72' width='20' height='77'/%3E%3C/g%3E%3Cpath d='M95 210c77-12 150-28 211-50 62-22 105-36 167-28 49 7 100 30 190 28' fill='none' stroke='%2368d8f5' stroke-width='4' opacity='.55'/%3E%3Cpath d='M142 210c69-13 132-28 190-49 60-21 99-28 144-21 62 10 105 34 187 31' fill='none' stroke='%23c0f2ff' stroke-width='2' opacity='.62'/%3E%3Cpath d='M205 210c50-11 100-23 147-40 58-21 95-25 131-19 56 9 92 27 153 30' fill='none' stroke='%236fd8f4' stroke-width='1.5' opacity='.65'/%3E%3C/svg%3E");
@@ -450,12 +508,15 @@
       width: 260px;
       height: 260px;
 
-      border: 1px solid rgba(76, 198, 234, 0.18);
+      border:
+        1px solid
+        rgba(76, 198, 234, 0.18);
 
       transform: rotate(45deg);
 
       z-index: 0;
     }
+
 
     .hero-shape-two {
       position: absolute;
@@ -466,7 +527,9 @@
       width: 350px;
       height: 350px;
 
-      border: 1px solid rgba(76, 198, 234, 0.13);
+      border:
+        1px solid
+        rgba(76, 198, 234, 0.13);
 
       transform: rotate(45deg);
 
@@ -476,18 +539,24 @@
 
     .primary-content {
       position: relative;
+
       z-index: 2;
 
       width: 52%;
+
       max-width: 610px;
 
       text-align: right;
     }
 
+
     .primary-label {
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
+
       gap: 7px;
 
       margin-bottom: 15px;
@@ -496,16 +565,20 @@
 
       border-radius: 20px;
 
-      background: rgba(82, 203, 243, 0.25);
+      background:
+        rgba(82, 203, 243, 0.25);
+
       color: #e6faff;
 
       font-size: 9px;
-      font-weight: 800;
 
-      letter-spacing: 1.4px;
+      font-weight: 700;
+
+      letter-spacing: 1.2px;
 
       direction: ltr;
     }
+
 
     .primary-card h3 {
       margin-bottom: 8px;
@@ -513,27 +586,35 @@
       color: white;
 
       font-size: 27px;
-      font-weight: 800;
+
+      font-weight: 700;
 
       direction: ltr;
+
       text-align: right;
     }
+
 
     .primary-card p {
       color: #e9f5fa;
 
       font-size: 13px;
-      font-weight: 700;
+
+      font-weight: 600;
+
       line-height: 1.9;
     }
 
 
     .hero-side {
       position: relative;
+
       z-index: 2;
 
       display: flex;
+
       flex-direction: column;
+
       align-items: flex-start;
 
       gap: 17px;
@@ -541,23 +622,31 @@
       min-width: 185px;
     }
 
+
     .hero-side-text {
       color: #d9f0fa;
 
       font-size: 9px;
-      line-height: 1.6;
-      font-weight: 700;
 
-      letter-spacing: 3px;
+      line-height: 1.6;
+
+      font-weight: 600;
+
+      letter-spacing: 2.6px;
 
       direction: ltr;
+
       text-align: left;
     }
 
+
     .primary-action {
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       gap: 16px;
 
       min-width: 170px;
@@ -567,28 +656,35 @@
       border-radius: 12px;
 
       background: #ffffff;
+
       color: #0a315b;
 
       font-size: 14px;
-      font-weight: 800;
+
+      font-weight: 700;
 
       box-shadow:
-        0 8px 22px rgba(0, 30, 60, 0.12);
+        0 8px 22px
+        rgba(0, 30, 60, 0.12);
 
       transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
     }
 
+
     .primary-card:hover .primary-action {
       transform: translateX(-4px);
 
       box-shadow:
-        0 10px 25px rgba(0, 30, 60, 0.18);
+        0 10px 25px
+        rgba(0, 30, 60, 0.18);
     }
+
 
     .action-arrow {
       font-size: 19px;
+
       line-height: 1;
 
       direction: ltr;
@@ -600,10 +696,18 @@
     ========================================================= */
 
     .resources {
+      width: 100%;
+
       max-width: 1240px;
 
       margin: 27px auto 0;
     }
+
+
+    .resources .section-heading {
+      width: 100%;
+    }
+
 
     .cards-grid {
       display: grid;
@@ -615,37 +719,69 @@
     }
 
 
+    /* =========================================================
+       CARDS
+    ========================================================= */
+
     .card {
       position: relative;
+
       overflow: hidden;
 
       display: flex;
+
       flex-direction: column;
 
       min-height: 236px;
 
-      padding: 22px 25px 18px;
+      padding:
+        22px
+        25px
+        18px;
 
-      border: 1px solid #dfe8ef;
+      border:
+        1px solid
+        #dfe8ef;
+
       border-radius: 15px;
 
       cursor: pointer;
 
-      background: rgba(255, 255, 255, 0.91);
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.91
+        );
 
       box-shadow:
-        0 8px 22px rgba(26, 67, 97, 0.055);
+        0 8px 22px
+        rgba(
+          26,
+          67,
+          97,
+          0.055
+        );
 
       transition:
         transform 0.28s ease,
         box-shadow 0.28s ease;
     }
 
+
     .card:hover {
-      transform: translateY(-5px);
+      transform:
+        translateY(-5px);
 
       box-shadow:
-        0 15px 31px rgba(26, 67, 97, 0.11);
+        0 15px 31px
+        rgba(
+          26,
+          67,
+          97,
+          0.11
+        );
     }
 
 
@@ -660,6 +796,7 @@
 
       height: 3px;
     }
+
 
     .current-card::after {
       background: #15a9df;
@@ -683,7 +820,8 @@
       color: #9fd4ef;
 
       font-size: 13px;
-      font-weight: 700;
+
+      font-weight: 600;
 
       direction: ltr;
     }
@@ -691,7 +829,9 @@
 
     .icon {
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       width: 48px;
@@ -705,39 +845,66 @@
         transform 0.28s ease;
     }
 
+
     .card:hover .icon {
       transform:
         translateY(-3px)
         scale(1.05);
     }
 
+
     .icon svg {
       width: 27px;
+
       height: 27px;
     }
 
+
     .current-card .icon {
       background: #dff5ff;
+
       color: #008cda;
 
       box-shadow:
-        0 5px 15px rgba(0, 140, 218, 0.10);
+        0 5px 15px
+        rgba(
+          0,
+          140,
+          218,
+          0.10
+        );
     }
+
 
     .taxonomy-card .icon {
       background: #eaf0ff;
+
       color: #4f62df;
 
       box-shadow:
-        0 5px 15px rgba(79, 98, 223, 0.10);
+        0 5px 15px
+        rgba(
+          79,
+          98,
+          223,
+          0.10
+        );
     }
+
 
     .map-card .icon {
       background: #def8f1;
+
       color: #12a781;
 
       box-shadow:
-        0 5px 15px rgba(18, 167, 129, 0.10);
+        0 5px 15px
+        rgba(
+          18,
+          167,
+          129,
+          0.10
+        );
     }
 
 
@@ -747,11 +914,14 @@
       color: #0a2d55;
 
       font-size: 16px;
-      font-weight: 800;
+
+      font-weight: 700;
 
       direction: ltr;
+
       text-align: right;
     }
+
 
     .card p {
       flex: 1;
@@ -759,12 +929,16 @@
       color: #466687;
 
       font-size: 12.5px;
-      font-weight: 700;
+
+      font-weight: 600;
+
       line-height: 1.9;
     }
 
+
     .open-link {
       display: flex;
+
       align-items: center;
 
       gap: 7px;
@@ -774,8 +948,10 @@
       color: #087fb9;
 
       font-size: 11px;
-      font-weight: 800;
+
+      font-weight: 700;
     }
+
 
     .arrow {
       display: inline-block;
@@ -783,12 +959,15 @@
       direction: ltr;
 
       transition:
-        transform 0.25s ease;
+        transform
+        0.25s ease;
     }
+
 
     .card:hover .arrow,
     .updates-card:hover .arrow {
-      transform: translateX(-4px);
+      transform:
+        translateX(-4px);
     }
 
 
@@ -798,6 +977,7 @@
 
     .updates-card {
       position: relative;
+
       overflow: hidden;
 
       max-width: 1240px;
@@ -805,8 +985,11 @@
       margin: 22px auto 0;
 
       display: flex;
+
       align-items: center;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
 
       gap: 20px;
 
@@ -814,7 +997,10 @@
 
       padding: 18px 27px;
 
-      border: 1px solid #d7e8ef;
+      border:
+        1px solid
+        #d7e8ef;
+
       border-radius: 15px;
 
       cursor: pointer;
@@ -822,17 +1008,34 @@
       background:
         linear-gradient(
           90deg,
-          rgba(255,255,255,0.96),
-          rgba(244,251,254,0.95)
+          rgba(
+            255,
+            255,
+            255,
+            0.96
+          ),
+          rgba(
+            244,
+            251,
+            254,
+            0.95
+          )
         );
 
       box-shadow:
-        0 7px 20px rgba(23, 67, 96, 0.05);
+        0 7px 20px
+        rgba(
+          23,
+          67,
+          96,
+          0.05
+        );
 
       transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
     }
+
 
     .updates-card::before {
       content: "";
@@ -840,41 +1043,62 @@
       position: absolute;
 
       right: 19%;
+
       top: -85px;
 
       width: 210px;
+
       height: 170px;
 
       border-radius: 50%;
 
       background:
-        rgba(221, 245, 252, 0.55);
+        rgba(
+          221,
+          245,
+          252,
+          0.55
+        );
     }
 
+
     .updates-card:hover {
-      transform: translateY(-3px);
+      transform:
+        translateY(-3px);
 
       box-shadow:
-        0 13px 27px rgba(23, 67, 96, 0.09);
+        0 13px 27px
+        rgba(
+          23,
+          67,
+          96,
+          0.09
+        );
     }
 
 
     .update-left {
       position: relative;
+
       z-index: 1;
 
       display: flex;
+
       align-items: center;
 
       gap: 17px;
     }
 
+
     .update-icon {
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       width: 48px;
+
       height: 48px;
 
       flex-shrink: 0;
@@ -882,19 +1106,30 @@
       border-radius: 12px;
 
       background: #e2f5fc;
+
       color: #087fc5;
 
       box-shadow:
-        0 5px 14px rgba(8, 127, 197, 0.09);
+        0 5px 14px
+        rgba(
+          8,
+          127,
+          197,
+          0.09
+        );
     }
+
 
     .update-icon svg {
       width: 25px;
+
       height: 25px;
     }
 
+
     .update-text h3 {
       display: flex;
+
       align-items: center;
 
       gap: 10px;
@@ -904,11 +1139,15 @@
       color: #0a2d55;
 
       font-size: 15px;
-      font-weight: 800;
+
+      font-weight: 700;
 
       direction: ltr;
-      justify-content: flex-end;
+
+      justify-content:
+        flex-end;
     }
+
 
     .new-badge {
       padding: 4px 8px;
@@ -916,27 +1155,36 @@
       border-radius: 15px;
 
       background: #d9f5e8;
+
       color: #129364;
 
       font-size: 8px;
-      font-weight: 800;
 
-      letter-spacing: 0.8px;
+      font-weight: 700;
+
+      letter-spacing:
+        0.7px;
     }
+
 
     .update-text p {
       color: #4f6f8b;
 
       font-size: 11.5px;
-      font-weight: 700;
+
+      font-weight: 600;
+
       line-height: 1.7;
     }
 
+
     .update-action {
       position: relative;
+
       z-index: 1;
 
       display: flex;
+
       align-items: center;
 
       gap: 7px;
@@ -944,7 +1192,8 @@
       color: #087eb9;
 
       font-size: 11px;
-      font-weight: 800;
+
+      font-weight: 700;
 
       white-space: nowrap;
     }
@@ -960,32 +1209,43 @@
       margin: 26px auto 0;
 
       display: flex;
+
       align-items: flex-end;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
 
       direction: ltr;
     }
+
 
     .footer-brand {
       color: #7893aa;
 
       font-size: 7px;
-      line-height: 1.8;
-      font-weight: 700;
 
-      letter-spacing: 2px;
+      line-height: 1.8;
+
+      font-weight: 600;
+
+      letter-spacing:
+        1.8px;
 
       direction: ltr;
+
       text-align: left;
     }
+
 
     .footer-links {
       color: #718ca5;
 
       font-size: 7px;
-      font-weight: 700;
 
-      letter-spacing: 1.5px;
+      font-weight: 600;
+
+      letter-spacing:
+        1.4px;
 
       direction: ltr;
     }
@@ -998,33 +1258,47 @@
     .reveal {
       opacity: 0;
 
-      transform: translateY(13px);
+      transform:
+        translateY(13px);
 
       animation:
-        reveal 0.55s ease forwards;
+        reveal
+        0.55s ease
+        forwards;
     }
+
 
     .delay-1 {
-      animation-delay: 0.07s;
+      animation-delay:
+        0.07s;
     }
+
 
     .delay-2 {
-      animation-delay: 0.14s;
+      animation-delay:
+        0.14s;
     }
+
 
     .delay-3 {
-      animation-delay: 0.21s;
+      animation-delay:
+        0.21s;
     }
 
+
     .delay-4 {
-      animation-delay: 0.28s;
+      animation-delay:
+        0.28s;
     }
+
 
     @keyframes reveal {
 
       to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+          translateY(0);
       }
 
     }
@@ -1037,7 +1311,9 @@
     @media (max-width: 950px) {
 
       .training-home {
-        padding: 25px 22px;
+        padding:
+          25px
+          22px;
       }
 
       .primary-content {
@@ -1058,72 +1334,96 @@
     @media (max-width: 760px) {
 
       .training-home {
-        padding: 22px 15px 30px;
+        padding:
+          22px
+          15px
+          30px;
       }
+
 
       .top-branding {
         min-height: 50px;
       }
 
+
       .meti-name {
         font-size: 21px;
       }
+
 
       .meti-mark {
         transform:
           scale(0.82);
 
-        transform-origin: left top;
+        transform-origin:
+          left top;
       }
+
 
       .meti-sub {
         font-size: 6px;
       }
 
+
       .top-tagline {
         display: none;
       }
 
+
       .intro {
         margin-top: 6px;
+
         margin-bottom: 25px;
       }
+
 
       .intro h1 {
         font-size: 31px;
       }
 
+
       .intro p {
         font-size: 13px;
       }
 
-      .primary-card {
-        flex-direction: column;
 
-        align-items: stretch;
+      .primary-card {
+        flex-direction:
+          column;
+
+        align-items:
+          stretch;
 
         gap: 25px;
 
-        padding: 27px 24px;
+        padding:
+          27px
+          24px;
       }
+
 
       .primary-content {
         width: 100%;
       }
 
+
       .hero-side {
         width: 100%;
 
-        align-items: stretch;
+        align-items:
+          stretch;
       }
+
 
       .hero-side-text {
         display: none;
       }
 
+
       .primary-action {
         width: 100%;
       }
+
 
       .hero-scene {
         left: 0;
@@ -1132,17 +1432,23 @@
         opacity: 0.20;
       }
 
+
       .cards-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
 
+
       .updates-card {
-        align-items: flex-start;
+        align-items:
+          flex-start;
       }
+
 
       .update-action {
         display: none;
       }
+
 
       .page-footer {
         display: none;
@@ -1155,11 +1461,13 @@
 
       * {
         animation: none !important;
+
         transition: none !important;
       }
 
       .reveal {
         opacity: 1;
+
         transform: none;
       }
 
@@ -1176,7 +1484,6 @@
 <div class="map-background"></div>
 
 
-
 <section class="training-home">
 
 
@@ -1188,27 +1495,41 @@
 
       <div class="meti-brand">
 
+
         <div class="meti-mark">
+
           <span class="meti-cut"></span>
+
         </div>
+
 
         <div class="meti-text">
 
+
           <div class="meti-name">
+
             METI
+
           </div>
+
 
           <div class="meti-sub">
+
             TRAINING MATERIAL
+
           </div>
 
+
         </div>
+
 
       </div>
 
 
       <div class="top-tagline">
+
         DRIVE A SMARTER TOMORROW
+
       </div>
 
 
@@ -1220,18 +1541,24 @@
 
 
       <div class="eyebrow">
+
         METI QUALITY TRAINING
+
       </div>
 
 
       <h1>
+
         Training Material
+
       </h1>
 
 
       <p>
+
         المكان الرئيسي لكل الـGuidelines والـUpdates والـLabeling Rules
         الخاصة بالمشروع، عشان تقدر توصل للمعلومة المطلوبة بسهولة وسرعة.
+
       </p>
 
 
@@ -1247,13 +1574,20 @@
 
         <div class="section-heading-content">
 
+
           <h2>
+
             ابدأ من هنا
+
           </h2>
 
+
           <span>
+
             New Hire Start
+
           </span>
+
 
         </div>
 
@@ -1269,20 +1603,29 @@
         class="primary-card reveal delay-1"
 
         role="link"
+
         tabindex="0"
 
-        onclick="openPage('https://sites.google.com/meti.ai/training-material/welcome-to-meti')"
+        onclick="
+          openPage(
+            'https://sites.google.com/meti.ai/training-material/welcome-to-meti'
+          )
+        "
 
-        onkeydown="handleKey(
-          event,
-          'https://sites.google.com/meti.ai/training-material/welcome-to-meti'
-        )"
+        onkeydown="
+          handleKey(
+            event,
+            'https://sites.google.com/meti.ai/training-material/welcome-to-meti'
+          )
+        "
       >
 
 
         <div class="hero-scene"></div>
 
+
         <div class="hero-shape-one"></div>
+
 
         <div class="hero-shape-two"></div>
 
@@ -1292,19 +1635,25 @@
 
 
           <div class="primary-label">
+
             START HERE
+
           </div>
 
 
           <h3>
+
             Welcome to METI
+
           </h3>
 
 
           <p>
+
             لو أنت New Hire، ابدأ من هنا الأول عشان تتعرف على METI،
             المشروع، وطريقة الشغل وأهم المعلومات الأساسية اللي محتاج تعرفها
             قبل ما تبدأ في الـQueues.
+
           </p>
 
 
@@ -1316,19 +1665,30 @@
 
 
           <div class="hero-side-text">
-            PEOPLE<br>
-            DATA<br>
+
+            PEOPLE
+            <br>
+
+            DATA
+            <br>
+
             SAFER ROADS
+
           </div>
 
 
           <div class="primary-action">
 
+
             <span class="action-arrow">
+
               →
+
             </span>
 
+
             ابدأ التدريب
+
 
           </div>
 
@@ -1351,13 +1711,20 @@
 
         <div class="section-heading-content">
 
+
           <h2>
+
             Training Resources
+
           </h2>
 
+
           <span>
+
             الخطوات والمراجع الأساسية
+
           </span>
+
 
         </div>
 
@@ -1377,63 +1744,89 @@
           class="card current-card reveal delay-1"
 
           role="link"
+
           tabindex="0"
 
-          onclick="openPage(
-            'https://sites.google.com/meti.ai/training-material/home/queues'
-          )"
+          onclick="
+            openPage(
+              'https://sites.google.com/meti.ai/training-material/home/queues'
+            )
+          "
 
-          onkeydown="handleKey(
-            event,
-            'https://sites.google.com/meti.ai/training-material/home/queues'
-          )"
+          onkeydown="
+            handleKey(
+              event,
+              'https://sites.google.com/meti.ai/training-material/home/queues'
+            )
+          "
         >
 
 
           <div class="card-number">
+
             01
+
           </div>
 
 
           <div class="icon">
 
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
+
               fill="none"
+
               viewBox="0 0 24 24"
+
               stroke="currentColor"
+
               stroke-width="1.8"
             >
 
+
               <path
                 stroke-linecap="round"
+
                 stroke-linejoin="round"
+
                 d="M3.75 6.75A1.75 1.75 0 015.5 5h4l2 2h7A1.75 1.75 0 0120.25 8.75v8.75A1.75 1.75 0 0118.5 19.25h-13a1.75 1.75 0 01-1.75-1.75V6.75z"
               />
 
+
             </svg>
+
 
           </div>
 
 
           <h3>
+
             Queues
+
           </h3>
 
 
           <p>
+
             ادخل هنا عشان تشوف الـQueues الخاصة بالمشروع،
             وتوصل للـCurrent Queue والـWorkflow والـRules الخاصة بكل Queue.
+
           </p>
 
 
           <div class="open-link">
 
+
             فتح الـQueues
 
+
             <span class="arrow">
+
               ←
+
             </span>
+
 
           </div>
 
@@ -1446,67 +1839,128 @@
           class="card taxonomy-card reveal delay-2"
 
           role="link"
+
           tabindex="0"
 
-          onclick="openPage(
-            'https://sites.google.com/meti.ai/training-material/home/unified-taxonomy'
-          )"
+          onclick="
+            openPage(
+              'https://sites.google.com/meti.ai/training-material/home/unified-taxonomy'
+            )
+          "
 
-          onkeydown="handleKey(
-            event,
-            'https://sites.google.com/meti.ai/training-material/home/unified-taxonomy'
-          )"
+          onkeydown="
+            handleKey(
+              event,
+              'https://sites.google.com/meti.ai/training-material/home/unified-taxonomy'
+            )
+          "
         >
 
 
           <div class="card-number">
+
             02
+
           </div>
 
 
           <div class="icon">
 
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
+
               fill="none"
+
               viewBox="0 0 24 24"
+
               stroke="currentColor"
+
               stroke-width="1.8"
             >
 
-              <rect x="9" y="3" width="6" height="4" rx="1" />
-              <rect x="3" y="17" width="6" height="4" rx="1" />
-              <rect x="15" y="17" width="6" height="4" rx="1" />
+
+              <rect
+                x="9"
+
+                y="3"
+
+                width="6"
+
+                height="4"
+
+                rx="1"
+              />
+
+
+              <rect
+                x="3"
+
+                y="17"
+
+                width="6"
+
+                height="4"
+
+                rx="1"
+              />
+
+
+              <rect
+                x="15"
+
+                y="17"
+
+                width="6"
+
+                height="4"
+
+                rx="1"
+              />
+
 
               <path
                 stroke-linecap="round"
+
                 stroke-linejoin="round"
+
                 d="M12 7v5M6 17v-3h12v3"
               />
 
+
             </svg>
+
 
           </div>
 
 
           <h3>
+
             Unified Taxonomy
+
           </h3>
 
 
           <p>
+
             راجع الـClasses والـAttributes المستخدمة في الشغل،
             واعرف تعريف كل Object وإمتى نستخدم كل تصنيف.
+
           </p>
 
 
           <div class="open-link">
 
+
             فتح الـTaxonomy
 
+
             <span class="arrow">
+
               ←
+
             </span>
+
 
           </div>
 
@@ -1519,69 +1973,98 @@
           class="card map-card reveal delay-3"
 
           role="link"
+
           tabindex="0"
 
-          onclick="openPage(
-            'https://sites.google.com/meti.ai/training-material/home/semantic-map-regions'
-          )"
+          onclick="
+            openPage(
+              'https://sites.google.com/meti.ai/training-material/home/semantic-map-regions'
+            )
+          "
 
-          onkeydown="handleKey(
-            event,
-            'https://sites.google.com/meti.ai/training-material/home/semantic-map-regions'
-          )"
+          onkeydown="
+            handleKey(
+              event,
+              'https://sites.google.com/meti.ai/training-material/home/semantic-map-regions'
+            )
+          "
         >
 
 
           <div class="card-number">
+
             03
+
           </div>
 
 
           <div class="icon">
 
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
+
               fill="none"
+
               viewBox="0 0 24 24"
+
               stroke="currentColor"
+
               stroke-width="1.8"
             >
 
+
               <path
                 stroke-linecap="round"
+
                 stroke-linejoin="round"
+
                 d="M4 6.5l5-2.5 6 2.5 5-2.5v13.5L15 20l-6-2.5L4 20V6.5z"
               />
 
+
               <path
                 stroke-linecap="round"
+
                 stroke-linejoin="round"
+
                 d="M9 4v13.5M15 6.5V20"
               />
 
+
             </svg>
+
 
           </div>
 
 
           <h3>
+
             Semantic Map Regions
+
           </h3>
 
 
           <p>
+
             راجع أنواع الـMap Regions وإزاي بنحدد الـDrivable
             والـNon-Drivable Areas والقواعد الخاصة بكل منطقة.
+
           </p>
 
 
           <div class="open-link">
 
+
             فتح الـMap Regions
 
+
             <span class="arrow">
+
               ←
+
             </span>
+
 
           </div>
 
@@ -1600,16 +2083,21 @@
       class="updates-card reveal delay-4"
 
       role="link"
+
       tabindex="0"
 
-      onclick="openPage(
-        'https://sites.google.com/meti.ai/training-material/home/updates'
-      )"
+      onclick="
+        openPage(
+          'https://sites.google.com/meti.ai/training-material/home/updates'
+        )
+      "
 
-      onkeydown="handleKey(
-        event,
-        'https://sites.google.com/meti.ai/training-material/home/updates'
-      )"
+      onkeydown="
+        handleKey(
+          event,
+          'https://sites.google.com/meti.ai/training-material/home/updates'
+        )
+      "
     >
 
 
@@ -1618,27 +2106,40 @@
 
         <div class="update-icon">
 
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
+
             fill="none"
+
             viewBox="0 0 24 24"
+
             stroke="currentColor"
+
             stroke-width="1.8"
           >
 
+
             <path
               stroke-linecap="round"
+
               stroke-linejoin="round"
+
               d="M4 13V9.5a2 2 0 012-2h2l8-3v14l-8-3H6a2 2 0 01-2-2.5z"
             />
 
+
             <path
               stroke-linecap="round"
+
               stroke-linejoin="round"
+
               d="M19 8.5c.7.8 1 1.7 1 2.75 0 1.05-.3 1.95-1 2.75"
             />
 
+
           </svg>
+
 
         </div>
 
@@ -1648,18 +2149,25 @@
 
           <h3>
 
+
             Latest Updates
 
+
             <span class="new-badge">
+
               NEW
+
             </span>
+
 
           </h3>
 
 
           <p>
+
             راجع آخر الـUpdates والـClarifications وأي Rules جديدة
             اتضافت أو اتغيرت.
+
           </p>
 
 
@@ -1672,11 +2180,16 @@
 
       <div class="update-action">
 
+
         عرض الـUpdates
 
+
         <span class="arrow">
+
           ←
+
         </span>
+
 
       </div>
 
@@ -1691,16 +2204,26 @@
       <div class="footer-brand">
 
         METI | TRAINING MATERIAL
+
         <br>
+
         BETTER DATA. SAFER ROADS.
 
       </div>
 
 
       <div class="footer-links">
-        GUIDELINES &nbsp; | &nbsp;
-        SUPPORT &nbsp; | &nbsp;
+
+        GUIDELINES
+
+        &nbsp; | &nbsp;
+
+        SUPPORT
+
+        &nbsp; | &nbsp;
+
         CONTACT
+
       </div>
 
 
@@ -1715,6 +2238,7 @@
 
 
 <script>
+
 
   function openPage(url) {
 
@@ -1741,6 +2265,7 @@
     }
 
   }
+
 
 </script>
 
